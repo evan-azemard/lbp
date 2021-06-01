@@ -1,0 +1,21 @@
+Pour le compte gérant :
+
+pseudo : Admin
+
+MDP : AdminAdmin1.
+
+Email : Admin@gmail.com
+
+Type de compte : Users
+
+
+
+Pour le compte Vendeur :
+
+pseudo : Sellers
+
+MDP : SellersSellers1.
+
+Email : Sellers@gmail.com
+
+Type de compte : Sellers
