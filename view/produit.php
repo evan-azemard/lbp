@@ -6,7 +6,7 @@ if (empty($_SESSION['id'])){
 ?>
 <?php
 if (isset($_POST['ppan'])){
-$user = new C_produit();
+    $user = new C_produit();
     $errors = $user->produit($_POST['idppa'],$_POST['number']);
 } else {
     $errors = array();
@@ -16,8 +16,33 @@ $user = new C_produit();
 <main id="produit_main">
     <!--Affiche produit par section-->
     <div class="produit_h1 banderole">
-        <h1>Découvrer nos smartphones</h1>
+        <h1>Découvrer nos produits</h1>
     </div>
+    <section id="info_produit">
+        <article id="info_produit_art1">
+            <p>Rechercher par catégorie: </p>
+            <nav id="wrap">
+                <ul class="navbar">
+                    <li>
+                        <a class="ali" href="#">Catégorie</a>
+                        <ul>
+                            <li><a class="ali" href="#encre4">Du smartphone au PC</a></li>
+                            <li><a class="ali" href="#encre3">Engin motorisé</a></li>
+                            <li><a class="ali" href="#encre3">Décoration</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+        <article id="info_produit_art2">
+            <p>Rechercher dans votre fourchette de prix:</p>
+            <div id="info_produit_art3">
+                <input id="prix1" aria-label="number" type="number" minlength="1" placeholder="50 (€)">
+                <input  id="prix2" aria-label="number" type="number" minlength="1" placeholder=" 4000 (€)">
+                <div id="vprix">Valider</div>
+            </div>
+        </article>
+    </section>
     <section>
         <article class="articlegrid">
             <?php
@@ -25,7 +50,7 @@ $user = new C_produit();
                 $model = $tab['marque_model'];
 
                 $articles = article_produit($model);
-            ?>
+                ?>
                 <div class="produit_h1">
                     <h1><?= $tab['marque_model'] ?></h1>
                 </div>
@@ -52,7 +77,7 @@ $user = new C_produit();
 
                                         $t = strlen($article['resum']);
 
-                                            $tt = substr($article['resum'], 0, 120) . '[...]';
+                                        $tt = substr($article['resum'], 0, 120) . '[...]';
 
 
                                         $a = substr($tt, 0, 40);
@@ -73,7 +98,7 @@ $user = new C_produit();
                                         <input type="number" name="number" class="number" id="number" placeholder="1" value="<?php if (empty($_POST['number'])){echo 1;}?>" min="1" max="500"><label for="number"></label>
                                         <input type="text" aria-label="pasID" name="idppa" value="<?=$article['id_produit']?>" style="display: none">
                                     </form>
-                                        <a href="article?id=<?= $article['id_produit']?>"><i class="fa fa-info-circle fa-3x" aria-hidden="true"></i></a>
+                                    <a href="article?id=<?= $article['id_produit']?>"><i class="fa fa-info-circle fa-3x" aria-hidden="true"></i></a>
                                     <p><?= $article['prix_article']?></p>
                                 </div>
                             </article>
@@ -81,7 +106,7 @@ $user = new C_produit();
                     </div>
                 </div>
                 <div class="traimoyen"></div>
-            <?php
+                <?php
             } ?>
         </article>
     </section>
