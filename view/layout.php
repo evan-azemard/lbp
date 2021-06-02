@@ -17,54 +17,53 @@
     <title>Smart Your Future</title>
 </head>
 <?php
-/*Si tu est vendeur tu à accé*/
-function remplaceV($nameA,$urlA){
-      if (!empty($_SESSION['id'])) {
-          if ($_SESSION['rank'] == 2) {
-              echo "<a href='$urlA' class='colorlien'>";
-              echo "$nameA";
-              echo "</a>";
-          } else {
-              echo '';
-          }
-      }
-}
-/*Si tu n'est pa connecté tu à accé*/
-function remplaceRIEN($nameA,$urlA){
-    if (empty($_SESSION['id'])){
-        echo "<a href='$urlA' class='colorlien'>";
-        echo"$nameA";
-        echo "</a>";
-        }else{
-        echo '';
+/*Si tu es vendeur tu as accés*/
+function remplaceV($nameA, $urlA)
+{
+    if (!empty($_SESSION['id'])) {
+        if ($_SESSION['rank'] == 2) {
+            echo "<a href='$urlA' class='colorlien'>";
+            echo "$nameA";
+            echo "</a>";
+        } else {
+            echo '';
+        }
     }
-
 }
-/*Si tu est admin tu à accé*/
-function remplaceAd($nameA,$urlA){
-    if (!empty($_SESSION['id']))
-    {
-    if ($_SESSION['rank'] == 3) {
+/*Si tu n'es pas connecté tu as accés*/
+function remplaceRIEN($nameA, $urlA)
+{
+    if (empty($_SESSION['id'])) {
         echo "<a href='$urlA' class='colorlien'>";
         echo "$nameA";
         echo "</a>";
-    }else{
+    } else {
         echo '';
     }
-    }
-
-
 }
-/*Si tu est connecté tu affiche*/
-function remplaceID($nameA,$urlA){
+/*Si tu es admin tu as accés*/
+function remplaceAd($nameA, $urlA)
+{
+    if (!empty($_SESSION['id'])) {
+        if ($_SESSION['rank'] == 3) {
+            echo "<a href='$urlA' class='colorlien'>";
+            echo "$nameA";
+            echo "</a>";
+        } else {
+            echo '';
+        }
+    }
+}
+/*Si tu es connecté tu affiche*/
+function remplaceID($nameA, $urlA)
+{
     if (isset($_SESSION['id'])) {
         echo "<a href='$urlA' class='colorlien'>";
         echo "$nameA";
         echo "</a>";
-    }else{
+    } else {
         echo '';
     }
-
 }
 ?>
 
@@ -78,17 +77,17 @@ function remplaceID($nameA,$urlA){
                 <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
                     <a href="#" class="fermer" onclick="closeNav()">×</a>
                     <a class="colorlien" href="accueil">Accueil</a>
-                    <?php remplaceRIEN("Inscription","register"); ?>
-                    <?php remplaceRIEN("Connexion","login"); ?>
-                    <?php remplaceID("Profil","profil"); ?>
+                    <?php remplaceRIEN("Inscription", "register"); ?>
+                    <?php remplaceRIEN("Connexion", "login"); ?>
+                    <?php remplaceID("Profil", "profil"); ?>
                     <a class="colorlien" href="produit">Découvrer nos produits</a>
-                    <?php remplacev("Ajouter un article","ajout"); ?>
-                    <?php remplacev("Historique de vente","historique_vendeur"); ?>
-                    <?php remplaceID("Historique des commandes","historique_commende"); ?>
-                    <?php remplaceID("Panier","panier"); ?>
-                    <?php remplaceAd("Admin","admin"); ?>
-                    <?php remplaceAd("Gérant","gerant"); ?>
-                    <?php remplaceID("Déconnexion","disconnect"); ?>
+                    <?php remplacev("Ajouter un article", "ajout"); ?>
+                    <?php remplacev("Historique de vente", "historique_vendeur"); ?>
+                    <?php remplaceID("Historique des commandes", "historique_commende"); ?>
+                    <?php remplaceID("Panier", "panier"); ?>
+                    <?php remplaceAd("Admin", "admin"); ?>
+                    <?php remplaceAd("Gérant", "gerant"); ?>
+                    <?php remplaceID("Déconnexion", "disconnect"); ?>
                 </div>
                 <span style="font-size:30px;" onclick="openNav()">
                     <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
@@ -128,26 +127,26 @@ function remplaceID($nameA,$urlA){
                 </form>
             </div>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
-             <div id="header_lien_button">
-                <button><a href="disconnect">Déconexion</a> </button>
-            </div>
+            if (isset($_SESSION['id'])) {
+            ?>
+                <div id="header_lien_button">
+                    <button><a href="disconnect">Déconexion</a> </button>
+                </div>
             <?php
-            }else{
+            } else {
                 echo '';
             }
             ?>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
-            <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+            if (isset($_SESSION['id'])) {
+            ?>
+                <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
-         <?php
-            }else{
+    <?php
+            } else {
                 echo '';
             }
-            ?>
+    ?>
     </header>
 
     <!--Main-->
@@ -176,4 +175,5 @@ function remplaceID($nameA,$urlA){
         </div>
     </footer>
 </body>
+
 </html>
