@@ -15,7 +15,6 @@
 		echo $data;
 
 
-
 	}
 	else{
 
