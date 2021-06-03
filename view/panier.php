@@ -7,11 +7,15 @@ if (empty($_SESSION['id'])) {
 $user = new C_affiche();
 $errors = $user->affiche_panier($_SESSION['id']);
 ?>
+
 <main id="panier_main">
     <section id="panier_section">
         <article id="panier_h1">
             <h1>Votre panier</h1>
         </article>
+
+                <?= $key['prix_article'] ?>
+
         <article class="panier_card">
             <div class="card_panier_img">
                 <img src="img_docs/exemple.png.jpg" alt="exemple">

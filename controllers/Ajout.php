@@ -174,7 +174,6 @@ function ajout()
             }
 
             if (count($errors) < 1) {
-                /*                    $this->marque = strtoupper($this->marque);*/
                 ajouter($this->imgname,$this->imgsize,$this->imgtype,$this->imgtmp,$this->resum,$this->categorie
                     ,$this->code,$this->nom, $this->marque,$this->prix,$this->iduser);
 

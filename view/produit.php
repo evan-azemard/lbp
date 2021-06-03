@@ -7,7 +7,7 @@ if (empty($_SESSION['id'])){
 <?php
 if (isset($_POST['ppan'])){
     $user = new C_produit();
-    $errors = $user->produit($_POST['idppa'],$_POST['number']);
+    $errors = $user->produit($_POST['idppa'],$_POST['prix']);
 } else {
     $errors = array();
 }?>
@@ -59,7 +59,7 @@ if (isset($_POST['ppan'])){
                         <?php foreach ($articles as $article) { ?>
                             <article class="produit_card">
                                 <div class="card_img">
-                                    <img src="img_docs/exemple.png.jpg" alt="exemple">
+                                    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($article['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
                                 </div>
                                 <div class="card_description">
                                     <h3>
@@ -94,12 +94,12 @@ if (isset($_POST['ppan'])){
                                 </div>
                                 <div class="logo_card">
                                     <form method="post" style="display: flex">
-                                        <input type="submit" name="ppan" value="ajouter">
-                                        <input type="number" name="number" class="number" id="number" placeholder="1" value="<?php if (empty($_POST['number'])){echo 1;}?>" min="1" max="500"><label for="number"></label>
+                                        <input style="cursor: pointer" type="submit" name="ppan" value="ajouter">
                                         <input type="text" aria-label="pasID" name="idppa" value="<?=$article['id_produit']?>" style="display: none">
+                                        <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?=$article['prix_article']?>" style="display: none">
                                     </form>
-                                    <a href="article?id=<?= $article['id_produit']?>"><i class="fa fa-info-circle fa-3x" aria-hidden="true"></i></a>
-                                    <p><?= $article['prix_article']?></p>
+                                    <p><?= $article['prix_article']?>€</p>
+                                    <p><?= $article['code']?></p>
                                 </div>
                             </article>
                         <?php } ?>

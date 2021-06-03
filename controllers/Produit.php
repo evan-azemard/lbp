@@ -20,7 +20,8 @@ function produit()
     {
 
         private $id;
-        private $number;
+        private $prix;
+
         public function getId()
         {
             return $this->id;
@@ -29,45 +30,31 @@ function produit()
         {
             $this->id = $id;
         }
-
-        public function getNumber()
+        public function getPrix()
         {
-            return $this->number;
+            return $this->prix;
         }
-        public function setNumber($number)
+        public function setPrix($prix)
         {
-            $this->number = $number;
+            $this->prix = $prix;
         }
 
-        public function produit($id, $number)
+
+        public function produit($id,$prix)
         {
-            $this->setNumber($number);
             $this->setId($id);
+            $this->setPrix($prix);
             $errors = array();
 
 
 
-
-
-            if ($this->id < 1 || $this->id > 50) {
-                array_push($errors, "Vous pouvez sélectioner au maximum 50 même produit");
-            }
-
             if (count($errors) < 1) {
 
-                $data_article = data_article($this->id);
-
-                foreach ($data_article as $item) {
-                    $prix = $item['prix_article'];
-                }
-
-
-                $prixf = (int)$prix * (int)$this->number;
+                $prixf = (int)$prix;
                 $id_user = (int)$_SESSION['id'];
                 $id_article = (int)$this->id;
-                $number_article = (int)$this->number;
 
-                ajout_panier($id_user, $id_article, $number_article, $prixf);
+                ajout_panier($id_user, $id_article, $prixf);
 
                 unset($prixf);
 

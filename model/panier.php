@@ -6,22 +6,16 @@ function  article_panier($model)
 
     $sel = $bdd->prepare('select id_panier from paniers  WHERE id_user = ?');
     $sel->execute(array($model));
-    $articles = $sel->fetchColumn();
-
+    $articles = $sel->fetch();
     return $articles;
-
-
 }
 
 function  article_pp($id)
 {
-
     $bdd =  db_connect();
-
-    $sel = $bdd->prepare('select id_produit  from paniers REPLICATE  WHERE id_panier = ? ');
+    $sel = $bdd->prepare('select id_produit from paniers  WHERE id_panier = ? ');
     $sel->execute(array($id));
-    $articles_pp = $sel->fetchColumn();
-/*    var_dump($articles_pp);*/
+    $articles_pp = $sel->fetchAll();
     return $articles_pp;
 }
 
@@ -29,9 +23,9 @@ function  article_pp($id)
 function  select_all($data)
 {
     $bdd =  db_connect();
-    $sel = $bdd->prepare('select * from articles INNER JOIN paniers ON ? = articles.id_produit  ');
+    $sel = $bdd->prepare('select * from articles WHERE id_produit = ? ');
     $sel->execute(array($data));
-    $select_all = $sel->fetch();
+    $select_all = $sel->fetchAll();
     return $select_all;
 }
 

@@ -28,27 +28,14 @@ function  article_model()
 }
 
 
-
-function  data_article($id)
-{
-
-    $bdd =  db_connect();
-
-    $sel = $bdd->prepare('select prix_article from articles  WHERE id_produit = ?');
-    $sel->execute(array($id));
-    $data_article = $sel->fetchAll();
-
-    return $data_article;
-}
-
-function  ajout_panier($id_user,$id_produit,$nombres,$prix)
+function  ajout_panier($id_user,$id_produit,$prix)
 {
 
     $bdd =  db_connect();
     $date = date('Y-m-d H:i:s');
 
-    $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,nombres,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?,?) ");
-    $sse->execute(array($id_user,$id_produit,$nombres,$date,$prix,$id_user));
+    $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?) ");
+    $sse->execute(array($id_user,$id_produit,$date,$prix,$id_user));
 
 
 }

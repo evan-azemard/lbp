@@ -12,7 +12,6 @@ require('controllers/disconnect.php');
 require('controllers/Register.php');
 require('controllers/Ajout.php');
 require('controllers/Produit.php');
-require('controllers/article.php');
 require('controllers/admin.php');
 require('controllers/gerant.php');
 require('controllers/panier.php');
@@ -46,9 +45,6 @@ if (isset($_GET['page']))
             break;
         case 'produit';
             produit();
-            break;
-        case 'article';
-            article();
             break;
         case 'admin';
             admin();

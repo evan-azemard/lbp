@@ -23,46 +23,43 @@ function panier(){
         {
             $this->setId($id);
 
-            /*Récupére l'id du panier*/
-/*            $articles = article_panier($this->id);*/
+            /*l'id du pannier de l'utilisateur*/
+            $articles =  article_panier($this->id);
+
+            var_dump($articles['id_panier']);
 
 
-/*$i = 0;
-while ($i < 20){
+
+                /*selectionne les id produit du panier*/
+                $articles_pp = article_pp($articles['id_panier']);
+
+                foreach ($articles_pp as $item)
+                {
+                    $select_all = select_all($item['id_produit']);
+
+                    foreach ($select_all as $key)
+                    {
+                        var_dump($key['prix_article']);
+                       /* ob_start();
+                        ob_clean();
+                        render
+                        extends*/
+
+                    }
+
+                }
 
 
-    $i++;
-}*/
-                /*Selectione tout les produit du même panier*/
 
-/*              $articles_pp =  article_pp($articles);*/
 
-            /*Selectione l'article qui correspond à l'id */
-/*            $select_all = select_all((int)$articles_pp);*/
 
-/*            var_dump($select_all['prix_article']);*/
-
-/*            $_SESSION['prix'] = $select_all['prix_article'];
-            $_SESSION['resum'] = $select_all['resum'];
-            $_SESSION['marque'] = $select_all['marque_model'];
-            $_SESSION['nom'] = $select_all['nom_model'];*/
-
-            ?> <pre>
-
-    <?php
-    ?>
-            </pre> <?php
 
         }
-
-
-
     }
 
-
-    //Template
+//Template
     $template = 'panier';
-    //Layout (contient header , footer)
+//Layout (contient header , footer)
     include('view/layout.php');
 }
 
