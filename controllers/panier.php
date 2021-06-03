@@ -26,12 +26,12 @@ function panier(){
             /*l'id du pannier de l'utilisateur*/
             $articles =  article_panier($this->id);
 
-            var_dump($articles['id_panier']);
 
 
+            /*selectionne les id produit du panier*/
 
-                /*selectionne les id produit du panier*/
-                $articles_pp = article_pp($articles['id_panier']);
+            $articles_pp = article_pp($articles['id_panier']);
+
 
                 foreach ($articles_pp as $item)
                 {
@@ -39,21 +39,10 @@ function panier(){
 
                     foreach ($select_all as $key)
                     {
-                        var_dump($key['prix_article']);
-                       /* ob_start();
-                        ob_clean();
-                        render
-                        extends*/
-
+                        return $key;
                     }
 
                 }
-
-
-
-
-
-
         }
     }
 
@@ -63,4 +52,8 @@ function panier(){
     include('view/layout.php');
 }
 
+ /* ob_start();
+                        ob_clean();
+                        render
+                        extends*/
 ?>

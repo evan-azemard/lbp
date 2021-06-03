@@ -14,7 +14,13 @@ $errors = $user->affiche_panier($_SESSION['id']);
             <h1>Votre panier</h1>
         </article>
 
-                <?= $key['prix_article'] ?>
+                <?php
+
+
+                var_dump($key['prix_article']);
+
+
+                ?>
 
         <article class="panier_card">
             <div class="card_panier_img">
