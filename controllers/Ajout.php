@@ -1,5 +1,4 @@
 <?php
-
 /*Ajouter un produuit*/
 require ('model/ajout.php');
 

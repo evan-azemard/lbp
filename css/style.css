@@ -1549,7 +1549,7 @@ option:focus {
   min-height: 10vh;
   height: 20vh;
   max-height: 30vh;
-  width: 80%;
+  max-width: 80%;
   margin-left: 5%;
   margin-right: 15%;
   margin-bottom: 3%;
@@ -1580,17 +1580,18 @@ option:focus {
 /*Résumé*/
 .card_panier_text_div1 {
   text-align: center;
-  max-width: 55vw;
-  width: 60%;
+  max-width: 35vw;
+  min-width: 35vw;
+  width: 35vw;
   height: 100%;
   word-wrap: break-word;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: scroll;
 }
 /*les boutton*/
 .card_panier_text_div2 {
   background-color: rgba(179, 187, 202, 0.37);
-  width: 40%;
+  width: 13vw;
   height: 100%;
   flex-wrap: nowrap;
   display: flex;
@@ -1963,10 +1964,24 @@ option:focus {
 .navbar li:hover ul{
   display: block;
 }
+#produit_0{
+  font-size: 2.3rem;
+  color: red;
+  font-weight: bold;
+}
 
+#panier_0{
+  margin-top: -5%;
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../img_docs/panier.png");
+  background-size: cover;
+}
 
-
-
-
+.panier_card{
+  margin-left: 18vw;
+}
 
 

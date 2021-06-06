@@ -1,11 +1,9 @@
 <?php
-if (empty($_SESSION['id'])) {
+if (empty($_SESSION['id']))
+{
     header("Location: accueil");
 }
-?>
-<?php
 $user = new C_affiche();
-$errors = $user->affiche_panier($_SESSION['id']);
 ?>
 
 <main id="panier_main">
@@ -14,46 +12,7 @@ $errors = $user->affiche_panier($_SESSION['id']);
             <h1>Votre panier</h1>
         </article>
 
-                <?php
-
-
-                var_dump($key['prix_article']);
-
-
-                ?>
-
-        <article class="panier_card">
-            <div class="card_panier_img">
-                <img src="img_docs/exemple.png.jpg" alt="exemple">
-            </div>
-            <div class="card_panier_text">
-                <div class="card_panier_text_div1">
-                    <p>
-
-                     2020 qui possède un écran rotatif (de 6.8 pouces)
-                    laissant apparaître un deuxième écran de 3.9 pouces.
-
-                    </p>
-                </div>
-                <div class="card_panier_text_div2">
-                    <div class="panier_commende">
-                        <h2>LG Wing 5g</h2>
-                    </div>
-                    <div class="panier_commende2">
-                        <div>750€</div>
-                        <form name="panierform1" method="post">
-                            <input name="numberpanier" aria-label="number" placeholder="1" type="number">
-                        </form>
-                    </div>
-                    <div class="panier_commende">
-                        <form name="panierform1" method="post">
-                            <input type="submit" class="button_panier">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <div class="traimoyenpanier"></div>
+        <?php $key = $user->affiche_panier($_SESSION['id']); ?>
 
         <article id="commender_panier">
             <div id="totale_panier">
