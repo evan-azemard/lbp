@@ -20,23 +20,23 @@ require_once  ('library/fonctions.php');
 </head>
 <body>
     <!--Header-->
-    <header>
+<!--    <header>
         <div id="header_menu">
             <div class="sectiondiv">
                 <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
                     <a href="#" class="fermer" onclick="closeNav()">×</a>
                     <a class="colorlien" href="accueil">Accueil</a>
-                    <?php remplaceRIEN("Inscription","register"); ?>
-                    <?php remplaceRIEN("Connexion","login"); ?>
-                    <?php remplaceID("Profil","profil"); ?>
+                    <?php /*remplaceRIEN("Inscription","register"); */?>
+                    <?php /*remplaceRIEN("Connexion","login"); */?>
+                    <?php /*remplaceID("Profil","profil"); */?>
                     <a class="colorlien" href="produit">Découvrer nos produits</a>
-                    <?php remplacev("Ajouter un article","ajout"); ?>
-                    <?php remplacev("Historique de vente","historique_vendeur"); ?>
-                    <?php remplaceID("Historique des commandes","historique_commende"); ?>
-                    <?php remplaceID("Panier","panier"); ?>
-                    <?php remplaceAd("Admin","admin"); ?>
-                    <?php remplaceAd("Gérant","gerant"); ?>
-                    <?php remplaceID("Déconnexion","disconnect"); ?>
+                    <?php /*remplacev("Ajouter un article","ajout"); */?>
+                    <?php /*remplacev("Historique de vente","historique_vendeur"); */?>
+                    <?php /*remplaceID("Historique des commandes","historique_commende"); */?>
+                    <?php /*remplaceID("Panier","panier"); */?>
+                    <?php /*remplaceAd("Admin","admin"); */?>
+                    <?php /*remplaceAd("Gérant","gerant"); */?>
+                    <?php /*remplaceID("Déconnexion","disconnect"); */?>
                 </div>
                 <span style="font-size:30px;" onclick="openNav()">
                     <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
@@ -76,27 +76,27 @@ require_once  ('library/fonctions.php');
                 </form>
             </div>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
+/*            if (isset($_SESSION['id'])){
+                */?>
              <div id="header_lien_button">
                 <button><a href="disconnect">Déconexion</a> </button>
             </div>
             <?php
-            }else{
+/*            }else{
                 echo '';
             }
-            ?>
+            */?>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
+/*            if (isset($_SESSION['id'])){
+                */?>
             <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
          <?php
-            }else{
+/*            }else{
                 echo '';
             }
-            ?>
-    </header>
+            */?>
+    </header>-->
 
     <!--Main-->
 

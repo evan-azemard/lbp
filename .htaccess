@@ -42,9 +42,22 @@ RewriteRule ^panier index.php?page=panier [L]
 RewriteRule ^paiment index.php?page=paiment [L]
 
 
+
 RewriteRule ^historique_commende index.php?page=historique_commende [L]
 
 RewriteRule ^historique_vendeur index.php?page=historique_vendeur [L]
 
 
 
+
+RewriteRule ^contact/?$ index.php?page=contact&id_produit=$1&id_vendeur=$1&id_client=$1 [L,QSA]
+
+
+
+
+
+#RewriteRule ^contact/?$ index.php?page=contact&id_produit=1 [L,QSA]
+
+#RewriteRule ^contact/?$ index.php?page=contact&id_vendeur=1 [L,QSA]
+
+#RewriteRule ^contact/?$ index.php?page=contact&id_client=1 [L,QSA]
