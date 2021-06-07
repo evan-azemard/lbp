@@ -100,7 +100,7 @@ if (isset($_POST['ppan'])){
                                     </form>
                                     <p><?= $article['prix_article']?>€</p>
                                     <p><?= $article['code']?></p>
-                                    <button><a href="contact?id_produit=<?= $article['id_produit']?>&?id_vendeur=<?= $article['id_vendeur']?>&?id_client=<?= $_SESSION['id']?>">Contacter</a></button>
+                                    <button><a href="contact?id_produit=<?= $article['id_produit']?>&?id_vendeur=<?= $article['id_vendeur']?>">Contacter</a></button>
                                 </div>
                             </article>
                         <?php } ?>
