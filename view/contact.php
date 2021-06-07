@@ -7,11 +7,11 @@ if (empty($_SESSION['id'])){
 <?php
 if ($_GET['id_produit']){
     $user = new C_contact();
-    $errors = $user->contactF($_GET['id_produit'], $_GET['id_vendeur'], $_GET['id_client']);
+    $errors = $user->contactF($_GET['id_produit'], $_GET['id_vendeur']);
 } else {
     $errors = array();
 }
-var_dump($_GET['id_produit'], $_GET['id_vendeur'], $_GET['id_client']);
+var_dump($_GET['id_produit'],$_GET['id_vendeur']);
 ?>
 <main id="login_main">
     <?php include 'error.php'; ?>

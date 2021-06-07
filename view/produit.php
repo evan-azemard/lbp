@@ -97,9 +97,10 @@ if (isset($_POST['ppan'])) {
                                         <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
                                         <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">
                                     </form>
-                                    <p><?= $article['prix_article'] ?>€</p>
-                                    <p><?= $article['code'] ?></p>
-                                    <button><a href="contact?id_produit=<?= $article['id_produit'] ?>&?id_vendeur=<?= $article['id_vendeur'] ?>&?id_client=<?= $_SESSION['id'] ?>">Contacter</a></button>
+
+                                    <p><?= $article['prix_article']?>€</p>
+                                    <p><?= $article['code']?></p>
+                                    <button><a href="contact?id_produit=<?= $article['id_produit']?>&?id_vendeur=<?= $article['id_vendeur']?>">Contacter</a></button>
                                 </div>
                             </article>
                         <?php } ?>
