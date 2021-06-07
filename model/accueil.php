@@ -5,7 +5,7 @@
 function  article_accueil()
 {
 
-        $bdd =  db_connect();
+    $bdd =  db_connect();
 
     $sel = $bdd->prepare("select * from articles");
     $sel->execute();

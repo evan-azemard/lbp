@@ -1,5 +1,5 @@
 <?php
-require ('model/login.php');
+require('model/login.php');
 /*Le login*/
 function login()
 {
@@ -63,8 +63,7 @@ function login()
 
             if ($this->pseudo && $this->password && $this->choix && $this->email) {
 
-                if ($this->choix = 1 && $this->choix != 2)
-                {
+                if ($this->choix = 1 && $this->choix != 2) {
                     $tab = F_login($this->pseudo);
 
                     $hpass = $tab["password"];
@@ -82,8 +81,7 @@ function login()
                     }
                 }
 
-                if ($this->choix = 2 && $this->choix != 1)
-                {
+                if ($this->choix = 2 && $this->choix != 1) {
                     $tab = F_login2($this->pseudo);
 
                     $hpass = $tab["password"];
@@ -102,7 +100,6 @@ function login()
                     if ($this->email != $tab['email']) {
                         array_push($errors, 'Email invalide par rapport à ce pseudo');
                     }
-
                 }
 
 
@@ -121,14 +118,11 @@ function login()
                     $_SESSION["adresse"] = $tab["adresse"];
 
                     header('Location: accueil');
-
                 } else {
                     return $errors;
                 }
-
-            }else
-            {
-                array_push($errors,'Veuillez remplire tout les champs !');
+            } else {
+                array_push($errors, 'Veuillez remplire tout les champs !');
             }
         }
     }

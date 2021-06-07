@@ -1,6 +1,6 @@
 <?php
 /*Ajouter un produuit*/
-require ('model/ajout.php');
+require('model/ajout.php');
 
 function ajout()
 {
@@ -114,7 +114,7 @@ function ajout()
         }
 
 
-        public function ajouter($imgname,$imgsize,$imgtype,$imgtmp,$resum,$categorie,$code,$nom,$marque,$prix,$iduser)
+        public function ajouter($imgname, $imgsize, $imgtype, $imgtmp, $resum, $categorie, $code, $nom, $marque, $prix, $iduser)
         {
             $this->setImgname($imgname);
             $this->setImgsize($imgsize);
@@ -130,8 +130,7 @@ function ajout()
             $errors = array();
             $size = 650000;
 
-            if ($_SESSION['rank'] = 2)
-            {
+            if ($_SESSION['rank'] = 2) {
                 if ($this->imgsize > $size) {
                     array_push($errors, "Le poid de l'image est trop grand.(maximum = 650 ko)");
                 }
@@ -168,16 +167,27 @@ function ajout()
                 if ($this->prix > 50000) {
                     array_push($errors, "La prix est trop grand: $this->prix");
                 }
-            }else{
+            } else {
                 array_push($errors, "Vous n'êtes pas re-vendeur");
             }
 
             if (count($errors) < 1) {
-                ajouter($this->imgname,$this->imgsize,$this->imgtype,$this->imgtmp,$this->resum,$this->categorie
-                    ,$this->code,$this->nom, $this->marque,$this->prix,$this->iduser);
+                ajouter(
+                    $this->imgname,
+                    $this->imgsize,
+                    $this->imgtype,
+                    $this->imgtmp,
+                    $this->resum,
+                    $this->categorie,
+                    $this->code,
+                    $this->nom,
+                    $this->marque,
+                    $this->prix,
+                    $this->iduser
+                );
 
                 header('Location: accueil');
-            }else {
+            } else {
                 return $errors;
             }
         }

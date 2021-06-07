@@ -34,4 +34,3 @@ function d_panier($data1,$data2){
     $del = $bdd->prepare('DELETE from paniers WHERE id_produit = ? and id_user = ?');
     $del->execute(array($data1,$data2));
 }
-?>

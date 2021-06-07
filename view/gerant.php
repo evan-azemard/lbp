@@ -1,8 +1,8 @@
 <?php
-if (empty($_SESSION['id'])){
-        header("Location: accueil");
+if (empty($_SESSION['id'])) {
+    header("Location: accueil");
 }
-if ($_SESSION['rank'] < 3){
+if ($_SESSION['rank'] < 3) {
     header("Location: accueil");
 }
 ?>

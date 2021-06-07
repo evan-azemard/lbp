@@ -7,7 +7,7 @@ function RegisterA($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)
     $bdd =  db_connect();
     $rank = 1;
     $sql = $bdd->prepare("INSERT INTO users (pseudo, password, tel, email, age, prenom, nom, adresse, rank,registration_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
-    $sql->execute(array($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse,$rank,$time));
+    $sql->execute(array($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse, $rank, $time));
 }
 
 
@@ -18,12 +18,12 @@ function RegisterB($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)
     $bdd =  db_connect();
     $rank = 2;
     $sql = $bdd->prepare("INSERT INTO sellers (pseudo, password, tel, email, age, prenom, nom, adresse, rank,registration_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $sql->execute(array($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse,$rank,$time));
+    $sql->execute(array($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse, $rank, $time));
 }
 
 
 /*Pour vérifier que le pseudo n'est pas dèjà pris */
-function selectusers ()
+function selectusers()
 {
     $bdd =  db_connect();
 
@@ -33,7 +33,7 @@ function selectusers ()
     return $sel;
 }
 /*sellers*/
-function selectsellers ()
+function selectsellers()
 {
     $bdd =  db_connect();
 

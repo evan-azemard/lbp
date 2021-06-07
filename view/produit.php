@@ -1,16 +1,15 @@
-
 <?php
-if (empty($_SESSION['id'])){
+if (empty($_SESSION['id'])) {
     header("Location: login");
 }
 ?>
 <?php
-if (isset($_POST['ppan'])){
+if (isset($_POST['ppan'])) {
     $user = new C_produit();
-    $errors = $user->produit($_POST['idppa'],$_POST['prix']);
+    $errors = $user->produit($_POST['idppa'], $_POST['prix']);
 } else {
     $errors = array();
-}?>
+} ?>
 
 
 <main id="produit_main">
@@ -38,7 +37,7 @@ if (isset($_POST['ppan'])){
             <p>Rechercher dans votre fourchette de prix:</p>
             <div id="info_produit_art3">
                 <input id="prix1" aria-label="number" type="number" minlength="1" placeholder="50 (€)">
-                <input  id="prix2" aria-label="number" type="number" minlength="1" placeholder=" 4000 (€)">
+                <input id="prix2" aria-label="number" type="number" minlength="1" placeholder=" 4000 (€)">
                 <div id="vprix">Valider</div>
             </div>
         </article>
@@ -50,7 +49,7 @@ if (isset($_POST['ppan'])){
                 $model = $tab['marque_model'];
 
                 $articles = article_produit($model);
-                ?>
+            ?>
                 <div class="produit_h1">
                     <h1><?= $tab['marque_model'] ?></h1>
                 </div>
@@ -95,22 +94,22 @@ if (isset($_POST['ppan'])){
                                 <div class="logo_card">
                                     <form method="post" style="display: flex">
                                         <input style="cursor: pointer" type="submit" name="ppan" value="ajouter">
-                                        <input type="text" aria-label="pasID" name="idppa" value="<?=$article['id_produit']?>" style="display: none">
-                                        <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?=$article['prix_article']?>" style="display: none">
+                                        <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
+                                        <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">
                                     </form>
-                                    <p><?= $article['prix_article']?>€</p>
-                                    <p><?= $article['code']?></p>
-                                    <button><a href="contact?id_produit=<?= $article['id_produit']?>&?id_vendeur=<?= $article['id_vendeur']?>&?id_client=<?= $_SESSION['id']?>">Contacter</a></button>
+                                    <p><?= $article['prix_article'] ?>€</p>
+                                    <p><?= $article['code'] ?></p>
+                                    <button><a href="contact?id_produit=<?= $article['id_produit'] ?>&?id_vendeur=<?= $article['id_vendeur'] ?>&?id_client=<?= $_SESSION['id'] ?>">Contacter</a></button>
                                 </div>
                             </article>
                         <?php } ?>
                     </div>
                 </div>
                 <div class="traimoyen"></div>
-                <?php
+            <?php
             } ?>
         </article>
     </section>
 </main>
-<!--                                    <a href="contact?id_produit=<?/*= $article['id_produit']*/?>&?id_vendeur=<?/*= $article['id_venduer']*/?>&?id_client=<?/*= $_SESSION['id']*/?>">Contacter</a>
+<!--                                    <a href="contact?id_produit=<?/*= $article['id_produit']*/ ?>&?id_vendeur=<?/*= $article['id_venduer']*/ ?>&?id_client=<?/*= $_SESSION['id']*/ ?>">Contacter</a>
 -->

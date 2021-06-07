@@ -1,7 +1,7 @@
 <?php
 /*Rgister*/
 
-require ('model/register.php');
+require('model/register.php');
 $errors = array();
 
 function register()
@@ -171,13 +171,11 @@ function register()
                 if ($this->age < 18) {
                     array_push($errors, "Il faut avoir 18 ans !");
                 }
-                if ($this->choix = 1 && $this->choix != 2)
-                {
+                if ($this->choix = 1 && $this->choix != 2) {
                     $sel = selectusers();
 
                     foreach ($sel as $row) {
-                        if (isset($row))
-                        {
+                        if (isset($row)) {
                             if ($row["pseudo"] == $this->pseudo) {
                                 array_push($errors, "Le pseudo est déja utilisé");
                             }
@@ -198,8 +196,7 @@ function register()
                     $selle = selectsellers();
 
                     foreach ($selle as $rows) {
-                        if (isset($rows))
-                        {
+                        if (isset($rows)) {
                             if ($rows["pseudo"] == $this->pseudo) {
                                 array_push($errors, "Le pseudo est déja utilisé");
                             }
@@ -215,8 +212,8 @@ function register()
                         }
                     }
                 }
-            }else{
-                array_push($errors,"Veuillez remplire tout les champs !");
+            } else {
+                array_push($errors, "Veuillez remplire tout les champs !");
             }
             if (count($errors) < 1) {
                 if ($this->choix = 1 && $this->choix != 2) {
@@ -226,7 +223,6 @@ function register()
                     RegisterB($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
                 }
                 header('Location: login');
-
             } else {
                 return $errors;
             }
@@ -238,4 +234,3 @@ function register()
     //Layout (contient header , footer)
     include('view/layout.php');
 }
-

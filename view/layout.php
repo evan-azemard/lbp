@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require_once  ('library/fonctions.php');
+require_once('library/fonctions.php');
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,16 +19,17 @@ require_once  ('library/fonctions.php');
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <title>Smart Your Future</title>
 </head>
+
 <body>
- <!-- barre de recherche -->
+    <!-- barre de recherche -->
 
 
-            <?php
-            $recherche = isset($_GET['search']) ? $_GET['search'] : '';
-            if (isset($_GET['search'])) {
-                $data = $search->getSearch($recherche);
-            }
-            ?>
+    <?php
+    $recherche = isset($_GET['search']) ? $_GET['search'] : '';
+    if (isset($_GET['search'])) {
+        $data = $search->getSearch($recherche);
+    }
+    ?>
 
 
     <!--Header-->
@@ -37,17 +39,17 @@ require_once  ('library/fonctions.php');
                 <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
                     <a href="#" class="fermer" onclick="closeNav()">×</a>
                     <a class="colorlien" href="accueil">Accueil</a>
-                    <?php remplaceRIEN("Inscription","register"); ?>
-                    <?php remplaceRIEN("Connexion","login"); ?>
-                    <?php remplaceID("Profil","profil"); ?>
+                    <?php remplaceRIEN("Inscription", "register"); ?>
+                    <?php remplaceRIEN("Connexion", "login"); ?>
+                    <?php remplaceID("Profil", "profil"); ?>
                     <a class="colorlien" href="produit">Découvrer nos produits</a>
-                    <?php remplacev("Ajouter un article","ajout"); ?>
-                    <?php remplacev("Historique de vente","historique_vendeur"); ?>
-                    <?php remplaceID("Historique des commandes","historique_commende"); ?>
-                    <?php remplaceID("Panier","panier"); ?>
-                    <?php remplaceAd("Admin","admin"); ?>
-                    <?php remplaceAd("Gérant","gerant"); ?>
-                    <?php remplaceID("Déconnexion","disconnect"); ?>
+                    <?php remplacev("Ajouter un article", "ajout"); ?>
+                    <?php remplacev("Historique de vente", "historique_vendeur"); ?>
+                    <?php remplaceID("Historique des commandes", "historique_commende"); ?>
+                    <?php remplaceID("Panier", "panier"); ?>
+                    <?php remplaceAd("Admin", "admin"); ?>
+                    <?php remplaceAd("Gérant", "gerant"); ?>
+                    <?php remplaceID("Déconnexion", "disconnect"); ?>
                 </div>
                 <span style="font-size:30px;" onclick="openNav()">
                     <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
@@ -87,26 +89,26 @@ require_once  ('library/fonctions.php');
                 </form>
             </div>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
-             <div id="header_lien_button">
-                <button><a href="disconnect">Déconexion</a> </button>
-            </div>
+            if (isset($_SESSION['id'])) {
+            ?>
+                <div id="header_lien_button">
+                    <button><a href="disconnect">Déconexion</a> </button>
+                </div>
             <?php
-            }else{
+            } else {
                 echo '';
             }
             ?>
             <?php
-            if (isset($_SESSION['id'])){
-                ?>
-            <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+            if (isset($_SESSION['id'])) {
+            ?>
+                <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
-         <?php
-            }else{
+    <?php
+            } else {
                 echo '';
             }
-            ?>
+    ?>
     </header>
 
 
@@ -138,4 +140,5 @@ require_once  ('library/fonctions.php');
         </div>
     </footer>
 </body>
+
 </html>

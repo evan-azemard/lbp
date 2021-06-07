@@ -2,7 +2,7 @@
 /*Rgister*/
 
 
-require ('model/profil.php');
+require('model/profil.php');
 $errors = array();
 
 function profil()
@@ -148,8 +148,7 @@ function profil()
                 if (!empty($this->password) && empty($this->r_password)) {
                     array_push($errors, "Veuillez confirmer le password !");
                 }
-                if (!empty($this->password) && !empty($this->r_password))
-                {
+                if (!empty($this->password) && !empty($this->r_password)) {
                     if ($this->password !== $this->r_password) {
                         array_push($errors, "Le mot de passe répété n'est pas le même");
                     }
@@ -168,13 +167,11 @@ function profil()
                 if ($this->age < 18) {
                     array_push($errors, "Il faut avoir 18 ans !");
                 }
-                if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2)
-                {
+                if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2) {
                     $sel = select();
 
                     foreach ($sel as $row) {
-                        if (isset($row))
-                        {
+                        if (isset($row)) {
 
                             if ($row["pseudo"] == $this->pseudo) {
                                 array_push($errors, "Le pseudo est déja utilisé");
@@ -192,13 +189,11 @@ function profil()
                     }
                 }
 
-                if ($_SESSION["rank"] = 2 && $_SESSION["rank"] != 1)
-                {
+                if ($_SESSION["rank"] = 2 && $_SESSION["rank"] != 1) {
                     $selle = select2();
 
                     foreach ($selle as $rows) {
-                        if (isset($rows))
-                        {
+                        if (isset($rows)) {
                             if ($rows["pseudo"] == $this->pseudo) {
                                 array_push($errors, "Le pseudo est déja utilisé");
                             }
@@ -218,7 +213,7 @@ function profil()
 
 
             if (count($errors) < 1) {
-                if (!empty($this->password)){
+                if (!empty($this->password)) {
                     if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2) {
                         UpdateA($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
                         /*2 = sellers*/
@@ -226,7 +221,7 @@ function profil()
                         UpdateB($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
                     }
                 }
-                if (empty($this->password)){
+                if (empty($this->password)) {
                     if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2 && $this->password = "vide") {
                         UpdateAA($this->pseudo, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
                         /*2 = sellers*/
@@ -246,5 +241,4 @@ function profil()
     $template = 'profil';
     //Layout (contient header , footer)
     include('view/layout.php');
-
 }

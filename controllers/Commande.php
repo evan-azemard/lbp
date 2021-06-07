@@ -16,7 +16,6 @@ function Acart()
         {
             // Démarrage des sessions si pas déjà démarrées
             if (session_status() == PHP_SESSION_NONE) {
-
             }
             $this->initCart();
         }

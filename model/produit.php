@@ -18,7 +18,7 @@ function  article_produit($model)
 function  article_model()
 {
 
-        $bdd =  db_connect();
+    $bdd =  db_connect();
 
     $sel = $bdd->prepare('select DISTINCT marque_model from articles ');
     $sel->execute();
@@ -28,14 +28,12 @@ function  article_model()
 }
 
 
-function  ajout_panier($id_user,$id_produit,$prix)
+function  ajout_panier($id_user, $id_produit, $prix)
 {
 
     $bdd =  db_connect();
     $date = date('Y-m-d H:i:s');
 
     $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?) ");
-    $sse->execute(array($id_user,$id_produit,$date,$prix,$id_user));
-
-
+    $sse->execute(array($id_user, $id_produit, $date, $prix, $id_user));
 }

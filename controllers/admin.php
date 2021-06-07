@@ -10,5 +10,3 @@ function admin(){
     //Layout (contient header , footer)
     include('view/layout.php');
 }
-
-?>

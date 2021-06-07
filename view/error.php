@@ -10,4 +10,3 @@ if (isset($errors)) {
         echo "</div>";
     }
 }
-?>

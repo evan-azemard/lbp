@@ -10,5 +10,4 @@ function disco()
     }
     header("Location: accueil");
     die;
-
 }

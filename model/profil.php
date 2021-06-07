@@ -37,7 +37,7 @@ function UpdateBB($pseudo, $tel, $email, $age, $prenom, $nom, $adresse)
 
 
 /*Pour vérifier que le pseudo n'est pas dèjà pris */
-function select ()
+function select()
 {
     $bdd =  db_connect();
 
@@ -47,7 +47,7 @@ function select ()
     return $sel;
 }
 /*sellers*/
-function select2 ()
+function select2()
 {
     $bdd =  db_connect();
 

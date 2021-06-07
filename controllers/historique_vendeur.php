@@ -9,5 +9,3 @@ function historique_vendeur(){
     //Layout (contient header , footer)
     include('view/layout.php');
 }
-
-?>

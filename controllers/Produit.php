@@ -40,7 +40,7 @@ function produit()
         }
 
 
-        public function produit($id,$prix)
+        public function produit($id, $prix)
         {
             $this->setId($id);
             $this->setPrix($prix);
@@ -65,8 +65,6 @@ function produit()
                 header("refresh: 1");
             }
         }
-
-
     }
 
 

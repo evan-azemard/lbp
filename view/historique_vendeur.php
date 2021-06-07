@@ -1,11 +1,11 @@
 <?php
-if (empty($_SESSION['id'])){
-        header("Location: accueil");
-}
-if ($_SESSION['rank'] == 3 ){
+if (empty($_SESSION['id'])) {
     header("Location: accueil");
 }
-if ($_SESSION['rank'] == 1 ){
+if ($_SESSION['rank'] == 3) {
+    header("Location: accueil");
+}
+if ($_SESSION['rank'] == 1) {
     header("Location: accueil");
 }
 ?>

@@ -60,5 +60,3 @@ function contact(){
     //Layout (contient header , footer)
     include('view/layout.php');
 }
-
-?>

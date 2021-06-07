@@ -1,5 +1,5 @@
 <?php
-if (empty($_SESSION['id'])){
+if (empty($_SESSION['id'])) {
     header("Location: accueil");
 }
 ?>
@@ -15,8 +15,8 @@ if (empty($_SESSION['id'])){
             <div class="card_panier_text">
                 <div class="card_panier_text_div1">
                     <p>
-                    2020 qui possède un écran rotatif (de 6.8 pouces)
-                    laissant apparaître un deuxième écran de 3.9 pouces.                    </p>
+                        2020 qui possède un écran rotatif (de 6.8 pouces)
+                        laissant apparaître un deuxième écran de 3.9 pouces. </p>
                 </div>
                 <div class="card_panier_text_div2">
                     <div class="panier_commende">
@@ -24,7 +24,9 @@ if (empty($_SESSION['id'])){
                     </div>
                     <div class="panier_commende2">
                         <div>750 €</div>
-                        <div><p>#8</p></div>
+                        <div>
+                            <p>#8</p>
+                        </div>
                     </div>
                     <div class="panier_commende">
                     </div>

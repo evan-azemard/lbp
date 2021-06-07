@@ -125,5 +125,3 @@ function supprimePanier()
 {
     unset($_SESSION['panier']);
 }
-?>
-

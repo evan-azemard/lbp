@@ -1,5 +1,5 @@
 <?php
-if (empty($_SESSION['id'])){
+if (empty($_SESSION['id'])) {
     header("Location: login");
 }
 //Affichage des erreurs PHP ( A mettre au début de tes scripts PHP )
@@ -9,7 +9,6 @@ ini_set('display_startup_errors', TRUE);
 
 // Démarrage des sessions si pas déjà démarrées
 if (session_status() == PHP_SESSION_NONE) {
-
 }
 
 //on inclus la class qui permet de gérer le panier
