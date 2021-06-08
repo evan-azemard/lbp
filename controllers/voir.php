@@ -3,7 +3,6 @@ require('model/voir.php');
 
 function voir(){
 
-
     class C_voir
     {
 
@@ -41,7 +40,6 @@ function voir(){
 
                         if (!empty($_POST['resum']))
                         {
-
                             echo $selusers['email'];
 
                             $message = 'Message de la part du vendeur  Smart Your Future
@@ -55,12 +53,7 @@ function voir(){
                                 ?><script> alert("Votre message a bien été envoyé.") </script>
                                 <?php
                             }
-
                         }
-
-
-
-
                     }
 
                     ?>
@@ -102,17 +95,10 @@ function voir(){
                     </div>
 
                     <?php
-
                 }
-
-
-
             }
-
-
         }
     }
-
 
 
     //Template
