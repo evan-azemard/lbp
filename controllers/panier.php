@@ -1,5 +1,6 @@
 <?php
 require('model/panier.php');
+
 function panier()
 {
     class C_affiche

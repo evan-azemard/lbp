@@ -8,6 +8,7 @@ require ('config/database.php');
 //Controleur
 require ('controllers/accueil.php');
 require ('controllers/contact.php');
+require ('controllers/voir.php');
 require('controllers/Login.php');
 require('controllers/Profil.php');
 require('controllers/disconnect.php');
@@ -68,6 +69,9 @@ if (isset($_GET['page']))
             break;
         case 'contact';
             contact();
+            break;
+        case 'voir';
+            voir();
             break;
     }
 }else

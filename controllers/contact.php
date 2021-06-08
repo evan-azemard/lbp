@@ -5,20 +5,12 @@ function contact(){
 
     class C_contact
     {
-        private $id_vendeur;
         private $id_produit;
+        private $com;
 
 
 
-        public function getId_vendeur()
-        {
-            return $this->id_vendeur;
-        }
 
-        public function setId_vendeur($id_vendeur)
-        {
-            $this->id_vendeur = $id_vendeur;
-        }
 
         public function getId_produit()
         {
@@ -29,12 +21,41 @@ function contact(){
         {
             $this->id_produit = $id_produit;
         }
+        public function getCom()
+        {
+            return $this->com;
+        }
 
-        public function contactF($id_produit, $id_vendeur)
+        public function setCom($com)
+        {
+            $this->com = $com;
+        }
+
+        public function contactF($id_produit,$com)
         {
             $this->setId_produit($id_produit);
-            $this->setId_vendeur($id_vendeur);
+            $this->setCom($com);
             $errors = array();
+
+            (int)$id_vendeur = trouveid($this->id_produit);
+
+
+            foreach ($id_vendeur as $key){
+
+                $id = $key['id_vendeur'];
+
+                $val = issertmessage($this->id_produit,$_SESSION['id'],$id,$this->com);
+
+                if ($val = true){
+                    ?><script>alert("Message envoyé")</script>
+                    <?php
+
+                    header("Location: accueil");
+
+                }
+
+            }
+
 
 
 
@@ -44,7 +65,7 @@ function contact(){
 
     }
 
-        //Template
+    //Template
     $template = 'contact';
     //Layout (contient header , footer)
     include('view/layout.php');

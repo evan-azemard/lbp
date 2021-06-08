@@ -16,7 +16,7 @@ require_once('library/fonctions.php');
     <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/560ce3d2ed.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googlecapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <title>Smart Your Future</title>
 </head>
 
@@ -45,6 +45,7 @@ require_once('library/fonctions.php');
                     <a class="colorlien" href="produit">Découvrer nos produits</a>
                     <?php remplacev("Ajouter un article", "ajout"); ?>
                     <?php remplacev("Historique de vente", "historique_vendeur"); ?>
+                    <?php remplacev("Messagerie", "voir"); ?>
                     <?php remplaceID("Historique des commandes", "historique_commende"); ?>
                     <?php remplaceID("Panier", "panier"); ?>
                     <?php remplaceAd("Admin", "admin"); ?>
@@ -89,26 +90,26 @@ require_once('library/fonctions.php');
                 </form>
             </div>
             <?php
-            if (isset($_SESSION['id'])) {
-            ?>
+/*            if (isset($_SESSION['id'])) {
+            */?>
                 <div id="header_lien_button">
                     <button><a href="disconnect">Déconexion</a> </button>
                 </div>
             <?php
-            } else {
+/*            } else {
                 echo '';
             }
-            ?>
+            */?>
             <?php
-            if (isset($_SESSION['id'])) {
-            ?>
+/*            if (isset($_SESSION['id'])) {
+            */?>
                 <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
     <?php
-            } else {
+/*            } else {
                 echo '';
             }
-    ?>
+    */?>
     </header>
 
 
