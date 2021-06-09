@@ -49,9 +49,7 @@ RewriteRule ^historique_commende index.php?page=historique_commende [L]
 
 RewriteRule ^historique_vendeur index.php?page=historique_vendeur [L]
 
-
-
-RewriteRule ^contact/?$  index.php?page=contact&id_produit1     [L,QSA]
+RewriteRule ^contact/?$  index.php?page=contact&id_produit1  [L,QSA]
 
 
 

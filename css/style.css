@@ -342,19 +342,25 @@ main {
   margin-left: 25vw;
 }
 /*Contient les smartphones populaire*/
-#accueil_section2 {
+#accueil_section2
+{
+
   display: flex;
   flex-direction: row;
-  justify-content: center !important;
+  justify-content: space-around !important;
   text-align: center;
 }
 #accueil_section2 {
-  width: 100%;
-  padding-left: 14vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-row-gap: 20px;
+}
+.growflex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3%;
 }
 /*-------------------------------------------*\
                 Card ACCUEIL
@@ -1996,4 +2002,72 @@ option:focus {
   height: 50vh;
   background-color: #dae2ed;
   border-radius: 45px;
+}
+
+
+
+
+.body_cards{
+    margin-right: 8%;
+    margin-left: 8%;
+    height: 510px;
+    width: 445px;
+    max-height: 510px;
+    max-width: 445px;
+    min-height: 300px;
+    min-width: 300px;
+    background-color: #e1e1e1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(-25px 67px 54px rgba(196, 194, 194, 0.68));
+    border-radius: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards_img{
+    height: 40%;
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+}
+
+.cards_img img{
+    position: center;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+}
+
+.cards_des{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+      color: #527b9e;
+
+  font-family: "Lora", serif;
+}
+.cards_des h3{
+  margin-top: 5%;
+}
+
+.cards_logo{
+  padding-left: 5px;
+    padding-right: 5px;
+    height: 20%;
+    border-top: solid 2px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #527b9e;
+    font-size: 2rem;
+}
+.cards_logo input{
+  background-color: #527b9e;
+  font-size: 1.6rem;
+  color: white;
+  border-radius: 5px;
 }

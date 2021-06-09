@@ -10,75 +10,7 @@
             <h2 class="promo">"Printemps"</h2>
         </article>
     </section>
-    <div class="traimoyen"></div>
-    <!--Section des smartphones populaire-->
-    <h2>Nos smartphones populaire</h2>
-    <section id="accueil_section2">
-        <!--Card contenute dans un article-->
-        <article class="accueil_card">
-            <!--Img de la card -->
-            <div class="card_img">
-                <!--Image de la card-->
-                <img src="img_docs/exemple.png.jpg" alt="exemple">
-            </div>
-            <!--Description de la card-->
-            <div class="card_description">
-                <h3>Exemple</h3>
-                <p>Le LG Exemple est un smartphone annoncé le 14 septembre
-                    2020 qui possède un écran rotatif (de 6.8 pouces poled)
-                    laissant apparaître
-                    un deuxième écran de 3.9 pouces goled.</p>
-            </div>
-            <!--Les option de la card-->
-            <div class="logo_card">
-                <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
-                <input type="number" class="number" id="number" placeholder="1" min="1" max="500"><label for="number"></label>
-                <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
-                <p>700 €</p>
-            </div>
-        </article>
 
-        <article class="accueil_card">
-            <div class="card_img">
-                <img src="img_docs/exemple.png.jpg" alt="exemple">
-            </div>
-            <div class="card_description">
-                <h3>Exemple</h3>
-                <p>Le LG Exemple est un smartphone annoncé le 14 septembre
-                    2020 qui possède un écran rotatif (de 6.8 pouces poled)
-                    laissant apparaître
-                    un deuxième écran de 3.9 pouces goled.</p>
-            </div>
-            <div class="logo_card">
-                <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
-                <input type="number" class="number" id="number" placeholder="1" min="1" max="500"><label for="number"></label>
-                <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
-                <p>700 €</p>
-            </div>
-        </article>
-
-        <article class="accueil_card">
-            <div class="card_img">
-                <img src="img_docs/exemple.png.jpg" alt="exemple">
-            </div>
-            <div class="card_description">
-                <h3>Exemple</h3>
-                <p>Le LG Exemple est un smartphone annoncé le 14 septembre
-                    2020 qui possède un écran rotatif (de 6.8 pouces poled)
-                    laissant apparaître
-                    un deuxième écran de 3.9 pouces goled.</p>
-            </div>
-            <div class="logo_card">
-                <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
-                <input type="number" class="number" id="number" placeholder="1" min="1" max="500"><label for="number"></label>
-                <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
-                <p>700 €</p>
-            </div>
-        </article>
-    </section>
-
-
-    <div class="traimoyen"></div>
     <h2>Derniers produits ajoutés</h2>
 
 

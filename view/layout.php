@@ -23,14 +23,12 @@ require_once('library/fonctions.php');
 <body>
     <!-- barre de recherche -->
 
-
     <?php
     $recherche = isset($_GET['search']) ? $_GET['search'] : '';
     if (isset($_GET['search'])) {
         $data = $search->getSearch($recherche);
     }
     ?>
-
 
     <!--Header-->
     <header>
@@ -81,7 +79,7 @@ require_once('library/fonctions.php');
             <div id="header_lien_grid1">
                 <form method="post">
                     <i id="header_absolute" class="fa fa-search" aria-hidden="true">
-                        <input id="header_submit" type="submit">
+                        <input id="header_submit" autocomplete="off" type="submit">
                     </i>
                     <input type="search" id="recherche">
                     <label for="recherche">
@@ -111,7 +109,6 @@ require_once('library/fonctions.php');
             }
     */?>
     </header>
-
 
 
 
