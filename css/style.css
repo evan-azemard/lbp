@@ -803,6 +803,7 @@ input {
 }
 /*La ligne d'un produit*/
 .grid {
+  height: 57vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
