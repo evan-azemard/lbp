@@ -18,7 +18,7 @@ class Search
 
         $connexion_db = $this->db->connectDb();
 
-        $q = $connexion_db->prepare("SELECT * FROM sports WHERE nom LIKE '%$recherche%'");
+        $q = $connexion_db->prepare("SELECT * FROM articles WHERE nom_model LIKE '%$recherche%'");
         $q->execute();
         $search_results = $q->fetchAll(PDO::FETCH_ASSOC);
 
@@ -28,7 +28,7 @@ class Search
 
             foreach ($search_results as $r) {
 
-                $search .= "<a href='element.php?id=" . $r['id'] . "'><p class='element'>" . $r['nom'] . "</p></a><br/>";
+                $search .= "<a href='element.php?id=" . $r['id'] . "'><p class='element'>" . $r['nom_model'] . "</p></a><br/>";
             }
 
             return $search;
@@ -44,7 +44,7 @@ class Search
         $connexion_db = $this->db->connectDb();
 
         // la requete mysql
-        $q = $connexion_db->prepare("SELECT * FROM sports WHERE nom LIKE '%$recherche%' LIMIT 5");
+        $q = $connexion_db->prepare("SELECT * FROM articles WHERE nom_model LIKE '%$recherche%' LIMIT 5");
         $q->execute();
         $search_results = $q->fetchAll(PDO::FETCH_ASSOC);
 
@@ -54,7 +54,7 @@ class Search
 
             foreach ($search_results as $r) {
 
-                $search .= "<a href='recherche.php?search=" . $r['nom'] . "'><p class='result'>" . $r['nom'] . "</p></a><br/>";
+                $search .= "<a href='recherche.php?search=" . $r['nom_model'] . "'><p class='result'>" . $r['nom_model'] . "</p></a><br/>";
             }
 
             return $search;
@@ -68,7 +68,7 @@ class Search
     {
 
         $connexion_db = $this->db->connectDb();
-        $q = $connexion_db->prepare("SELECT * FROM sports WHERE id = $id ");
+        $q = $connexion_db->prepare("SELECT * FROM articles WHERE id = $id ");
         $q->execute();
         $search_results = $q->fetch(PDO::FETCH_ASSOC);
 
