@@ -82,7 +82,7 @@ require_once('library/fonctions.php');
                     <i id="header_absolute" class="fa fa-search" aria-hidden="true">
                         <input id="header_submit" type="submit">
                     </i>
-                    <input type="search" id="recherche">
+                    <input type="search" id="recherche" autoCompletion="off">
                     <label for="recherche">
                         <i class="fa fa-microphone" aria-hidden="true"></i>
                     </label>

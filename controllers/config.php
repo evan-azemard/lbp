@@ -5,3 +5,4 @@
 require 'database.php';
 
 require 'search.php';
+$search = new Search($db);
