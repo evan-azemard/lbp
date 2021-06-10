@@ -888,7 +888,9 @@
     .login_labput input:focus {
         border: rgba(20, 157, 211, 0.42) solid 1px;
     }
-
+    .profil_invi{
+        display: none;
+    }
     .login_labput label {
         font-size: 1.6rem;
         color: #315d7b;
@@ -949,6 +951,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 3%;
+        margin-top: 10vh;
     }
 
     /*Form login*/
@@ -956,8 +959,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 60%;
-        height: 50vh;
+        width: 95%;
+        height: 70vh;
         background-color: #dae2ed;
         border-radius: 45px;
     }

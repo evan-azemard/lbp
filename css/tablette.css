@@ -827,7 +827,9 @@
     .login_labput2 {
         margin-left: -6%;
     }
-
+    .profil_invi{
+        display: none;
+    }
     .login_labput input {
         height: 3vh;
         width: 28vw;
@@ -899,6 +901,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 3%;
+        margin-top: 10vh;
     }
 
     /*Form login*/
@@ -907,7 +910,7 @@
         flex-direction: column;
         justify-content: space-around;
         width: 60%;
-        height: 50vh;
+        height: 70vh;
         background-color: #dae2ed;
         border-radius: 45px;
     }
