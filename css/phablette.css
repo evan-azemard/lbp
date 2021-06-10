@@ -806,7 +806,9 @@
     .register_labput5 input[type="radio"] {
         background-color: #103256;
     }
-
+    .login_invi{
+        display: none;
+    }
     .register_labput input {
         min-height: 3vh;
         width: 90vw;
@@ -856,7 +858,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 40%;
+        width: 48%;
         height: 50vh;
         background-color: #dae2ed;
         border-radius: 45px;
@@ -875,17 +877,15 @@
 
     /*Contient le label et input*/
     .login_labput {
-        width: 12.2vw;
     }
 
     .login_labput2 {
-        width: 12.2vw;
         margin-left: -6%;
     }
 
     .login_labput input {
         height: 3vh;
-        width: 12vw;
+        width: 28vw;
         background-color: #ebf7fc;
         border: none;
     }

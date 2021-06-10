@@ -23,35 +23,35 @@ if (isset($_POST["submit"])) {
             </article>
             <article class="login_article">
                 <div class="login_labput">
-                    <label for="pseudo">Pseudo</label>
+                    <label class="login_invi" for="pseudo">Pseudo</label>
                 </div>
                 <div class="login_labput">
-                    <input <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo $_POST['pseudo'] ?>"<?php ;}?> type="text" name="pseudo" id="pseudo" required>
-                </div>
-            </article>
-            <article class="login_article">
-                <div class="login_labput">
-                    <label for="password">Mot de passe</label>
-
-                </div>
-                <div class="login_labput">
-                    <input type="password"   name="password" autocomplete="on" id="password" required>
-
+                    <input placeholder="Pseudo" class="logininput" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo $_POST['pseudo'] ?>"<?php ;}?> type="text" name="pseudo" id="pseudo" required>
                 </div>
             </article>
             <article class="login_article">
                 <div class="login_labput">
-                    <label for="email">Email</label>
+                    <label class="login_invi" for="password">Mot de passe</label>
 
                 </div>
                 <div class="login_labput">
-                    <input type="email"  <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo $_POST['email'] ?>"<?php ;}?> name="email" id="email" required>
+                    <input placeholder="Mot de passe" class="logininput" type="password"   name="password" autocomplete="on" id="password" required>
+
+                </div>
+            </article>
+            <article class="login_article">
+                <div class="login_labput">
+                    <label class="login_invi" for="email">Email</label>
+
+                </div>
+                <div class="login_labput">
+                    <input placeholder="Email" class="logininput" type="email"  <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo $_POST['email'] ?>"<?php ;}?> name="email" id="email" required>
 
                 </div>
             </article>
             <article class="login_article">
                 <div class="login_labput2">
-                    <p class="lolo2">Type de compte </p>
+                    <p class="lolo2 login_invi">Type de compte </p>
                 </div>
                 <div id="login_labput_radio">
                     <div class="radio">

@@ -723,6 +723,10 @@
         justify-content: space-around;
     }
 
+    .login_invi{
+        display: none;
+    }
+
     .register_labput {
         width: 48%;
         display: flex;
@@ -818,17 +822,15 @@
 
     /*Contient le label et input*/
     .login_labput {
-        width: 12.2vw;
     }
 
     .login_labput2 {
-        width: 12.2vw;
         margin-left: -6%;
     }
 
     .login_labput input {
         height: 3vh;
-        width: 12vw;
+        width: 28vw;
         background-color: #ebf7fc;
         border: none;
     }
