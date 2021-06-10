@@ -929,14 +929,14 @@ input {
 
 /*La ligne d'un produit*/
 .grid {
-    height: 57vh;
+    height: 63vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-row-gap: 20px;
     width: 85%;
     padding-left: 6%;
-    padding-right: 3%;
+    padding-right: 5%;
     padding-top: 1.5%;
     margin-left: 10%;
     margin-right: 10%;
@@ -944,6 +944,10 @@ input {
     border-radius: 20px;
 }
 
+.gridproduit{
+    display: flex;
+    justify-content: space-around;
+}
 /*La section d'une marque*/
 .articlegrid {
     display: flex;
@@ -991,6 +995,7 @@ input {
     background-color: #527b9e;
     color: #bacbdd;
 }
+
 
 .produit_card:hover {
     margin-top: -2%;
@@ -2140,7 +2145,7 @@ option:focus {
 
 #info_produit_art2 p {
     background-color: #dae2ed;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     height: 100%;
     color: #315d7b;
     display: flex;
@@ -2276,7 +2281,6 @@ option:focus {
 
 .body_cards {
     margin-right: 8%;
-    margin-left: 8%;
     height: 510px;
     width: 445px;
     max-height: 510px;

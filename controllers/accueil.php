@@ -16,7 +16,7 @@ function accueil()
             foreach ($articles as $article)
             {
                 ?>
-                <article class="body_cards">
+                <article class="body_cards produitcard">
                     <div class="cards_img">
                         <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($article['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
 

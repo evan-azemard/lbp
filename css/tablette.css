@@ -41,7 +41,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
         /*
         background-color: #FBFBFB;
@@ -175,7 +175,7 @@
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
 
-    #recherche{
+    #recherche {
         width: 100%;
     }
 
@@ -289,7 +289,7 @@
     /*-------------------------------------------*\
                     Footer
     \*-------------------------------------------*/
-     footer {
+    footer {
         background-color: #dae2ed;
         height: 200px;
         width: 100%;
@@ -323,9 +323,10 @@
         flex-grow: 1;
     }
 
-    #layoutform{
+    #layoutform {
         margin-left: 25vw;
     }
+
     /*-------------------------------------------*\
                     Page ACCUEIL
     \*-------------------------------------------*/
@@ -508,6 +509,7 @@
         align-content: center;
         text-align: center;
     }
+
     /*Formulaire*/
     #form_contacte {
         height: 45vh;
@@ -524,10 +526,12 @@
         margin-left: 3%;
         height: 2.6vh;
     }
+
     /*1er input*/
     #accueil_form1 {
         margin-bottom: 5%;
     }
+
     /*2 e input*/
     #accueil_form2 {
         display: flex;
@@ -536,6 +540,7 @@
         font-size: 1.7rem;
         margin-bottom: 5%;
     }
+
     /*textarea*/
     #accueil_form3 {
         display: flex;
@@ -544,6 +549,7 @@
         font-size: 1.7rem;
         margin-bottom: 5%;
     }
+
     /*button*/
     #accueil_form4 {
         display: flex;
@@ -554,49 +560,59 @@
         font-size: 1.7rem;
         margin-bottom: 5%;
     }
+
     /*Textarea*/
     #contient_textarea {
         width: 100%;
         display: flex;
         justify-content: center;
     }
+
     #textare {
         height: 7vh;
         width: 20vw;
         margin-top: 1.3%;
     }
 
-    .lsection{
+    .lsection {
         display: none;
 
     }
-    .larticle{
+
+    .larticle {
         display: none;
     }
-    .lform{
+
+    .lform {
         display: none;
     }
-    .ldiv1{
+
+    .ldiv1 {
         display: none;
 
     }
-    .ldiv2{
+
+    .ldiv2 {
         display: none;
 
     }
-    .linput{
+
+    .linput {
         display: none;
 
     }
-    .linput2{
+
+    .linput2 {
         display: none;
 
     }
-    #ldiv3{
+
+    #ldiv3 {
         display: none;
 
     }
-    .lbutton{
+
+    .lbutton {
         display: none;
 
     }
@@ -631,7 +647,7 @@
     /*Paragraphe*/
     #register_text1 {
         display: flex;
-        flex-direction: column ;
+        flex-direction: column;
         position: relative;
         overflow: auto;
     }
@@ -661,7 +677,8 @@
         font-family: "Secular One", sans-serif;
         color: #e1e9f4;
     }
-    .register_invi{
+
+    .register_invi {
         display: none;
     }
 
@@ -723,7 +740,7 @@
         justify-content: space-around;
     }
 
-    .login_invi{
+    .login_invi {
         display: none;
     }
 
@@ -827,9 +844,11 @@
     .login_labput2 {
         margin-left: -6%;
     }
-    .profil_invi{
+
+    .profil_invi {
         display: none;
     }
+
     .login_labput input {
         height: 3vh;
         width: 28vw;
@@ -951,19 +970,30 @@
 
     /*La ligne d'un produit*/
     .grid {
-        height: 57vh;
+        padding-bottom: 4vh;
+        padding-top: 4vh;
+        padding-left: 10vw;
+        padding-right: 10vw;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-row-gap: 20px;
-        width: 85%;
-        padding-left: 6%;
-        padding-right: 3%;
-        padding-top: 1.5%;
-        margin-left: 10%;
-        margin-right: 10%;
         background-color: rgba(158, 181, 204, 0.2);
         border-radius: 20px;
+    }
+
+    .gridproduit {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .banderole h1 {
+        margin-top: 1.9%;
+        font-size: 2.3rem;
+    }
+
+    .banderole {
+        margin-top: 4.3vh;
     }
 
     /*La section d'une marque*/
@@ -2143,12 +2173,12 @@
 
     #info_produit_art1 p {
         background-color: #dae2ed;
-        font-size: 1.6rem;
+        font-size: 0.8rem;
         height: 100%;
         color: #315d7b;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center
     }
 
     #info_produit_art2 {
@@ -2162,7 +2192,7 @@
 
     #info_produit_art2 p {
         background-color: #dae2ed;
-        font-size: 1.6rem;
+        font-size: 0.8rem;
         height: 100%;
         color: #315d7b;
         display: flex;
@@ -2181,6 +2211,16 @@
     #info_produit_art3 input {
         background-color: #527b9e;
         color: white;
+        width: 5vw;
+    }
+
+    #prix1::placeholder {
+        font-size: 1rem !important;
+    }
+
+
+    #prix2::placeholder {
+        font-size: 1rem !important;
     }
 
     #vprix {
@@ -2296,7 +2336,6 @@
     }
 
 
-
     .body_cards {
         margin-right: 8%;
         margin-left: 8%;
@@ -2364,17 +2403,29 @@
         color: white;
         border-radius: 5px;
     }
-}
 
-#header_lien_button button a {
-    /*
-    display: none;
-    */
-}
-.buthead{
-    display: none!important;
-    background-color: transparent!important;
-}
-#header_panier{
-    /*display: none;*/
+
+    #header_lien_button button a {
+        /*
+        display: none;
+        */
+    }
+
+    .buthead {
+        display: none !important;
+        background-color: transparent !important;
+    }
+
+    #header_panier {
+        /*display: none;*/
+    }
+
+    .produitcard {
+        height: 420px !important;
+        width: 300px !important;
+        max-height: 420px !important;
+        max-width: 300px !important;
+        min-height: 300px !important;
+        min-width: 300px !important;
+    }
 }
