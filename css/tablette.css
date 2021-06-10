@@ -43,7 +43,10 @@
         justify-content: space-between;
         height: 100vh;
         width: 100vw;
+        /*
         background-color: #FBFBFB;
+        */
+        background-color: purple;
     }
 
     a {
@@ -610,13 +613,15 @@
 
     #register_section1 {
         height: 40vh;
-        display: grid;
-        grid-template-columns: 40% 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding-right: 8%;
         padding-left: 8%;
         padding-top: 3%;
         color: #527b9e;
-        margin-top: 5%;
+        margin-top: 10%;
     }
 
     #register_titre h1 {
@@ -626,15 +631,17 @@
     /*Paragraphe*/
     #register_text1 {
         display: flex;
-        justify-content: center;
+        flex-direction: column ;
         position: relative;
+        overflow: auto;
     }
 
     #register_text1 p {
-        width: 15vw;
+        width: 60vw;
     }
 
     #register_g1 {
+        display: none;
         position: absolute;
         top: 0;
         left: 80px;
@@ -645,6 +652,7 @@
     }
 
     #register_g2 {
+        display: none;
         position: absolute;
         bottom: 0;
         right: 80px;
@@ -653,11 +661,14 @@
         font-family: "Secular One", sans-serif;
         color: #e1e9f4;
     }
+    .register_invi{
+        display: none;
+    }
 
     /*Section du formulaire*/
     #register_section2 {
         background-color: #fafbfc;
-        height: 60vh;
+        height: 70vh;
         display: flex;
         justify-content: center;
         padding-top: 2%;
@@ -680,7 +691,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-bottom: 2%;
+        margin-bottom: 9%;
         margin-top: 1%;
         color: #315d7b;
     }
@@ -697,14 +708,19 @@
 
     #telregister {
         color: #315d7b;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     /*Contient les input et label*/
     .register_form_contient {
         width: 100%;
-        min-height: 6vh;
+        align-items: center;
+        min-height: 10vh;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .register_labput {
@@ -726,7 +742,7 @@
         justify-content: flex-end;
         align-items: center;
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         color: #315d7b;
     }
 
@@ -736,7 +752,7 @@
 
     .register_labput input {
         min-height: 3vh;
-        width: 12vw;
+        width: 90vw;
         background-color: #ebf7fc;
         border: none;
     }

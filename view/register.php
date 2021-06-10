@@ -41,54 +41,54 @@ if (isset($_POST["submit"])) {
                 <article id="register_form_article2">
                     <div class="register_form_contient">
                         <div class="register_labput">
-                            <label for="pseudo">Pseudo</label>
-                            <input  <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo $_POST['pseudo'] ?>"<?php ;}?> type="text" name="pseudo" minlength="4" maxlength="12" id="pseudo" required>
+                            <label class="register_invi" for="pseudo">Pseudo</label>
+                            <input  placeholder="Pseudo" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo $_POST['pseudo'] ?>"<?php ;}?> type="text" name="pseudo" minlength="4" maxlength="12" id="pseudo" required>
                         </div>
                         <div class="register_labput">
-                            <label for="téléphone">Téléphone</label>
+                            <label class="register_invi" for="téléphone">Téléphone</label>
                             <div id="telregister">
-                                <p>+33</p>
+                                <p class="register_invi">+33</p>
                             </div>
-                            <input type="number" <?php if (!empty($_POST['tel'])){ ?>style="color: red"  value="<?php echo $_POST['tel'] ?>"<?php ;}?> name="tel" maxlength="9" minlength="9" id="téléphone" required>
+                            <input  placeholder="Téléphone : +33" type="number" <?php if (!empty($_POST['tel'])){ ?>style="color: red"  value="<?php echo $_POST['tel'] ?>"<?php ;}?> name="tel" maxlength="9" minlength="9" id="téléphone" required>
                         </div>
                     </div>
                     <div class="register_form_contient">
                         <div class="register_labput">
-                            <label for="password">Mot de passe </label>
-                            <input type="password" name="password" minlength="12" maxlength="40" id="password" required>
+                            <label  class="register_invi" for="password">Mot de passe </label>
+                            <input  placeholder="Password" type="password" name="password" minlength="12" maxlength="40" id="password" required>
                         </div>
                         <div class="register_labput">
-                            <label for="email">Email</label>
-                            <input type="email" <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo $_POST['email'] ?>"<?php ;}?> name="email" minlength="9" maxlength="35" id="email" required>
-                        </div>
-                    </div>
-                    <div class="register_form_contient">
-                        <div class="register_labput">
-                            <label for="confirme_password">Confirmer le mot de passe</label>
-                            <input type="password" name="r_password" minlength="12" maxlength="40" id="confirme_password" required>
-                        </div>
-                        <div class="register_labput">
-                            <label for="age">Âge</label>
-                            <input type="number" name="age" <?php if (!empty($_POST['age'])){ ?>style="color: red"  value="<?php echo $_POST['age'] ?>"<?php ;}?>  minlength="13" maxlength="115" id="age" required>
+                            <label class="register_invi" for="email">Email</label>
+                            <input placeholder="Email" type="email" <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo $_POST['email'] ?>"<?php ;}?> name="email" minlength="9" maxlength="35" id="email" required>
                         </div>
                     </div>
                     <div class="register_form_contient">
                         <div class="register_labput">
-                            <label for="prenom">Prénom</label>
-                            <input type="text" name="prenom" <?php if (!empty($_POST['prenom'])){ ?>style="color: red"  value="<?php echo $_POST['prenom'] ?>"<?php ;}?> maxlength="12" min="3" id="prenom" required>
+                            <label class="register_invi" for="confirme_password">Confirmer le mot de passe</label>
+                            <input placeholder="Confirmer password" type="password" name="r_password" minlength="12" maxlength="40" id="confirme_password" required>
                         </div>
                         <div class="register_labput">
-                            <label for="adresse">Adresse complète</label>
-                            <input type="text" minlength="20" maxlength="80"  <?php if (!empty($_POST['adresse'])){ ?>style="color: red"  value="<?php echo $_POST['adresse'] ?>"<?php ;}?> name="adresse" id="adresse" required>
+                            <label class="register_invi" for="age">Âge</label>
+                            <input  placeholder="Age" type="number" name="age" <?php if (!empty($_POST['age'])){ ?>style="color: red"  value="<?php echo $_POST['age'] ?>"<?php ;}?>  minlength="13" maxlength="115" id="age" required>
                         </div>
                     </div>
                     <div class="register_form_contient">
                         <div class="register_labput">
-                            <label for="nom">Nom</label>
-                            <input type="text" name="nom"  <?php if (!empty($_POST['nom'])){ ?>style="color: red"  value="<?php echo $_POST['nom'] ?>"<?php ;}?> maxlength="15" min="3" id="nom" required>
+                            <label  class="register_invi" for="prenom">Prénom</label>
+                            <input placeholder="Prénom" type="text" name="prenom" <?php if (!empty($_POST['prenom'])){ ?>style="color: red"  value="<?php echo $_POST['prenom'] ?>"<?php ;}?> maxlength="12" min="3" id="prenom" required>
+                        </div>
+                        <div class="register_labput">
+                            <label class="register_invi" for="adresse">Adresse complète</label>
+                            <input placeholder="Adresse" type="text" minlength="20" maxlength="80"  <?php if (!empty($_POST['adresse'])){ ?>style="color: red"  value="<?php echo $_POST['adresse'] ?>"<?php ;}?> name="adresse" id="adresse" required>
+                        </div>
+                    </div>
+                    <div class="register_form_contient">
+                        <div class="register_labput">
+                            <label class="register_invi" for="nom">Nom</label>
+                            <input  placeholder="Nom" type="text" name="nom"  <?php if (!empty($_POST['nom'])){ ?>style="color: red"  value="<?php echo $_POST['nom'] ?>"<?php ;}?> maxlength="15" min="3" id="nom" required>
                         </div>
                         <div class="register_labput5">
-                            <p id="labelcompte">Type de compte</p>
+                            <p id="labelcompte" class="register_invi">Type de compte</p>
                             <label for="choix1">Vendeur</label>
                             <input type="radio" required value="2" name="choix" id="choix1">
                             <label for="choix2">Utilisateur</label>

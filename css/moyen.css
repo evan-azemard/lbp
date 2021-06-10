@@ -42,7 +42,10 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
+        /*
         background-color: #FBFBFB;
+        */
+        background-color: red;
     }
 
     a {
@@ -620,10 +623,13 @@
         display: flex;
         justify-content: center;
         position: relative;
+        font-size: 1rem!important;
+
     }
 
     #register_text1 p {
-        width: 15vw;
+        width: 30vw;
+        font-size: 1rem!important;
     }
 
     #register_g1 {
