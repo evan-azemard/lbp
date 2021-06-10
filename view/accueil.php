@@ -14,35 +14,52 @@
     <h2>Derniers produits ajoutés</h2>
 
 
- <?= recent(); ?>
+    <?= recent(); ?>
 
     <div class="traimoyen"></div>
 
-    <section id="accueil_section3">
-        <article id="accueil_section3_article-form">
-            <form method="post" id="form_contacte">
-                <div id="accueil_form1">
-                    <h2>Contact</h2>
+    <section id="accueil_section3" class="lsection">
+        <article id="accueil_section3_article-form" class="larticle">
+            <form class="lform" method="post">
+                <div id="ldiv1">
+                    <h1>Contact</h1>
                 </div>
-                <div id="accueil_form2">
-                    <label for="email">Email</label>
-                    <input id="email" type="email">
+                <div id="ldiv2">
+                    <input id="email" type="email" class="linput" placeholder="Email">
+                    <input type="text" id="number2" class="linput" placeholder="Id du produit">
+                    <textarea id="textare" class="linput2" placeholder="Message"></textarea>
                 </div>
-                <div id="accueil_form3">
-                    <label for="number2">Id du produit*</label>
-                    <input type="text" id="number2">
+                <div id="ldiv3">
+                    <input type="submit" value="Envoyer" class="lbutton">
                 </div>
-                <div id="accueil_form4">
-                    <label for="textare">Message</label>
-                    <div id="contient_textarea">
-                        <textarea id="textare"></textarea>
+            </form>
+        </article>
+    </section>
+
+
+    <section id="accueil_section3" class="invi">
+        <article id="accueil_section3_article-form" class="invi">
+            <form method="post" id="form_contacte" class="invi">
+                <div id="accueil_form1" class="invi">
+                    <h2 class="invi">Contact</h2>
+                </div>
+                <div id="accueil_form2" class="invi">
+                    <input id="email" type="email" class="invi" placeholder="Email">
+                </div>
+                <div id="accueil_form3" class="invi">
+                    <input type="text" placeholder="Id produit*" class="invi" id="number2">
+                </div>
+                <div id="accueil_form4" class="invi">
+                    <label for="textare" class="invi">Message</label>
+                    <div id="contient_textarea" class="invi">
+                        <textarea id="textare" class="invi" placeholder="Message"></textarea>
                     </div>
                 </div>
-                <div id="accueil_form5">
-                    <input type="submit" value="Envoyer" class="button">
+                <div id="accueil_form5" class="invi">
+                    <input type="submit" onclick="invi" value="Envoyer" class="button">
                 </div>
-                <div id="accueil_form6">
-                    <p>*Champs non obligatoire</p>
+                <div id="accueil_form6" class="invi">
+                    <p class="invi">*Champs non obligatoire</p>
                 </div>
             </form>
         </article>

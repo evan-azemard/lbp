@@ -25,123 +25,118 @@ require_once('library/fonctions.php');
 </head>
 
 <body>
-    <!-- barre de recherche -->
+<!-- barre de recherche -->
 
-    <?php
-    $recherche = isset($_GET['search']) ? $_GET['search'] : '';
-    if (isset($_GET['search'])) {
-        $data = $search->getSearch($recherche);
-    }
-    ?>
+<?php
 
-    <!--Header-->
-    <header>
-        <div id="header_menu">
-            <div class="sectiondiv">
-                <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
-                    <a href="#" class="fermer" onclick="closeNav()">×</a>
-                    <a class="colorlien" href="accueil">Accueil</a>
-                    <?php remplaceRIEN("Inscription", "register"); ?>
-                    <?php remplaceRIEN("Connexion", "login"); ?>
-                    <?php remplaceID("Profil", "profil"); ?>
-                    <a class="colorlien" href="produit">Découvrer nos produits</a>
-                    <?php remplacev("Ajouter un article", "ajout"); ?>
-                    <?php remplacev("Historique de vente", "historique_vendeur"); ?>
-                    <?php remplacev("Messagerie", "voir"); ?>
-                    <?php remplaceID("Historique des commandes", "historique_commende"); ?>
-                    <?php remplaceID("Panier", "panier"); ?>
-                    <?php remplaceAd("Admin", "admin"); ?>
-                    <?php remplaceAd("Gérant", "gerant"); ?>
-                    <?php remplaceID("Déconnexion", "disconnect"); ?>
-                </div>
-                <span style="font-size:30px;" onclick="openNav()">
-                    <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+?>
+<!--Header-->
+<header>
+    <div id="header_menu">
+        <div class="sectiondiv">
+            <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
+                <a href="#" class="fermer" onclick="closeNav()">×</a>
+                <a class="colorlien" href="accueil">Accueil</a>
+                <?php remplaceRIEN("Inscription", "register"); ?>
+                <?php remplaceRIEN("Connexion", "login"); ?>
+                <?php remplaceID("Profil", "profil"); ?>
+                <a class="colorlien" href="produit">Découvrer nos produits</a>
+                <?php remplacev("Ajouter un article", "ajout"); ?>
+                <?php remplacev("Historique de vente", "historique_vendeur"); ?>
+                <?php remplacev("Messagerie", "voir"); ?>
+                <?php remplaceID("Historique des commandes", "historique_commende"); ?>
+                <?php remplaceID("Panier", "panier"); ?>
+                <?php remplaceAd("Admin", "admin"); ?>
+                <?php remplaceAd("Gérant", "gerant"); ?>
+                <?php remplaceID("Déconnexion", "disconnect"); ?>
+            </div>
+            <span style="font-size:30px;" onclick="openNav()">
+                    <i class="fa fa-user-circle fa-2x logomain" aria-hidden="true"></i>
                 </span>
-                <script>
-                    function openNav() {
-                        document.getElementById("déroul").style.width = "250px";
-                    }
+            <script>
+                function openNav() {
+                    document.getElementById("déroul").style.width = "250px";
+                }
 
-                    function closeNav() {
-                        document.getElementById("déroul").style.width = "0";
-                    }
-                </script>
-            </div>
+                function closeNav() {
+                    document.getElementById("déroul").style.width = "0";
+                }
+            </script>
         </div>
+    </div>
 
-        <div id="header_title">
-            <div id="header_title_img">
-                <img src=img_docs/logo.png alt="logo">
-            </div>
-            <a href="accueil">
-                <div id="header_h1">
-                    <h1>Smart Your Future</h1>
-                </div>
-            </a>
+    <div id="header_title">
+        <div id="header_title_img">
+            <img src=img_docs/logo.png alt="logo">
         </div>
-        <div id="header_lien">
-            <div id="header_lien_grid1">
-                <form method="post">
-                    <i id="header_absolute" class="fa fa-search" aria-hidden="true">
-                        <input id="header_submit" autocomplete="off" type="submit">
-                    </i>
-                    <input type="search" id="recherche" autoCompletion="off">
-                    <label for="recherche">
-                        <i class="fa fa-microphone" aria-hidden="true"></i>
-                    </label>
-                </form>
+        <a href="accueil">
+            <div id="header_h1">
+                <h1>Smart Your Future</h1>
             </div>
-            <?php
-/*            if (isset($_SESSION['id'])) {
-            */?>
+        </a>
+    </div>
+    <div id="header_lien">
+        <div id="header_lien_grid1">
+            <form method="post">
+                <i id="header_absolute" class="fa fa-search" aria-hidden="true">
+                    <input  id="header_submit" autocomplete="off" type="submit">
+                </i>
+                <input type="search" class="linput3" id="recherche" autoCompletion="off">
+                <label for="recherche">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </label>
+            </form>
+        </div>
+                    <?php
+            if (isset($_SESSION['id'])) {
+            ?>
                 <div id="header_lien_button">
-                    <button><a href="disconnect">Déconexion</a> </button>
+                    <button id="buttonl"><a href="disconnect">Déconexion</a> </button>
                 </div>
             <?php
-/*            } else {
+          } else {
                 echo '';
             }
-            */?>
+            ?>
             <?php
-/*            if (isset($_SESSION['id'])) {
-            */?>
+            if (isset($_SESSION['id'])) {
+            ?>
                 <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
     <?php
-/*            } else {
-                echo '';
-            }
-    */?>
-    </header>
+    } else {
+        echo '';
+    }
+    ?>
+</header>
 
 
 
 
-    <!--Main-->
+<!--Main-->
 
-    <!--Template-->
-    <?php include $template . '.php' ?>
+<!--Template-->
+<?php include $template . '.php' ?>
 
-    <!--Footer-->
-    <footer>
-        <div id="footer_div1">
-            <div>
-                <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-            </div>
-            <div>
-                <i class="fa fa-paypal fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div id="footer_div2">
+<!--Footer-->
+<footer>
+    <div id="footerdiv1">
+        <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-paypal fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
+    </div>
+    <div id="footerdiv2">
+        <div id="footerdiv3">
             <p>Evan Azemard</p>
             <p>Copyright 2021 © Smart Your Future</p>
             <p>Clément Nahmens</p>
         </div>
-    </footer>
+
+    </div>
+</footer>
 </body>
 
 </html>
