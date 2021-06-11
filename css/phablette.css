@@ -1336,7 +1336,7 @@
     /*-------------------------------------------*\
                     Page ajout
     \*-------------------------------------------*/
-    #ajout_main {
+       #ajout_main {
         background-color: #fdfefe;
         min-height: 105vh;
         align-items: center;
@@ -1349,9 +1349,10 @@
         color: #527b9e;
         width: 100%;
         display: flex;
+        font-size: 2rem;
         justify-content: center;
         align-items: center;
-        margin-top: 7%;
+        margin-top: 20%;
     }
 
     /*Contient tout*/
@@ -1382,23 +1383,28 @@
 
     /*Les lignes*/
     .ajout_article {
-        height: 5vh;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+        height: 12vh;
         display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: space-around;
     }
 
     /*Rectangle*/
     .article_rectangle {
         background-color: white;
-        width: 30vw;
+        width: 80%;
+        margin-top: 3%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        height: 5vh;
     }
-
+    .ajout_invi{
+        /*
+        display: none;
+        */
+    }
     .article_rectangle input {
         border: #daeaea solid 0.2px;
     }
@@ -1415,7 +1421,7 @@
 
     #button_article_div {
         margin: 0;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     .ajout_1 {
@@ -1471,6 +1477,7 @@
         border: #daeaea solid 0.2px;
         outline: none;
     }
+
 
     /*-------------------------------------------*\
                     Page admin

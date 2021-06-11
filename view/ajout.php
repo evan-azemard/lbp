@@ -40,7 +40,7 @@ if(isset($_POST["submit"]))
             <article class="ajout_article">
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="resum">Résumé :</label>
+                        <label class="ajout_invi" for="resum">Résumé :</label>
                     </div>
                     <div class="ajout_2">
                         <textarea id="resum"  placeholder="Le résumé doit faire au moins 50 caractére" required name="resum" maxlength="220"  minlength="20" <?php if (!empty($_POST['resum'])){ ?>style="color: red"<?php };?>><?php if (!empty($_POST['resum'])){ echo $_POST['resum'];}?></textarea>
@@ -48,7 +48,7 @@ if(isset($_POST["submit"]))
                 </div>
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="code">Code postale :</label>
+                        <label class="ajout_invi" for="code">Code postale :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="number" <?php if (!empty($_POST['code'])){ ?>style="color: red"  value="<?php echo $_POST['code'] ?>"<?php ;}?>  placeholder="Exemple: 26120" required minlength="5" maxlength="5" name="code"  id="code">
@@ -58,7 +58,7 @@ if(isset($_POST["submit"]))
             <article class="ajout_article">
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="nom_model">Nom du model :</label>
+                        <label class="ajout_invi" for="nom_model">Nom du model :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="text" <?php if (!empty($_POST['nom'])){ ?>style="color: red"  value="<?php echo $_POST['nom'] ?>"<?php ;}?>  placeholder="Exemple: Wigo" required minlength="3" maxlength="40" name="nom"  id="nom_model">
@@ -66,7 +66,7 @@ if(isset($_POST["submit"]))
                 </div>
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="marque_model">Marque du model :</label>
+                        <label class="ajout_invi" for="marque_model">Marque du model :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="text" <?php if (!empty($_POST['marque'])){ ?>style="color: red"  value="<?php echo $_POST['marque'] ?>"<?php ;}?>  placeholder="Exemple: Aria 6 Plus" required minlength="3" maxlength="40" name="marque"  id="marque_model">
@@ -76,7 +76,7 @@ if(isset($_POST["submit"]))
             <article class="ajout_article">
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="categorie">Catégorie :</label>
+                        <label class="ajout_invi" for="categorie">Catégorie :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="text" <?php if (!empty($_POST['categorie'])){ ?>style="color: red"  value="<?php echo $_POST['categorie'] ?>"<?php ;}?>  placeholder="Exemple: smartphone" required name="categorie"  id="categorie">
@@ -84,7 +84,7 @@ if(isset($_POST["submit"]))
                 </div>
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="prix_article">Prix de l'article :</label>
+                        <label class="ajout_invi" for="prix_article">Prix de l'article :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="text" <?php if (!empty($_POST['prix'])){ ?>style="color: red"  value="<?php echo $_POST['prix'] ?>"<?php ;}?>  placeholder="Uniquement la valeur en €, ex: 1500" required  name="prix"  id="prix_article">
@@ -94,7 +94,7 @@ if(isset($_POST["submit"]))
             <article class="ajout_article">
                 <div class="article_rectangle">
                     <div class="ajout_1">
-                        <label for="image_ajout">Image :</label>
+                        <label class="ajout_invi" for="image_ajout">Image :</label>
                     </div>
                     <div class="ajout_2">
                         <input type="file" <?php if (!empty($_POST['imageplod'])){ ?>style="color: red"  value="<?php echo $_POST['imageplod'] ?>"<?php ;}?>  placeholder="Uniquement les images de moins de 650ko" required name="imageplod" id="image_ajout">
