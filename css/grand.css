@@ -42,10 +42,7 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-        /*
         background-color: #FBFBFB;
-        */
-        background-color: #494040;
     }
 
     a {
