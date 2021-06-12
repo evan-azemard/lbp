@@ -89,12 +89,25 @@ function gerant(){
             $errors = array();
 
             $sel = verif_id($this->addadmin);
-            if ($sel !== 1){
+            if ($sel['rank'] == 2){
                 array_push($errors, "Vous ne pouvez utiliser cette id ! Seul les utilisateurs sont accécible!");
             }
-            if ($sel == 1){
-                ajoutadmin($this->addadmin);
-            }else{
+            if ($sel['rank'] == 3){
+                array_push($errors, "Vous ne pouvez utiliser cette id ! Seul les utilisateurs sont accécible!");
+            }
+            if ($sel['rank'] == 4){
+                array_push($errors, "Vous ne pouvez utiliser cette id ! Seul les utilisateurs sont accécible!");
+            }
+            $c = count($errors);
+
+            if ($c < 1)
+            {
+                if ($sel['rank'] = 1)
+                {
+                     ajoutadmin($this->addadmin);
+                 }
+            } else
+            {
                 return $errors;
             }
             header("refresh: 1");
@@ -108,12 +121,16 @@ function gerant(){
 
             $sel = verif_id($this->userall);
 
-            if ($sel == 4){
+            if ($sel['rank'] == 4){
                 array_push($errors, "Vous ne pouvez utiliser cette id ! Seul les utilisateurs , vendeurs et admin sont accécible!");
             }
-            if (($sel !== 4)){
-                delall($this->userall);
-            }else{
+             $c = count($errors);
+
+             if ($c < 1) {
+                 if (($sel['rank'] == 1 || $sel['rank'] == 2 || $sel['rank'] == 3)) {
+                     delall($this->userall);
+                 }
+             }else{
                 return $errors;
             }
             header("refresh: 1");
