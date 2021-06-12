@@ -130,7 +130,8 @@ function ajout()
             $errors = array();
             $size = 650000;
 
-            if ($_SESSION['rank'] = 2) {
+            if ($_SESSION['rank'] = 2)
+            {
                 if ($this->imgsize > $size) {
                     array_push($errors, "Le poid de l'image est trop grand.(maximum = 650 ko)");
                 }
@@ -171,7 +172,8 @@ function ajout()
                 array_push($errors, "Vous n'êtes pas re-vendeur");
             }
 
-            if (count($errors) < 1) {
+            if (count($errors) < 1)
+            {
                 ajouter(
                     $this->imgname,
                     $this->imgsize,
@@ -186,10 +188,9 @@ function ajout()
                     $this->iduser
                 );
 
-                header('Location: accueil');
-            } else {
-                return $errors;
+                ?> <script>window.location.replace("accueil");</script><?php
             }
+            return $errors;
         }
     }
 

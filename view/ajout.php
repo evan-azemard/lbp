@@ -9,6 +9,7 @@ if ($_SESSION['rank'] == 3 ){
 if ($_SESSION['rank'] == 1 ){
     header("Location: accueil");
 }
+var_dump($_SESSION['rank']);
 ?>
 <?php
 if(isset($_POST["submit"]))

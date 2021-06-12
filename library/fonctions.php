@@ -51,6 +51,20 @@ function remplaceAd($nameA, $urlA)
         }
     }
 }
+
+/*Si tu est admin tu à gérant*/
+function remplaceAdd($nameA, $urlA)
+{
+    if (!empty($_SESSION['id'])) {
+        if ($_SESSION['rank'] == 4) {
+            echo "<a href='$urlA' class='colorlien'>";
+            echo "$nameA";
+            echo "</a>";
+        } else {
+            echo '';
+        }
+    }
+}
 /*Si tu est connecté tu affiche*/
 function remplaceID($nameA, $urlA)
 {

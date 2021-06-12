@@ -49,7 +49,7 @@ require_once('library/fonctions.php');
                 <?php remplaceID("Historique des commandes", "historique_commende"); ?>
                 <?php remplaceID("Panier", "panier"); ?>
                 <?php remplaceAd("Admin", "admin"); ?>
-                <?php remplaceAd("Gérant", "gerant"); ?>
+                <?php remplaceAdd("Gérant", "gerant"); ?>
                 <?php remplaceID("Déconnexion", "disconnect"); ?>
             </div>
             <span style="font-size:30px;" onclick="openNav()">
@@ -104,7 +104,7 @@ require_once('library/fonctions.php');
             if (isset($_SESSION['id'])) {
             ?>
                 <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
-        </div>
+    </div>
     <?php
     } else {
         echo '';
