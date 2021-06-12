@@ -16,6 +16,7 @@ require_once('library/fonctions.php');
     <link rel="stylesheet" type="text/css" href="css/tablette.css">
     <link rel="stylesheet" type="text/css" href="css/phablette.css">
     <link rel="stylesheet" type="text/css" href="css/smartphone.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/560ce3d2ed.js"></script>
@@ -31,6 +32,7 @@ require_once('library/fonctions.php');
 
 ?>
 <!--Header-->
+
 <header>
     <div id="header_menu">
         <div class="sectiondiv">
@@ -109,8 +111,6 @@ require_once('library/fonctions.php');
     }
     ?>
 </header>
-
-
 
 
 <!--Main-->

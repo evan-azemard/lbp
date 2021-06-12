@@ -1401,6 +1401,18 @@
         background-color: white;
         min-height: 50vh;
     }
+    .afficheadmin{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .afficheadmin p {
+        font-size: 2.6rem;
+        color: #978f8f;
+        font-weight: bold;
+    }
 
     /*Contient tout*/
     .admin_div {

@@ -16,10 +16,6 @@ function  article_accueil()
 
 
 
-
-
-
-
 function  ajout_panierA($id_user, $id_produit, $prix)
 {
 
@@ -28,4 +24,22 @@ function  ajout_panierA($id_user, $id_produit, $prix)
 
     $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?) ");
     $sse->execute(array($id_user, $id_produit, $date, $prix, $id_user));
+}
+
+
+function  savid($data, $email, $mp)
+{
+
+    $bdd =  db_connect();
+
+    $sse = $bdd->prepare("INSERT INTO contacts (id_produit,email,message) VALUES (?,?,?) ");
+    $sse->execute(array($data, $email, $mp));
+}
+
+function  sav($email, $mp)
+{
+    $bdd = db_connect();
+
+    $sse = $bdd->prepare("INSERT INTO contacts (email,message) VALUES (?,?) ");
+    $sse->execute(array($email, $mp));
 }
