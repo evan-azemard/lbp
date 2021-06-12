@@ -1682,11 +1682,11 @@
     /*-------------------------------------------*\
                     Page  historique_vendeur
     \*-------------------------------------------*/
-    #historiquev_main {
+ #historiquev_main {
         min-height: 60vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     /*Contient titre et argent*/
@@ -1703,6 +1703,9 @@
         height: 100%;
         text-align: center;
         color: #494040;
+    }
+    #historiquev_main_info_titre h1{
+        font-size: 1rem;
     }
 
     #historiquev_main_info_argent {
@@ -1723,9 +1726,11 @@
     /*background texte prix*/
     #historiquev_color {
         background-color: #dae2ed;
-        width: 15vw;
     }
 
+    #historiquev_color p{
+        font-size: 1rem;
+    }
     /*Section des cards*/
     #historiquev_main section {
         min-height: 100%;
@@ -1734,6 +1739,7 @@
     }
 
     /*la card*/
+    /*
     .card_historiquev {
         height: 25vh;
         width: 90%;
@@ -1747,14 +1753,14 @@
         background-color: #dae2ed;
     }
 
-    /*img de la card*/
+    !*img de la card*!
     .card_historiquev_img {
         height: 100%;
         width: 25vw;
         border-radius: 40px 0 0 40px;
     }
 
-    /*img  redimentioné*/
+    !*img  redimentioné*!
     .card_historiquev_img img {
         height: 100%;
         width: 100%;
@@ -1794,19 +1800,19 @@
         background-color: rgba(55, 72, 143, 0.13);
     }
 
-    /*h2*/
+    !*h2*!
     .card_historiquev_text_div h2 {
         color: #315d7b;
     }
 
-    /*label*/
+    !*label*!
     .card_label_historique_vendeur {
         background-color: #c4c4c4;
         color: white;
         font-size: 2rem;
     }
 
-    /*label*/
+    !*label*!
     .card_label_historique_vendeur2 {
         background-color: #aab8d1;
         color: white;
@@ -1814,7 +1820,7 @@
         font-size: 2rem;
     }
 
-    /*button*/
+    !*button*!
     .card_historiquev_text_div input[type="submit"] {
         font-size: 2rem;
         border-radius: 5px !important;
@@ -1828,6 +1834,106 @@
         width: 50%;
         margin-left: 25vw;
     }
+    */
+
+    .prod_vendeur{
+        margin-bottom: 10%;
+        width: 290px;
+        height: 110px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 22px 10px 10px 22px;
+        background-color: rgba(122, 149, 177, 0.57);
+    }
+    .prod_div2{
+        width: 30%;
+        border-radius: 22px 10px 10px 22px;
+    }
+    .prod_div3
+    {
+        background-color: #C5CEE1;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .prod_div2 img{
+        height: 100%;
+        width: 100%;
+        border-radius: 22px 0 0 22px;
+
+    }
+    .prod_divdiv1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #315C7A;
+        max-height: 5vh;
+        background-color: #C5CEE1;
+    }
+    .prod_divdiv1h1 h2{
+        font-size: 0.9rem!important;
+
+    }
+    .prod_divdiv2{
+        background-color: #B0B7C4;
+        color: white;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .prod_divdiv3 {
+        background-color: #C5CEE1;
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        text-align: center;
+
+    }
+    .prod_divdiv23 p::before{
+        background-color: rgba(239, 239, 239, 0.62);
+    }
+    .prod_divdiv4{
+        background-color: #C5CEE1;
+        display: flex;
+        justify-content: space-around;
+    }
+    .prod_divdiv23{
+        background-color: rgba(239, 239, 239, 0.4);
+        text-align: center;
+        font-size: 0.5rem;
+
+    }
+    .prod_form{
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .prod_sub{
+        background-color: rgba(239, 239, 239, 0.62);
+        color: white;
+        border-radius: 12px;
+        border: none;
+        font-size: 0.5rem;
+        cursor: pointer;
+    }
+    .labelprod{
+        font-size: 0.5rem;
+    }
+    #modif_prix{
+        margin: 0!important;
+    }
+    #historique_vendeur_section{
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
 
     /*-------------------------------------------*\
                     Page Panier

@@ -22,8 +22,8 @@ if ($_SESSION['rank'] == 1) {
             </span>
         </div>
     </div>
-    <section>
-        <article class="card_historiquev">
+    <section id="historique_vendeur_section">
+        <!--<article class="card_historiquev">
             <div class="card_historiquev_img">
                 <img src="img_docs/exemple.png.jpg" alt="exemple">
             </div>
@@ -51,7 +51,38 @@ if ($_SESSION['rank'] == 1) {
                     </div>
                 </form>
             </div>
-        </article>
+        </article>-->
+        <div class="prod_vendeur">
+            <div class="prod_div2">
+                <img src="img_docs/exemple.png.jpg" alt="img">
+            </div>
+            <form class="prod_div3">
+                <div class="prod_divdiv1">
+                    <div class="prod_divdiv1h1">
+                        <h2>Lg wing</h2>
+                    </div>
+                </div>
+                <div class="prod_divdiv2">
+                    <div class="prod_divdiv23">
+                        <p>750 € </p>
+                    </div>
+                </div>
+                <div class="prod_divdiv3">
+                    <div class="prod_form">
+                        <label for="modif_prix" class="labelprod">Modifier le prix : </label>
+                        <input id="modif_prix" type="number" minlength="1" maxlength="500000" placeholder="Modifier le prix">
+                    </div>
+                </div>
+                <div class="prod_divdiv4">
+                    <div class="prod_form">
+                        <input type="submit" class="prod_sub" value="Modifier">
+                    </div>
+                    <div class="prod_form">
+                        <input type="submit" class="prod_sub" value="Supprimer">
+                    </div>
+                </div>
+            </form>
+        </div>
         <div class="traimoyen3"></div>
     </section>
 </main>
