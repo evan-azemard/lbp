@@ -13,3 +13,19 @@ function  article_accueil()
 
     return $articles;
 }
+
+
+
+
+
+
+
+function  ajout_panierA($id_user, $id_produit, $prix)
+{
+
+    $bdd =  db_connect();
+    $date = date('Y-m-d H:i:s');
+
+    $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?) ");
+    $sse->execute(array($id_user, $id_produit, $date, $prix, $id_user));
+}

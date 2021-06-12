@@ -1,7 +1,7 @@
 <?php
 
 
-/*öur généré les catégories des articles*/
+/*pour généré les catégories des articles*/
 function  article_produit($model)
 {
 

@@ -5,6 +5,71 @@ require('model/accueil.php');
 function accueil()
 {
 
+     class C_accueil
+    {
+
+        private $id;
+        private $prix;
+
+        public function getId()
+        {
+            return $this->id;
+        }
+        public function setId($id)
+        {
+            $this->id = $id;
+        }
+        public function getPrix()
+        {
+            return $this->prix;
+        }
+        public function setPrix($prix)
+        {
+            $this->prix = $prix;
+        }
+
+
+        public function accueil($id, $prix)
+        {
+            $this->setId($id);
+            $this->setPrix($prix);
+            $errors = array();
+
+
+
+            if (count($errors) < 1) {
+
+                $prixf = (int)$prix;
+                $id_user = (int)$_SESSION['id'];
+                $id_article = (int)$this->id;
+
+                ajout_panierA($id_user, $id_article, $prixf);
+
+                unset($prixf);
+
+                header("refresh: 1");
+
+                unset($prixf);
+
+                header("refresh: 1");
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function recent() {
 
         $articles = article_accueil();

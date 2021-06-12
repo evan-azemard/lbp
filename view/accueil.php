@@ -1,4 +1,11 @@
 <!--Accueil-->
+<?php
+if (isset($_POST['ppan'])) {
+    $user = new C_accueil();
+    $errors = $user->accueil($_POST['idppa'], $_POST['prix']);
+} else {
+    $errors = array();
+} ?>
 <main id="accueil_main">
     <!--Affiche de promotion-->
     <section id="accueil_section1">
