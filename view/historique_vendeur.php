@@ -8,6 +8,9 @@ if ($_SESSION['rank'] == 3) {
 if ($_SESSION['rank'] == 1) {
     header("Location: accueil");
 }
+
+$user = new C_historique_vendeur();
+$sel = $user->selecthistorique_vendeur();
 ?>
 
 <main id="historiquev_main">
@@ -52,37 +55,43 @@ if ($_SESSION['rank'] == 1) {
                 </form>
             </div>
         </article>-->
-        <div class="prod_vendeur">
-            <div class="prod_div2">
-                <img src="img_docs/exemple.png.jpg" alt="img">
+        <?php foreach ($sel as $key){
+            ?>
+
+            <div class="prod_vendeur">
+                <div class="prod_div2">
+                    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($key['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
+                </div>
+                <form class="prod_div3">
+                    <div class="prod_divdiv1">
+                        <div class="prod_divdiv1h1">
+                            <h2><?= $key['nom_model'] ?></h2>
+                        </div>
+                    </div>
+                    <div class="prod_divdiv2">
+                        <div class="prod_divdiv23">
+                            <p><?= $key['prix_article'] ?> €</p>
+                        </div>
+                    </div>
+                    <div class="prod_divdiv3">
+                        <div class="prod_form">
+                            <label for="modif_prix" class="labelprod">Modifier le prix : </label>
+                            <input id="modif_prix" type="number" minlength="1" maxlength="500000" placeholder="Modifier le prix">
+                        </div>
+                    </div>
+                    <div class="prod_divdiv4">
+                        <div class="prod_form">
+                            <input type="submit" class="prod_sub" value="Modifier">
+                        </div>
+                        <div class="prod_form">
+                            <input type="submit" class="prod_sub" value="Supprimer">
+                        </div>
+                    </div>
+                </form>
             </div>
-            <form class="prod_div3">
-                <div class="prod_divdiv1">
-                    <div class="prod_divdiv1h1">
-                        <h2>Lg wing</h2>
-                    </div>
-                </div>
-                <div class="prod_divdiv2">
-                    <div class="prod_divdiv23">
-                        <p>750 € </p>
-                    </div>
-                </div>
-                <div class="prod_divdiv3">
-                    <div class="prod_form">
-                        <label for="modif_prix" class="labelprod">Modifier le prix : </label>
-                        <input id="modif_prix" type="number" minlength="1" maxlength="500000" placeholder="Modifier le prix">
-                    </div>
-                </div>
-                <div class="prod_divdiv4">
-                    <div class="prod_form">
-                        <input type="submit" class="prod_sub" value="Modifier">
-                    </div>
-                    <div class="prod_form">
-                        <input type="submit" class="prod_sub" value="Supprimer">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="traimoyen3"></div>
+            <div class="traimoyen3"></div>
+            <?php
+
+        }?>
     </section>
 </main>
