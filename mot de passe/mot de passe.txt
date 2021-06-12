@@ -1,10 +1,23 @@
-Pour le compte gérant :
+Pour le compte admin :
 
 pseudo : Admin
 
 MDP : AdminAdmin1.
 
 Email : Admin@gmail.com
+
+Type de compte : Users
+
+
+
+
+Pour le compte gérant :
+
+pseudo : Gerant
+
+MDP : GerantGerant1.
+
+Email : Gerant@gmail.com
 
 Type de compte : Users
 
@@ -19,3 +32,15 @@ MDP : SellersSellers1.
 Email : Sellers@gmail.com
 
 Type de compte : Sellers
+
+
+
+Pour le compte utilisateur :
+
+pseudo : Users
+
+MDP : UsersUsers1.
+
+Email : Users@gmail.com
+
+Type de compte : Users

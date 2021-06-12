@@ -66,7 +66,10 @@ function login()
                 if ($this->choix = 1 && $this->choix != 2) {
                     $tab = F_login($this->pseudo);
 
-                    $hpass = $tab["password"];
+                    if (isset($tab["password"]))
+                    {
+                        $hpass = $tab["password"];
+                    }
 
                     if (!password_verify($this->password, $hpass)) {
                         array_push($errors, 'Mot de passe invalide par rapport à ce pseudo');
@@ -79,12 +82,17 @@ function login()
                     if ($this->email != $tab['email']) {
                         array_push($errors, 'Email invalide par rapport à ce pseudo');
                     }
+
+
                 }
 
                 if ($this->choix = 2 && $this->choix != 1) {
                     $tab = F_login2($this->pseudo);
 
-                    $hpass = $tab["password"];
+                    if (isset($tab["password"]))
+                    {
+                        $hpass = $tab["password"];
+                    }
 
                     if (!password_verify($this->password, $hpass)) {
 
@@ -100,6 +108,9 @@ function login()
                     if ($this->email != $tab['email']) {
                         array_push($errors, 'Email invalide par rapport à ce pseudo');
                     }
+
+
+
                 }
 
 

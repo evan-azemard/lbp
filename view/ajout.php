@@ -69,7 +69,7 @@ if(isset($_POST["submit"]))
                         <label class="ajout_invi" for="marque_model">Marque du model :</label>
                     </div>
                     <div class="ajout_2">
-                        <input type="text" <?php if (!empty($_POST['marque'])){ ?>style="color: red"  value="<?php echo $_POST['marque'] ?>"<?php ;}?>  placeholder="Exemple: Aria 6 Plus" required minlength="3" maxlength="40" name="marque"  id="marque_model">
+                        <input type="text" <?php if (!empty($_POST['marque'])){ ?>style="color: red"  value="<?php echo $_POST['marque'] ?>"<?php ;}?>  placeholder="Exemple: Aria 6 Plus" required minlength="1" maxlength="40" name="marque"  id="marque_model">
                     </div>
                 </div>
             </article>

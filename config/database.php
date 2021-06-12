@@ -5,7 +5,7 @@
  */
 function db_connect()
 {
-	$servname = "localhost"; $dbname = "boutique"; $user = "root"; $pass = "";
+	$servname = "localhost"; $dbname = "lbp"; $user = "root"; $pass = "";
 	try{
 	$bdd = new PDO("mysql:host=$servname;dbname=$dbname", $user , $pass);
  	}

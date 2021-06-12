@@ -13,7 +13,7 @@ function UpdateA($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)
 function UpdateB($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)
 {
     $bdd =  db_connect();
-    $sql = $bdd->prepare("UPDATE sellers SET pseudo= ?, password = ? , tel = ? , email = ? , age = ? , prenom = ? , nom = ? , adresse = ? WHERE id_user = ?");
+    $sql = $bdd->prepare("UPDATE users SET pseudo= ?, password = ? , tel = ? , email = ? , age = ? , prenom = ? , nom = ? , adresse = ? WHERE id_user = ?");
     $sql->execute(array($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse,  $_SESSION["id"]));
 }
 
@@ -31,7 +31,7 @@ function UpdateAA($pseudo,  $tel, $email, $age, $prenom, $nom, $adresse)
 function UpdateBB($pseudo, $tel, $email, $age, $prenom, $nom, $adresse)
 {
     $bdd =  db_connect();
-    $sql = $bdd->prepare("UPDATE sellers SET pseudo= ? , tel = ? , email = ? , age = ? , prenom = ? , nom = ? , adresse = ? WHERE id_user = ?");
+    $sql = $bdd->prepare("UPDATE users SET pseudo= ? , tel = ? , email = ? , age = ? , prenom = ? , nom = ? , adresse = ? WHERE id_user = ?");
     $sql->execute(array($pseudo, $tel, $email, $age, $prenom, $nom, $adresse,  $_SESSION["id"]));
 }
 
@@ -51,7 +51,7 @@ function select2()
 {
     $bdd =  db_connect();
 
-    $sel1 = $bdd->prepare("SELECT * FROM sellers WHERE id_user != ?");
+    $sel1 = $bdd->prepare("SELECT * FROM users WHERE id_user != ?");
     $sel1->execute(array($_SESSION["id"]));
     $selle = $sel1->fetchAll();
     return $selle;
