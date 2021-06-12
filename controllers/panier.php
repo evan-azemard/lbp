@@ -23,7 +23,6 @@ function panier()
             if (isset($_POST['Supprimer'])) {
                 d_panier($_POST['idproduit'], $this->id);
 
-                header("refresh: 1");
             }
 
             /*l'id du pannier de l'utilisateur*/
@@ -32,13 +31,15 @@ function panier()
             /*selectionne les id produit du panier*/
             if (!empty($articles)) {
                 $articles_pp = article_pp($articles['id_panier']);
+                $prix = article_prix($articles['id_panier']);
+
 
 
                 foreach ($articles_pp as $item) {
                     $select_all = select_all($item['id_produit']);
 
                     foreach ($select_all as $key) {
-?>
+                        ?>
                         <article class="panier_card">
                             <div class="card_panier_img">
                                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($key['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
@@ -65,9 +66,11 @@ function panier()
                             </div>
                         </article>
                         <div class="traimoyenpanier"></div>
-                <?php
+                        <?php
                     }
+
                 }
+
             } elseif (empty($articles)) {
                 ?>
 
@@ -77,8 +80,19 @@ function panier()
                     </p>
                 </div>
 
-<?php
+                <?php
             }
+            ?>
+            <article id="commender_panier">
+                <div id="totale_panier">
+                    <h3>Votre totale:</h3>
+                    <p><?php if (!empty($prix['prix_total'])){echo $prix['prix_total']."€";}else{echo '0 €';}?></p>
+                </div>
+                <form name="panier_valider" method="post" action="paiment.php">
+                    <input type="submit" value="Passer au paiment" class="button_panier">
+                </form>
+            </article>
+            <?php
         }
     }
 

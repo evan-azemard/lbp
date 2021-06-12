@@ -13,14 +13,6 @@ $user = new C_affiche();
 
         <?php $key = $user->affiche_panier($_SESSION['id']); ?>
 
-        <article id="commender_panier">
-            <div id="totale_panier">
-                <h3>Votre totale:</h3>
-                <p>750€ TTC</p>
-            </div>
-            <form name="panier_valider" method="post" action="paiment.php">
-                <input type="submit" value="Passer au paiment" class="button_panier">
-            </form>
-        </article>
+
     </section>
 </main>
