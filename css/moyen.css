@@ -1934,6 +1934,9 @@
         justify-content: space-around;
     }
 
+    .panier_commende h2{
+        font-size: 2rem!important;
+    }
     .panier_commende {
         width: 100%;
         min-height: 5vh;

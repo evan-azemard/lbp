@@ -1978,8 +1978,9 @@
 
     .panier_card {
         color: #315d7b;
-        min-height: 10vh;
-        height: 20vh;
+        min-height: 15vh;
+        height: 15vh;
+        width: 550px;
         max-height: 30vh;
         max-width: 80%;
         margin-left: 5%;
@@ -2035,7 +2036,9 @@
         flex-direction: column;
         justify-content: space-around;
     }
-
+    .panier_commende h2{
+        font-size: 1rem!important;
+    }
     .panier_commende {
         width: 100%;
         min-height: 5vh;
@@ -2062,7 +2065,7 @@
         min-height: 5vh;
         display: flex;
         justify-content: space-around;
-        font-size: 2rem;
+        font-size: 1rem;
         text-align: center;
         align-items: center;
     }
@@ -2138,6 +2141,8 @@
 
     #commende_section h1 {
         color: #494040;
+        font-size: 2rem;
+        margin-top: 20%;
     }
 
     /*-------------------------------------------*\

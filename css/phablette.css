@@ -1970,6 +1970,7 @@
     }
 
     .panier_card {
+        min-width: 400px!important;
         color: #315d7b;
         min-height: 10vh;
         height: 20vh;
@@ -2006,6 +2007,9 @@
         background-color: #dae2ed;
     }
 
+    .card_panier_text_div1 p{
+        font-size: 1rem!important;
+    }
     /*Résumé*/
     .card_panier_text_div1 {
         text-align: center;
@@ -2028,7 +2032,9 @@
         flex-direction: column;
         justify-content: space-around;
     }
-
+    .panier_commende h2{
+        font-size: 1.5rem!important;
+    }
     .panier_commende {
         width: 100%;
         min-height: 5vh;
@@ -2055,7 +2061,7 @@
         min-height: 5vh;
         display: flex;
         justify-content: space-around;
-        font-size: 2rem;
+        font-size: 1rem;
         text-align: center;
         align-items: center;
     }
@@ -2131,6 +2137,8 @@
 
     #commende_section h1 {
         color: #494040;
+        font-size: 2rem;
+        margin-top: 10%;
     }
 
     /*-------------------------------------------*\
