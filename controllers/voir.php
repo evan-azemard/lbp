@@ -38,17 +38,16 @@ function voir(){
 
                     if (isset($_POST['submit'])){
 
-                        if (!empty($_POST['resum']))
+                        if (!empty($_POST['message']))
                         {
-                            echo $selusers['email'];
 
                             $message = 'Message de la part du vendeur  Smart Your Future
-                          Votre message : ' . $relproduits['resum'] . '
+                          Votre message : ' . $selusers['resum'] . '
                           
                           Reponse : ' . $_POST['reponse']. '';
 
                             /*La fonction ne peut pas marcher en local*/
-                            $retour = mail($selusers['email'],'Reponse Vendeur SYF', $message);
+                            $retour = mail($selusers['email'],'Réponsse Vendeur SYF', $message);
                             if($retour) {
                                 ?><script> alert("Votre message a bien été envoyé.") </script>
                                 <?php
