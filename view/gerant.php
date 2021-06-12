@@ -5,20 +5,27 @@ if (empty($_SESSION['id'])) {
 if ($_SESSION['rank'] < 3) {
     header("Location: accueil");
 }
+
+
 $user = new C_gerant();
-if (isset($_POST['delette'])){
-    $user->deladmin($_POST['idadmin']);
+$sel = $user->selectadmin();
+
+if (isset($_POST['delette']))
+{
+    $errors = $user->deladmin($_POST['idadmin']);
+} else
+{
+    $errors = array();
 }
 ?>
 
 <main id="gerant_main">
     <section class="gerant_section1" style="overflow:auto;height:  10vh!important">
+        <?php include 'error.php'; ?>
         <h1>Les admins</h1>
-         <?php $sel = $user->selectadmin();
-    foreach ($sel as $key){
-        ?>
-        <table id="gerant_tabl" >
-            <thead>
+        <?php foreach ($sel as $key){ ?>
+            <table id="gerant_tabl" >
+                <thead>
                 <tr>
                     <th>
                         Id
@@ -30,18 +37,18 @@ if (isset($_POST['delette'])){
                         Prénom
                     </th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <tr>
                     <td><?= $key['id_user']; ?></td>
                     <td><?= $key['nom']; ?></td>
                     <td><?= $key['prenom']; ?></td>
                 </tr>
-            </tbody>
-        </table>
-<?php
-    }
- ?>
+                </tbody>
+            </table>
+            <?php
+        }
+        ?>
     </section>
     <section class="gerant_section2">
         <article>

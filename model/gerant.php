@@ -17,7 +17,7 @@ function selectadmin(){
 function deladmin($data){
     $bdd =  db_connect();
 
-    $sql = $bdd->prepare("DELETE FROM users  WHERE id_user = ?");
+    $sql = $bdd->prepare("DELETE FROM users  WHERE id_user = ? and rank = 3");
     $sql->execute(array($data));
 }
 

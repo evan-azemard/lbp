@@ -29,8 +29,21 @@ function gerant(){
 
         public function deladmin($id){
               $this->id = $id;
-              var_dump($this->id);
-              deladmin($this->id);
+              $errors = array();
+
+
+              if ($this->id === $_SESSION['id']) {
+                  array_push($errors, "Vous ne pouvez pas vous auto supprimer !");
+              }
+                $c = count($errors);
+
+              if ($c < 1){
+                  deladmin($this->id);
+              }else{
+                  return $errors;
+              }
+              header("refresh: 1");
+
         }
     }
 
