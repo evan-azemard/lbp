@@ -1488,21 +1488,11 @@
     \*--------------------------------------------*/
     #admin_main {
         background-color: white;
+        margin-top: 15%;
         min-height: 50vh;
     }
 
     /*Contient tout*/
-    .admin_div {
-        width: 90%;
-        margin-left: 5%;
-        background-color: #dae2ed;
-        margin-top: 10%;
-        margin-bottom: 5%;
-        height: 60vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 
     .admin_cont1 {
         height: 45%;
@@ -1551,7 +1541,21 @@
     .admin_cont2 {
         height: 45%;
     }
-
+     .admin_cont1 p{
+            font-size: 0.7rem!important;
+        }
+    /*Contient tout*/
+    .admin_div {
+        width: 90%;
+        margin-left: 5%;
+        background-color: #dae2ed;
+        margin-top: 25%;
+        margin-bottom: 5%;
+        height: 48vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     /*form*/
     .admin_form {
         margin-top: 1%;

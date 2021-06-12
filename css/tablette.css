@@ -1463,7 +1463,7 @@
         width: 90%;
         margin-left: 5%;
         background-color: #dae2ed;
-        margin-top: 10%;
+        margin-top: 15%;
         margin-bottom: 5%;
         height: 60vh;
         display: flex;
@@ -1476,7 +1476,9 @@
         display: flex;
         justify-content: space-between;
     }
-
+    .admin_cont1 p{
+        font-size: 1rem!important;
+    }
     /*les info du user*/
     .admin_cont1_text {
         width: 40%;

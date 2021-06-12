@@ -1486,13 +1486,15 @@
         background-color: white;
         min-height: 50vh;
     }
-
+    .admin_cont1 p{
+            font-size: 1rem!important;
+        }
     /*Contient tout*/
     .admin_div {
         width: 90%;
         margin-left: 5%;
         background-color: #dae2ed;
-        margin-top: 10%;
+        margin-top: 20%;
         margin-bottom: 5%;
         height: 60vh;
         display: flex;
