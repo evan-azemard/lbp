@@ -50,7 +50,8 @@ function contact(){
                     ?><script>alert("Message envoyé")</script>
                     <?php
 
-                    header("Location: accueil");
+                    ?> <script>window.location.replace("accueil");</script><?php
+
 
                 }
 

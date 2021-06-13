@@ -8,6 +8,7 @@ function disco()
         session_destroy();
         session_unset();
     }
-    header("Location: accueil");
+    ?> <script>window.location.replace("accueil");</script><?php
+
     die;
 }

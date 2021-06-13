@@ -128,7 +128,8 @@ function login()
                     $_SESSION["nom"] = $tab["nom"];
                     $_SESSION["adresse"] = $tab["adresse"];
 
-                    header('Location: accueil');
+                    ?> <script>window.location.replace("accueil");</script><?php
+
                 } else {
                     return $errors;
                 }

@@ -38,7 +38,7 @@ function admin()
                     }
                     if (isset($_POST['deletadmin'])){
                         deletempadmin($_POST['idmp']);
-                        header("refresh: 1");
+                        ?><meta http-equiv="refresh" content="0"><?php
                     }
 
                     ?>

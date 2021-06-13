@@ -230,7 +230,7 @@ function profil()
                     }
                 }
                 session_unset();
-                header("Location: login");
+                ?> <script>window.location.replace("login");</script><?php
             } else {
                 return $errors;
             }

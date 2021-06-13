@@ -222,7 +222,7 @@ function register()
                 } else if ($this->choix = 2 && $this->choix != 1) {
                     RegisterB($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
                 }
-                header('Location: login');
+                ?> <script>window.location.replace("login");</script><?php
             } else {
                 return $errors;
             }

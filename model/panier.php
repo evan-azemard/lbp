@@ -66,3 +66,23 @@ function infosellers($data){
     $info = $sel->fetchall();
     return $info;
 }
+
+ function delete_panier_article($id_panier,$id_user){
+    $bdd =  db_connect();
+    $del = $bdd->prepare('DELETE from paniers WHERE id_panier = ? and id_user = ?');
+    $del->execute(array($id_panier, $id_user));
+}
+
+function select_commende($id){
+    $bdd =  db_connect();
+    $sel = $bdd->prepare('SELECT  id_produit from commendes WHERE id_user = ? ');
+    $sel->execute(array($id));
+    $commendes = $sel->fetchall();
+    return $commendes;
+}
+
+function supp_art($id){
+    $bdd =  db_connect();
+    $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');
+    $del->execute(array($id,));
+}

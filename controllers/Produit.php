@@ -58,11 +58,11 @@ function produit()
 
                 unset($prixf);
 
-                header("refresh: 1");
+                ?><meta http-equiv="refresh" content="0"><?php
 
                 unset($prixf);
 
-                header("refresh: 1");
+                ?><meta http-equiv="refresh" content="0"><?php
             }
         }
     }

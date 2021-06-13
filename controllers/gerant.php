@@ -79,7 +79,7 @@ function gerant(){
             }else{
                 return $errors;
             }
-            header("refresh: 1");
+            ?><meta http-equiv="refresh" content="0"><?php
 
         }
 
@@ -110,7 +110,7 @@ function gerant(){
             {
                 return $errors;
             }
-            header("refresh: 1");
+            ?><meta http-equiv="refresh" content="0"><?php
         }
 
 
@@ -133,7 +133,7 @@ function gerant(){
              }else{
                 return $errors;
             }
-            header("refresh: 1");
+            ?><meta http-equiv="refresh" content="0"><?php
 
         }
     }

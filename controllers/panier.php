@@ -60,6 +60,11 @@ function panier()
                                 if (isset($_POST['acheter'])){
                                     envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier']);
                                     ?> <script>window.location.replace("paiment");</script><?php
+                                    delete_panier_article($articles['id_panier'],(int)$_SESSION['id']);
+                                    $commendes = select_commende($_SESSION['id']);
+                                    foreach ($commendes as  $commende){
+                                        supp_art($commende['id_produit']);
+                                    }
                                 }
 
                         }
