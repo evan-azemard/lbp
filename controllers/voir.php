@@ -44,7 +44,9 @@ function voir(){
 
             //recup les information de message pour le vendeur connecté
             $sels = selcont($this->id);
-            foreach ($sels as  $sel){
+            if (!empty($sels))
+            {
+                            foreach ($sels as  $sel){
 
                 $selusers = seluser($sel['id_user']);
 
@@ -124,6 +126,14 @@ function voir(){
                     <?php
                 }
             }
+            }else
+            {
+                echo "
+                <div class='afficheadmin'>
+                    <p>Vous n'avez aucun méssage</p>
+                </div>";
+            }
+
         }
     }
 
