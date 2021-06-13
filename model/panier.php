@@ -44,11 +44,11 @@ function d_panier($data1,$data2){
     $del->execute(array($data1,$data2));
 }
 
-function envoiepanier($id_produit,$id_user,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers,$id_panier,$taille_img,$type_img,$bin_img){
+function envoiepanier($id_produit,$id_user,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers,$id_panier,$nom_img,$taille_img,$type_img,$bin_img){
     $time = date('Y-m-d H:i:s');
     $bdd =  db_connect();
-    $sql = $bdd->prepare("INSERT INTO commendes ( date_commende, id_user, id_produit, nom_article, resum_article, prix_article, nom_user, nom_seller, id_seller, id_panier, taille_img,type_img,bin_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $sql->execute(array( $time, $id_user,$id_produit,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers,$id_panier,$taille_img,$type_img,$bin_img));
+    $sql = $bdd->prepare("INSERT INTO commendes ( date_commende, id_user, id_produit, nom_article, resum_article, prix_article, nom_user, nom_seller, id_seller, id_panier, nom_img, taille_img, type_img, bin_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $sql->execute(array( $time, $id_user,$id_produit,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers,$id_panier,$nom_img,$taille_img,$type_img,$bin_img));
 }
 
 function trouveidsel($data){

@@ -63,7 +63,7 @@ function panier()
                             {
                                 if (isset($_POST['acheter']))
                                 {
-                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier'],$key['taille_img'],$key['type_img'],$key['bin_img']);
+                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier'],$key['nom_img'],$key['taille_img'],$key['type_img'],$key['bin_img']);
 
                                     ?> <script>window.location.replace("paiment");</script><?php
 
