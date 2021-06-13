@@ -56,7 +56,7 @@ $user->logoA();
                 $articles = article_produit($model);
                 ?>
                 <div class="produit_h1">
-                    <h1><?= $tab['marque_model'] ?></h1>
+                    <h1><?= Htmlspecialchars($tab['marque_model'])?></h1>
                 </div>
                 <div id="flexcard">
                     <div class="grid">
@@ -73,9 +73,9 @@ $user->logoA();
                                             $str = strlen($article['nom_model']);
                                             if (strlen($str > 12)) {
                                                 $tt = substr($article['nom_model'], 0, 12) . '...';
-                                                echo  $tt;
+                                                echo  Htmlspecialchars($tt);
                                             } else {
-                                                echo $article['nom_model'];
+                                                echo Htmlspecialchars($article['nom_model']);
                                             } ?>
                                         </h3>
                                         <p> <?php
@@ -92,20 +92,20 @@ $user->logoA();
                                             $e = substr($tt, 160, 40);
 
 
-                                            echo $a . "<br/>" . $b . "<br/>" . $c . "<br/>" . $d . "<br/>" . $e . "<br/>";
+                                            echo Htmlspecialchars($a) . "<br/>" . Htmlspecialchars($b) . "<br/>" . Htmlspecialchars($c) . "<br/>" . Htmlspecialchars($d) . "<br/>" . Htmlspecialchars($e) . "<br/>";
 
                                             ?></p>
                                     </div>
                                     <div class="cards_logo">
                                         <form method="post" style="display: flex">
                                             <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
-                                            <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
-                                            <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">
+                                            <input type="text" aria-label="pasID" name="idppa" value="<?= Htmlspecialchars($article['id_produit']) ?>" style="display: none">
+                                            <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= Htmlspecialchars($article['prix_article'])?>" style="display: none">
                                         </form>
 
-                                        <p><?= $article['prix_article']?> €</p>
-                                        <p><?= $article['code']?></p>
-                                        <button><a href="contact?id_produit=<?= $article['id_produit']?>">Contacter</a></button>
+                                        <p><?= Htmlspecialchars($article['prix_article'])?> €</p>
+                                        <p><?= Htmlspecialchars($article['code'])?></p>
+                                        <button><a href="contact?id_produit=<?= Htmlspecialchars($article['id_produit'])?>">Contacter</a></button>
                                     </div>
                                 </article>
                             <?php } ?>

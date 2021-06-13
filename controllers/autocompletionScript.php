@@ -12,7 +12,7 @@ if (!empty($_POST['search'])) {
 
 	$data = $search->autoCompletion($recherche);
 
-	echo $data;
+	echo Htmlspecialchars($data);
 } else {
 
 	echo 'remplir le champs';

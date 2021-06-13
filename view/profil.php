@@ -29,20 +29,20 @@ if (isset($_POST["submit"])) {
     <section id="section_profil">
         <form method="POST" id="profil_form">
             <article id="register_form_article1">
-                <h2>Profil de <?php echo  $_SESSION["pseudo"]; ?></h2>
+                <h2>Profil de <?php echo  Htmlspecialchars($_SESSION["pseudo"]); ?></h2>
             </article>
             <article id="register_form_article2">
                 <div class="register_form_contient">
                     <div class="register_labput">
                         <label class="profil_invi" for="pseudo"> Pseudo</label>
-                        <input type="text" minlength="4" placeholder="<?= $_SESSION['pseudo'] ?> (pseudo)" name="pseudo" maxlength="12" id="pseudo">
+                        <input type="text" minlength="4" placeholder="<?= Htmlspecialchars($_SESSION['pseudo']) ?> (pseudo)" name="pseudo" maxlength="12" id="pseudo">
                     </div>
                     <div class="register_labput">
                         <label class="profil_invi" for="téléphone">Téléphone</label>
                         <div id="telregister">
                             <p>+33</p>
                         </div>
-                        <input type="number" name="tel" placeholder="<?= $_SESSION['tel'] ?>(téléphone)" maxlength="9" minlength="9" id="téléphone">
+                        <input type="number" name="tel" placeholder="<?= Htmlspecialchars($_SESSION['tel']) ?>(téléphone)" maxlength="9" minlength="9" id="téléphone">
                     </div>
                 </div>
                 <div class="register_form_contient">
@@ -52,7 +52,7 @@ if (isset($_POST["submit"])) {
                     </div>
                     <div class="register_labput">
                         <label class="profil_invi" for="email">Email</label>
-                        <input type="email" minlength="9" placeholder="<?= $_SESSION['email'] ?>(email)" name="email" maxlength="35" id="email">
+                        <input type="email" minlength="9" placeholder="<?= Htmlspecialchars($_SESSION['email']) ?>(email)" name="email" maxlength="35" id="email">
                     </div>
                 </div>
                 <div class="register_form_contient">
@@ -62,23 +62,23 @@ if (isset($_POST["submit"])) {
                     </div>
                     <div class="register_labput">
                         <label class="profil_invi" for="age">Âge</label>
-                        <input type="number" name="age" placeholder="<?= $_SESSION['age'] ?>(age)" minlength="13" maxlength="115" id="age">
+                        <input type="number" name="age" placeholder="<?= Htmlspecialchars($_SESSION['age']) ?>(age)" minlength="13" maxlength="115" id="age">
                     </div>
                 </div>
                 <div class="register_form_contient">
                     <div class="register_labput">
                         <label class="profil_invi" for="prenom">Prénom</label>
-                        <input type="text" name="prenom" placeholder="<?= $_SESSION['prenom'] ?>(prénom)" maxlength="12" min="3" id="prenom">
+                        <input type="text" name="prenom" placeholder="<?= Htmlspecialchars($_SESSION['prenom']) ?>(prénom)" maxlength="12" min="3" id="prenom">
                     </div>
                     <div class="register_labput register_labput_login">
                         <label class="profil_invi" for="adresse">Nouvelle adresse complète</label>
-                        <input type="text" name="adresse" placeholder="<?= $_SESSION['adresse'] ?>(adresse)" minlength="20" maxlength="80" id="adresse">
+                        <input type="text" name="adresse" placeholder="<?= Htmlspecialchars($_SESSION['adresse']) ?>(adresse)" minlength="20" maxlength="80" id="adresse">
                     </div>
                 </div>
                 <div class="register_form_contient">
                     <div class="register_labput">
                         <label class="profil_invi" for="nom">Nom</label>
-                        <input type="text" name="nom" placeholder="<?= $_SESSION['nom'] ?>(nom)" maxlength="15" min="3" id="nom">
+                        <input type="text" name="nom" placeholder="<?= Htmlspecialchars($_SESSION['nom']) ?>(nom)" maxlength="15" min="3" id="nom">
                     </div>
                 </div>
             </article>

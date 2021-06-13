@@ -89,22 +89,22 @@ function voir(){
                         <div class="admin_cont1">
                             <div class="admin_cont1_text">
                                 <div class="admin_label">
-                                    <p>Nom : <span class="admin_gray"><?= $selusers['nom'] ?></span> </p>
+                                    <p>Nom : <span class="admin_gray"><?= Htmlspecialchars($selusers['nom']) ?></span> </p>
                                 </div>
                                 <div class="admin_label">
-                                    <p>Prénom : <span class="admin_gray"><?= $selusers['prenom'] ?></span></p>
+                                    <p>Prénom : <span class="admin_gray"><?= Htmlspecialchars($selusers['prenom']) ?></span></p>
                                 </div>
                                 <div class="admin_label">
-                                    <p>Id produit : <span class="admin_gray">  <?= $relproduits['id_produit'] ?></span> </p>
+                                    <p>Id produit : <span class="admin_gray">  <?= Htmlspecialchars($relproduits['id_produit']) ?></span> </p>
                                 </div>
                                 <div class="admin_label">
-                                    <p>Nom du produit : <span class="admin_gray"><?= $relproduits['nom_model'] ?></span> </p>
+                                    <p>Nom du produit : <span class="admin_gray"><?= Htmlspecialchars($relproduits['nom_model']) ?></span> </p>
                                 </div>
                             </div>
                             <div class="admin_cont1_textarea">
                                 <div class="admin_cont_texta">
                                     <p style="display: flex">
-                                        <?= $sel['message'] ?>
+                                        <?= Htmlspecialchars($sel['message'] )?>
                                     </p>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@ function voir(){
                         <div class="traimoyen_admin"></div>
                         <div class="admin_cont2">
                             <form class="admin_form" method="post">
-                                <input type="text" value="<?= $sel['id']?>"style="display:none;" name="id_voir" >
+                                <input type="text" value="<?= Htmlspecialchars($sel['id'])?>"style="display:none;" name="id_voir" >
                                 <textarea aria-label="textarea" name="reponse" class="admin_textarea" placeholder="Méssage de réponse[...]"></textarea>
                                 <div class="admin_button">
                                     <input type="submit" class="button" name="submit" value="Envoyer">

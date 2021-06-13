@@ -75,19 +75,19 @@ $user->logoA();
                 <form class="prod_div3" method="post">
                     <div class="prod_divdiv1">
                         <div class="prod_divdiv1h1">
-                            <h2><?= $key['nom_model'] ?></h2>
+                            <h2><?= Htmlspecialchars($key['nom_model']) ?></h2>
                         </div>
                     </div>
                     <div class="prod_divdiv2">
                         <div class="prod_divdiv23">
-                            <p><?= $key['prix_article'] ?> €</p>
+                            <p><?= Htmlspecialchars($key['prix_article']) ?> €</p>
                         </div>
                     </div>
                     <div class="prod_divdiv3">
                         <div class="prod_form">
                             <label for="modif_prix" class="labelprod">Modifier le prix : </label>
                             <input id="modif_prix" type="number" name="prix" minlength="1" maxlength="500000" placeholder="Modifier le prix">
-                            <input type="text" aria-label="idproduit" name="valeur" value="<?= $key['id_produit']?>"style="display: none">
+                            <input type="text" aria-label="idproduit" name="valeur" value="<?= Htmlspecialchars($key['id_produit'])?>"style="display: none">
                         </div>
                     </div>
                     <div class="prod_divdiv4">

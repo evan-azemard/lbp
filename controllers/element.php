@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
                     <tbody>
                         <tr>
                             <td><?php echo $data['id'] ?></td>
-                            <td><?php echo $data['nom_model'] ?></td>
+                            <td><?php echo Htmlspecialchars($data['nom_model']) ?></td>
                         </tr>
                     </tbody>
                 </table>

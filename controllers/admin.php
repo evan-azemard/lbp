@@ -67,16 +67,16 @@ function admin()
                         <div class="admin_cont1">
                             <div class="admin_cont1_text">
                                 <div class="admin_label">
-                                    <p>Email : <span class="admin_gray"><?= $key['email'] ?></span> </p>
+                                    <p>Email : <span class="admin_gray"><?= Htmlspecialchars($key['email']) ?></span> </p>
                                 </div>
                                 <div class="admin_label">
-                                    <p>Id produit : <span class="admin_gray"> <?= $key['id_produit'] ?></span> </p>
+                                    <p>Id produit : <span class="admin_gray"> <?= Htmlspecialchars($key['id_produit']) ?></span> </p>
                                 </div>
                             </div>
                             <div class="admin_cont1_textarea">
                                 <div class="admin_cont_texta">
                                     <p style="display: flex">
-                                        <?= $key['message'] ?>
+                                        <?= Htmlspecialchars($key['message']) ?>
                                     </p>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ function admin()
                         <div class="traimoyen_admin"></div>
                         <div class="admin_cont2">
                             <form class="admin_form" method="post">
-                                <input aria-label="idmp" type="text" name="idmp" value="<?= $key['id_produit'] ?>"style="display: none">
+                                <input aria-label="idmp" type="text" name="idmp" value="<?= Htmlspecialchars($key['id_produit']) ?>"style="display: none">
                                 <textarea aria-label="textarea" name="reponse" class="admin_textarea" placeholder="Méssage de réponse[...]"></textarea>
                                 <div class="admin_button">
                                     <input type="submit" class="button" name="deletadmin" value="Supprimer">

@@ -57,9 +57,9 @@ $user->logoA();
                 </thead>
                 <tbody>
                 <tr>
-                    <td><?= $key['id_user']; ?></td>
-                    <td><?= $key['nom']; ?></td>
-                    <td><?= $key['prenom']; ?></td>
+                    <td><?= Htmlspecialchars($key['id_user']); ?></td>
+                    <td><?= Htmlspecialchars($key['nom']); ?></td>
+                    <td><?= Htmlspecialchars($key['prenom']); ?></td>
                 </tr>
                 </tbody>
             </table>
@@ -103,9 +103,9 @@ $user->logoA();
                 </thead>
                 <tbody>
                 <tr>
-                    <td><?= $key['id_user']; ?></td>
-                    <td><?= $key['nom']; ?></td>
-                    <td><?= $key['prenom']; ?></td>
+                    <td><?= Htmlspecialchars($key['id_user']); ?></td>
+                    <td><?= Htmlspecialchars($key['nom']); ?></td>
+                    <td><?= Htmlspecialchars($key['prenom']); ?></td>
                 </tr>
                 </tbody>
             </table>
@@ -152,10 +152,10 @@ $user->logoA();
                 </thead>
                 <tbody>
                 <tr>
-                    <td><?= $key['id_user']; ?></td>
-                    <td><?= $key['nom']; ?></td>
-                    <td><?= $key['prenom']; ?></td>
-                    <td><?= $key['rank']; ?></td>
+                    <td><?= Htmlspecialchars($key['id_user']); ?></td>
+                    <td><?= Htmlspecialchars($key['nom']); ?></td>
+                    <td><?= Htmlspecialchars($key['prenom']); ?></td>
+                    <td><?= Htmlspecialchars($key['rank']); ?></td>
                 </tr>
                 </tbody>
             </table>

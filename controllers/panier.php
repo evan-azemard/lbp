@@ -109,19 +109,19 @@ function panier()
                             </div>
                             <div class="card_panier_text">
                                 <div class="card_panier_text_div1">
-                                    <?= $key['resum'] ?>
+                                    <?= Htmlspecialchars($key['resum']) ?>
                                 </div>
                                 <div class="card_panier_text_div2">
                                     <div class="panier_commende">
-                                        <h2><?= $key['nom_model'] ?></h2>
+                                        <h2><?= Htmlspecialchars($key['nom_model']) ?></h2>
                                     </div>
                                     <div class="panier_commende2">
-                                        <div><?= $key['prix_article'] ?> €</div>
-                                        <div class="code"><?= $key['code'] ?></div>
+                                        <div><?= Htmlspecialchars($key['prix_article']) ?> €</div>
+                                        <div class="code"><?= Htmlspecialchars($key['code']) ?></div>
                                     </div>
                                     <div class="panier_commende">
                                         <form name="panierform1" method="post">
-                                            <input type="hidden" name="idproduit" value="<?= $key['id_produit'] ?>">
+                                            <input type="hidden" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                             <input type="submit" name="Supprimer" value="Supprimer" class="button_panier">
                                         </form>
                                     </div>
@@ -149,7 +149,7 @@ function panier()
             <article id="commender_panier">
                 <div id="totale_panier">
                     <h3>Votre totale:</h3>
-                    <p><?php if (!empty($prix['prix_total'])){echo $prix['prix_total']."€";}else{echo '0 €';}?></p>
+                    <p><?php if (!empty($prix['prix_total'])){echo Htmlspecialchars($prix['prix_total'])."€";}else{echo '0 €';}?></p>
                 </div>
                 <form name="panier_valider" method="post" >
                     <input type="submit" name="acheter" value="Passer au paiment" class="button_panier">

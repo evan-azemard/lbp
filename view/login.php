@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
                     <label class="login_invi" for="pseudo">Pseudo</label>
                 </div>
                 <div class="login_labput">
-                    <input placeholder="Pseudo" class="logininput" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo $_POST['pseudo'] ?>"<?php ;}?> type="text" name="pseudo" id="pseudo" required>
+                    <input placeholder="Pseudo" class="logininput" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo Htmlspecialchars($_POST['pseudo']) ?>"<?php ;}?> type="text" name="pseudo" id="pseudo" required>
                 </div>
             </article>
             <article class="login_article">
@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
 
                 </div>
                 <div class="login_labput">
-                    <input placeholder="Email" class="logininput" type="email"  <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo $_POST['email'] ?>"<?php ;}?> name="email" id="email" required>
+                    <input placeholder="Email" class="logininput" type="email"  <?php if (!empty($_POST['email'])){ ?>style="color: red"  value="<?php echo Htmlspecialchars($_POST['email']) ?>"<?php ;}?> name="email" id="email" required>
 
                 </div>
             </article>
