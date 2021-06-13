@@ -39,6 +39,16 @@ function produit()
             $this->prix = $prix;
         }
 
+        public function  redelette(){
+            $rec = recup_id_commende();
+
+            foreach ($rec as $rere){
+                delette((int)$rere['id_produit']);
+
+            }
+
+        }
+
 
         public function produit($id, $prix)
         {

@@ -9,7 +9,10 @@ if (isset($_POST['ppan'])) {
     $errors = $user->produit($_POST['idppa'], $_POST['prix']);
 } else {
     $errors = array();
-} ?>
+}
+$user = new C_produit();
+$user->redelette();
+?>
 
 
 <main id="produit_main">

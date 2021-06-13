@@ -64,7 +64,14 @@ function accueil()
         }
 
 
+        public function  redeletteA(){
+            $rec = recup_id_commendeA();
 
+            foreach ($rec as $rere){
+                deletteA((int)$rere['id_produit']);
+            }
+
+        }
         public  function contact_accueil($email,$iden,$mp){
             $this->setEmail($email);
             $this->setIden($iden);
@@ -94,9 +101,9 @@ function accueil()
                 array_push($errors, "Veuillez rensseigner au minimum une adresse email et un méssage !");
             }
             if (count($errors) < 1) {
-                    #fuction id sinon sans
+                #fuction id sinon sans
                 if (isset($this->iden)&& isset($this->email)&&isset($this->mp)){
-                     savid($this->iden,$this->email,$this->mp);
+                    savid($this->iden,$this->email,$this->mp);
                 }elseif (isset($this->email)&&isset($this->mp)&&empty($this->iden)){
                     sav($this->email,$this->mp);
                 }

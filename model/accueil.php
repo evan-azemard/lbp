@@ -43,3 +43,22 @@ function  sav($email, $mp)
     $sse = $bdd->prepare("INSERT INTO contacts (email,message) VALUES (?,?) ");
     $sse->execute(array($email, $mp));
 }
+
+function  recup_id_commendeA()
+{
+
+    $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select id_produit from commendes');
+    $sel->execute();
+    $rec = $sel->fetchAll();
+
+    return $rec;
+}
+
+
+function deletteA($id){
+    $bdd =  db_connect();
+    $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');
+    $del->execute(array($id));
+}

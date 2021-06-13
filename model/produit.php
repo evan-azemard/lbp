@@ -14,16 +14,32 @@ function  article_produit($model)
     return $articles;
 }
 
+function  recup_id_commende()
+{
+
+    $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select id_produit from commendes');
+    $sel->execute();
+    $rec = $sel->fetchAll();
+
+    return $rec;
+}
+
+
+function delette($id){
+    $bdd =  db_connect();
+    $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');
+    $del->execute(array($id));
+}
 /*Sélédctionner 1 fois la marque*/
 function  article_model()
 {
 
     $bdd =  db_connect();
-
     $sel = $bdd->prepare('select DISTINCT marque_model from articles ');
     $sel->execute();
     $articles_model = $sel->fetchAll();
-
     return $articles_model;
 }
 

@@ -13,6 +13,9 @@ if (!empty($_POST['Envoyer'])) {
 } else {
     $errors = array();
 }
+$user = new C_accueil();
+$user->redeletteA();
+
 ?>
 <main id="accueil_main">
     <!--Affiche de promotion-->
