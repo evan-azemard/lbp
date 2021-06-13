@@ -41,24 +41,24 @@ function panier()
 
 
                 foreach ($articles_pp as $item) {
-
+                /*Selectione les informations du produit*/
                     $select_all = select_all($item['id_produit']);
 
                     foreach ($select_all as $key) {
 
 
-
+                        /*Trpiver l'id du vendeur*/
                         $infos  = trouveidsel($item['id_produit']);
 
                         foreach ($infos as $info){
 
 
-
+                            /*Les infos du vendeur*/
                             $infosellers = infosellers($info['id_vendeur']);
 
                              foreach ($infosellers as $inf){
                                 if (isset($_POST['acheter'])){
-                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user']);
+                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier']);
                                     ?> <script>window.location.replace("paiment");</script><?php
                                 }
 
