@@ -18,6 +18,10 @@ function panier()
 
         public function affiche_panier($id)
         {
+
+
+
+
             $this->setId($id);
 
             if (isset($_POST['Supprimer'])) {
@@ -31,14 +35,44 @@ function panier()
             /*selectionne les id produit du panier*/
             if (!empty($articles)) {
                 $articles_pp = article_pp($articles['id_panier']);
+
                 $prix = article_prix($articles['id_panier']);
 
 
 
                 foreach ($articles_pp as $item) {
+
                     $select_all = select_all($item['id_produit']);
 
                     foreach ($select_all as $key) {
+
+
+
+                        $infos  = trouveidsel($item['id_produit']);
+
+                        foreach ($infos as $info){
+
+
+
+                            $infosellers = infosellers($info['id_vendeur']);
+
+                             foreach ($infosellers as $inf){
+                                if (isset($_POST['acheter'])){
+                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user']);
+                                    ?> <script>window.location.replace("paiment");</script><?php
+                                }
+
+                        }
+
+
+
+                        }
+
+
+
+
+
+
                         ?>
                         <article class="panier_card">
                             <div class="card_panier_img">
@@ -88,8 +122,8 @@ function panier()
                     <h3>Votre totale:</h3>
                     <p><?php if (!empty($prix['prix_total'])){echo $prix['prix_total']."€";}else{echo '0 €';}?></p>
                 </div>
-                <form name="panier_valider" method="post" action="paiment.php">
-                    <input type="submit" value="Passer au paiment" class="button_panier">
+                <form name="panier_valider" method="post" >
+                    <input type="submit" name="acheter" value="Passer au paiment" class="button_panier">
                 </form>
             </article>
             <?php

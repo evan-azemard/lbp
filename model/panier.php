@@ -43,3 +43,26 @@ function d_panier($data1,$data2){
     $del = $bdd->prepare('DELETE from paniers WHERE id_produit = ? and id_user = ?');
     $del->execute(array($data1,$data2));
 }
+
+function envoiepanier($id_produit,$id_user,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers){
+    $time = date('Y-m-d H:i:s');
+    $bdd =  db_connect();
+    $sql = $bdd->prepare("INSERT INTO commendes ( date_commende, id_user, id_produit, nom_article, resum_article, prix_article, nom_user, nom_seller, id_seller) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $sql->execute(array( $time, $id_user,$id_produit,$nom_model,$resum,$prix,$nom_user,$nom_sellers,$id_sellers));
+}
+
+function trouveidsel($data){
+    $bdd =  db_connect();
+    $sel = $bdd->prepare('SELECT  id_vendeur from articles WHERE id_produit = ? ');
+    $sel->execute(array($data));
+    $infos = $sel->fetchall();
+    return $infos;
+}
+
+function infosellers($data){
+    $bdd =  db_connect();
+    $sel = $bdd->prepare('SELECT  * from users WHERE id_user = ? ');
+    $sel->execute(array($data));
+    $info = $sel->fetchall();
+    return $info;
+}
