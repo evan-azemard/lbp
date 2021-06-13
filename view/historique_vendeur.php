@@ -11,12 +11,16 @@ if ($_SESSION['rank'] == 1) {
 
 $user = new C_historique_vendeur();
 $sel = $user->selecthistorique_vendeur();
+
+if (isset($_POST['prod_sub'])){
+    $user->modifhistorique_vendeur($_POST['prix'],$_POST['valeur']);
+}
 ?>
 
 <main id="historiquev_main">
     <div id="historiquev_main_info">
         <div id="historiquev_main_info_titre">
-            <h1>Votre historique de vente</h1>
+            <h1>Vos produits en vente</h1>
         </div>
         <div id="historiquev_main_info_argent">
             <span id="historiquev_color">
@@ -62,7 +66,7 @@ $sel = $user->selecthistorique_vendeur();
                 <div class="prod_div2">
                     <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($key['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
                 </div>
-                <form class="prod_div3">
+                <form class="prod_div3" method="post">
                     <div class="prod_divdiv1">
                         <div class="prod_divdiv1h1">
                             <h2><?= $key['nom_model'] ?></h2>
@@ -76,15 +80,16 @@ $sel = $user->selecthistorique_vendeur();
                     <div class="prod_divdiv3">
                         <div class="prod_form">
                             <label for="modif_prix" class="labelprod">Modifier le prix : </label>
-                            <input id="modif_prix" type="number" minlength="1" maxlength="500000" placeholder="Modifier le prix">
+                            <input id="modif_prix" type="number" name="prix" minlength="1" maxlength="500000" placeholder="Modifier le prix">
+                            <input type="text" aria-label="idproduit" name="valeur" value="<?= $key['id_produit']?>"style="display: none">
                         </div>
                     </div>
                     <div class="prod_divdiv4">
                         <div class="prod_form">
-                            <input type="submit" class="prod_sub" value="Modifier">
+                            <input type="submit"  name="prod_sub" class="prod_sub" value="Modifier">
                         </div>
                         <div class="prod_form">
-                            <input type="submit" class="prod_sub" value="Supprimer">
+                            <input type="submit" name="prod_sup" class="prod_sup" value="Supprimer">
                         </div>
                     </div>
                 </form>
