@@ -24,7 +24,8 @@ function panier()
 
             $this->setId($id);
 
-            if (isset($_POST['Supprimer'])) {
+            if (isset($_POST['Supprimer']))
+            {
                 d_panier($_POST['idproduit'], $this->id);
 
             }
@@ -33,44 +34,49 @@ function panier()
             $articles =  article_panier($this->id);
 
             /*selectionne les id produit du panier*/
-            if (!empty($articles)) {
+            if (!empty($articles))
+            {
                 $articles_pp = article_pp($articles['id_panier']);
 
                 $prix = article_prix($articles['id_panier']);
 
 
 
-                foreach ($articles_pp as $item) {
-                /*Selectione les informations du produit*/
+                foreach ($articles_pp as $item)
+                {
+                    /*Selectione les informations du produit*/
                     $select_all = select_all($item['id_produit']);
 
-                    foreach ($select_all as $key) {
+                    foreach ($select_all as $key)
+                    {
 
 
                         /*Trpiver l'id du vendeur*/
                         $infos  = trouveidsel($item['id_produit']);
 
-                        foreach ($infos as $info){
-
-
+                        foreach ($infos as $info)
+                        {
                             /*Les infos du vendeur*/
                             $infosellers = infosellers($info['id_vendeur']);
 
-                             foreach ($infosellers as $inf){
-                                if (isset($_POST['acheter'])){
-                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier']);
+                            foreach ($infosellers as $inf)
+                            {
+                                if (isset($_POST['acheter']))
+                                {
+                                    envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier'],$key['taille_img'],$key['type_img'],$key['bin_img']);
+
                                     ?> <script>window.location.replace("paiment");</script><?php
+
                                     delete_panier_article($articles['id_panier'],(int)$_SESSION['id']);
+
                                     $commendes = select_commende($_SESSION['id']);
-                                    foreach ($commendes as  $commende){
+
+                                    foreach ($commendes as  $commende)
+                                    {
                                         supp_art($commende['id_produit']);
                                     }
                                 }
-
-                        }
-
-
-
+                            }
                         }
 
 

@@ -183,7 +183,7 @@ function accueil()
                                 ?></p>
                         </div>
                         <div class="cards_logo">
-                            <form method="post" style="display: flex">
+                            <form method="post" style="display: flex" class="form_cards_logo">
                                 <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
                                 <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
                                 <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">

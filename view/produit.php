@@ -49,66 +49,66 @@ if (isset($_POST['ppan'])) {
                 $model = $tab['marque_model'];
 
                 $articles = article_produit($model);
-            ?>
+                ?>
                 <div class="produit_h1">
                     <h1><?= $tab['marque_model'] ?></h1>
                 </div>
                 <div id="flexcard">
                     <div class="grid">
                         <div class="gridproduit">
-                        <?php foreach ($articles as $article) { ?>
-                            <article class="body_cards">
-                    <div class="cards_img">
-                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($article['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
+                            <?php foreach ($articles as $article) { ?>
+                                <article class="body_cards">
+                                    <div class="cards_img">
+                                        <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($article['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
 
-                    </div>
-                    <div class="cards_des">
-                        <h3>
-                            <?php
-                            $str = strlen($article['nom_model']);
-                            if (strlen($str > 12)) {
-                                $tt = substr($article['nom_model'], 0, 12) . '...';
-                                echo  $tt;
-                            } else {
-                                echo $article['nom_model'];
-                            } ?>
-                        </h3>
-                        <p> <?php
+                                    </div>
+                                    <div class="cards_des">
+                                        <h3>
+                                            <?php
+                                            $str = strlen($article['nom_model']);
+                                            if (strlen($str > 12)) {
+                                                $tt = substr($article['nom_model'], 0, 12) . '...';
+                                                echo  $tt;
+                                            } else {
+                                                echo $article['nom_model'];
+                                            } ?>
+                                        </h3>
+                                        <p> <?php
 
-                            $t = strlen($article['resum']);
+                                            $t = strlen($article['resum']);
 
-                            $tt = substr($article['resum'], 0, 120);
-
-
-                            $a = substr($tt, 0, 40);
-                            $b = substr($tt, 40, 40);
-                            $c = substr($tt, 80, 40);
-                            $d = substr($tt, 120, 40);
-                            $e = substr($tt, 160, 40);
+                                            $tt = substr($article['resum'], 0, 120);
 
 
-                            echo $a . "<br/>" . $b . "<br/>" . $c . "<br/>" . $d . "<br/>" . $e . "<br/>";
+                                            $a = substr($tt, 0, 40);
+                                            $b = substr($tt, 40, 40);
+                                            $c = substr($tt, 80, 40);
+                                            $d = substr($tt, 120, 40);
+                                            $e = substr($tt, 160, 40);
 
-                            ?></p>
-                    </div>
-                    <div class="cards_logo">
-                        <form method="post" style="display: flex">
-                            <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
-                            <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
-                            <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">
-                        </form>
 
-                        <p><?= $article['prix_article']?> €</p>
-                        <p><?= $article['code']?></p>
-                        <button><a href="contact?id_produit=<?= $article['id_produit']?>">Contacter</a></button>
-                    </div>
-                </article>
-                        <?php } ?>
-                    </div>
+                                            echo $a . "<br/>" . $b . "<br/>" . $c . "<br/>" . $d . "<br/>" . $e . "<br/>";
+
+                                            ?></p>
+                                    </div>
+                                    <div class="cards_logo">
+                                        <form method="post" style="display: flex">
+                                            <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
+                                            <input type="text" aria-label="pasID" name="idppa" value="<?= $article['id_produit'] ?>" style="display: none">
+                                            <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= $article['prix_article'] ?>" style="display: none">
+                                        </form>
+
+                                        <p><?= $article['prix_article']?> €</p>
+                                        <p><?= $article['code']?></p>
+                                        <button><a href="contact?id_produit=<?= $article['id_produit']?>">Contacter</a></button>
+                                    </div>
+                                </article>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
                 <div class="traimoyen"></div>
-            <?php
+                <?php
             } ?>
         </article>
     </section>
