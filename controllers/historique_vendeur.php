@@ -41,9 +41,21 @@ function historique_vendeur(){
             if (isset($this->prix)){
                 modifhistorique_vendeur($this->prix,$this->valeur,$_SESSION['id']);
 
-                header("refresh: 1");
+                ?> <meta http-equiv="refresh" content="1"><?php
 
             }
+        }
+
+        public function supphistorique_vendeur($valeur){
+
+            $this->setValeur($valeur);
+
+
+           supphistorique_vendeur($this->valeur,$_SESSION['id']);
+
+
+                 ?>  <meta http-equiv="refresh" content="0"><?php
+
 
 
         }

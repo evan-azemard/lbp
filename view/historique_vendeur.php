@@ -15,6 +15,10 @@ $sel = $user->selecthistorique_vendeur();
 if (isset($_POST['prod_sub'])){
     $user->modifhistorique_vendeur($_POST['prix'],$_POST['valeur']);
 }
+
+if (isset($_POST['prod_sup'])){
+    $user->supphistorique_vendeur($_POST['valeur']);
+}
 ?>
 
 <main id="historiquev_main">
@@ -86,10 +90,10 @@ if (isset($_POST['prod_sub'])){
                     </div>
                     <div class="prod_divdiv4">
                         <div class="prod_form">
-                            <input type="submit"  name="prod_sub" class="prod_sub" value="Modifier">
+                            <input type="submit"  name="prod_sub" class="prod_sub" value="Modifier" style="cursor: pointer">
                         </div>
                         <div class="prod_form">
-                            <input type="submit" name="prod_sup" class="prod_sup" value="Supprimer">
+                            <input type="submit" name="prod_sup" class="prod_sup" value="Supprimer" style="cursor: pointer">
                         </div>
                     </div>
                 </form>

@@ -10,7 +10,16 @@ function historiquesel($data){
 }
 
 function modifhistorique_vendeur($data, $data2, $data3){
-        $bdd =  db_connect();
+    $bdd =  db_connect();
     $sql = $bdd->prepare("UPDATE  articles SET prix_article = ? WHERE id_produit = ? and id_vendeur = ?");
     $sql->execute(array($data, $data2, $data3));
+}
+
+function supphistorique_vendeur($data1,$data2){
+
+    $bdd =  db_connect();
+    $sql = $bdd->prepare("DELETE FROM articles  WHERE id_produit = ? and id_vendeur = ? ");
+    $sql->execute(array($data1,$data2));
+
+
 }
