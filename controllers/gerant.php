@@ -50,18 +50,38 @@ function gerant(){
         }
 
 
-          public function selectuser(){
+        public function selectuser(){
             $sel = selectuser();
             return $sel;
         }
 
 
-         public function selall(){
+        public function selall(){
             $sel = selall();
             return $sel;
         }
 
 
+
+        public  function logoA(){
+            $rec = cherche_logo_ger($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+
+        }
 
         public function deladmin($id)
         {
@@ -104,8 +124,8 @@ function gerant(){
             {
                 if ($sel['rank'] = 1)
                 {
-                     ajoutadmin($this->addadmin);
-                 }
+                    ajoutadmin($this->addadmin);
+                }
             } else
             {
                 return $errors;
@@ -124,13 +144,13 @@ function gerant(){
             if ($sel['rank'] == 4){
                 array_push($errors, "Vous ne pouvez utiliser cette id ! Seul les utilisateurs , vendeurs et admin sont accécible!");
             }
-             $c = count($errors);
+            $c = count($errors);
 
-             if ($c < 1) {
-                 if (($sel['rank'] == 1 || $sel['rank'] == 2 || $sel['rank'] == 3)) {
-                     delall($this->userall);
-                 }
-             }else{
+            if ($c < 1) {
+                if (($sel['rank'] == 1 || $sel['rank'] == 2 || $sel['rank'] == 3)) {
+                    delall($this->userall);
+                }
+            }else{
                 return $errors;
             }
             ?><meta http-equiv="refresh" content="0"><?php

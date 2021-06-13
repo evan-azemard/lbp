@@ -31,6 +31,27 @@ function contact(){
             $this->com = $com;
         }
 
+        public  function logoA(){
+            $rec = cherche_logo_CONT($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+
+        }
+
+
         public function contactF($id_produit,$com)
         {
             $this->setId_produit($id_produit);

@@ -55,3 +55,17 @@ function delall($data){
     $sel = $sql->fetch();
     return $sel;
 }
+
+function cherche_logo_ger($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}

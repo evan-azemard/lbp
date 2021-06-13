@@ -55,3 +55,17 @@ function ajouter(
         ':id_vendeur' => $iduser
     ));
 }
+
+function cherche_logo_Aj($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}

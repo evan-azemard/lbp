@@ -17,6 +17,26 @@ function voir(){
             $this->id = $id;
         }
 
+         public  function logoA(){
+            $rec = cherche_logo_voir($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+
+        }
+
         public function repondre($id)
         {
 
@@ -51,10 +71,16 @@ function voir(){
                             if($retour) {
                                 ?><script> alert("Votre message a bien été envoyé.") </script>
                                 <?php
+
+                                supp_voir_mp($_POST['id_voir']);
                             }
                         }
                     }
 
+                    if (isset($_POST['supprimer'])){
+                        supp_voir_mp($_POST['id_voir']);
+                        ?><meta http-equiv="refresh" content="0"><?php
+                    }
                     ?>
 
                     <div class="admin_div">
@@ -76,7 +102,7 @@ function voir(){
                             <div class="admin_cont1_textarea">
                                 <div class="admin_cont_texta">
                                     <p style="display: flex">
-                                        <?= $relproduits['resum'] ?>
+                                        <?= $sel['message'] ?>
                                     </p>
                                 </div>
                             </div>
@@ -84,9 +110,11 @@ function voir(){
                         <div class="traimoyen_admin"></div>
                         <div class="admin_cont2">
                             <form class="admin_form" method="post">
+                                <input type="text" value="<?= $sel['id']?>"style="display:none;" name="id_voir" >
                                 <textarea aria-label="textarea" name="reponse" class="admin_textarea" placeholder="Méssage de réponse[...]"></textarea>
                                 <div class="admin_button">
                                     <input type="submit" class="button" name="submit" value="Envoyer">
+                                    <input type="submit" class="button" name="supprimer" value="Supprimer">
                                     <!--                    <input type="submit" class="button" name="signaler" value="Signaler">
                                     -->                </div>
                             </form>

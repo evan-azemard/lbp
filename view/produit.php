@@ -12,6 +12,8 @@ if (isset($_POST['ppan'])) {
 }
 $user = new C_produit();
 $user->redelette();
+$user->logoA();
+
 ?>
 
 

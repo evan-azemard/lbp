@@ -72,6 +72,28 @@ function accueil()
             }
 
         }
+        public  function logoA()
+        {
+            if (isset($_SESSION['id'])){
+                       $rec = cherche_logo_A($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+            }
+
+        }
         public  function contact_accueil($email,$iden,$mp){
             $this->setEmail($email);
             $this->setIden($iden);

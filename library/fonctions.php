@@ -76,4 +76,13 @@ function remplaceID($nameA, $urlA)
         echo '';
     }
 }
+
+
+
+
+
+
+
+
+
 ?>

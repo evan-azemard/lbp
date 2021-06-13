@@ -19,6 +19,8 @@ if (isset($_POST['prod_sub'])){
 if (isset($_POST['prod_sup'])){
     $user->supphistorique_vendeur($_POST['valeur']);
 }
+$user->logoA();
+
 ?>
 
 <main id="historiquev_main">

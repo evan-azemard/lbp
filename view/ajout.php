@@ -32,6 +32,9 @@ if(isset($_POST["submit"]))
 {
     $errors = array();
 }
+$user = new C_ajout();
+$user->logoA();
+
 ?>
 <main id="ajout_main">
     <div><h1>Ajouter un article</h1></div>

@@ -21,3 +21,4 @@ function F_login2($pseudo)
     $tab = $sel->fetch();
     return $tab;
 }
+

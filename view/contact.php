@@ -16,6 +16,8 @@ if ($_GET['id_produit'])
         $errors = array();
     }
 }
+$user = new C_contact();
+$user->logoA();
 
 
 ?>

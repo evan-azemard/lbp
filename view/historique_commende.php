@@ -5,6 +5,8 @@ if (empty($_SESSION['id'])) {
 
 $user = new C_historique_commende();
 $recup = $user->historiquecommende_f();
+$user->logoA();
+
 ?>
 <main id="historique_commende">
     <section id="commende_section">

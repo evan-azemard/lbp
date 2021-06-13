@@ -16,11 +16,29 @@ function panier()
             $this->id = $id;
         }
 
+
+         public  function logoA(){
+            $rec = cherche_logo_pan($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+
+        }
+
         public function affiche_panier($id)
         {
-
-
-
 
             $this->setId($id);
 

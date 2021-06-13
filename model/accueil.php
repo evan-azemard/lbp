@@ -57,6 +57,21 @@ function  recup_id_commendeA()
 }
 
 
+function cherche_logo_A($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 function deletteA($id){
     $bdd =  db_connect();
     $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');

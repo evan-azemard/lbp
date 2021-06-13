@@ -56,3 +56,16 @@ function select2()
     $selle = $sel1->fetchAll();
     return $selle;
 }
+function cherche_logo_profil($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}

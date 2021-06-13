@@ -32,6 +32,8 @@ if (isset($_POST['deletteall'])){
 {
     $errors = array();
 }
+$user->logoA();
+
 ?>
 
 <main id="gerant_main">

@@ -86,3 +86,17 @@ function supp_art($id){
     $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');
     $del->execute(array($id,));
 }
+
+function cherche_logo_pan($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}

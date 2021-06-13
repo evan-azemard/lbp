@@ -53,3 +53,17 @@ function  ajout_panier($id_user, $id_produit, $prix)
     $sse = $bdd->prepare("INSERT INTO paniers (id_user,id_produit,date_panier,prix_panier,id_panier) VALUES (?,?,?,?,?) ");
     $sse->execute(array($id_user, $id_produit, $date, $prix, $id_user));
 }
+
+function cherche_logo_produit($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}

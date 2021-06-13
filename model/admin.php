@@ -14,6 +14,19 @@ function deletempadmin($data){
     $sql = $bdd->prepare("DELETE  FROM contacts WHERE id_produit = ? ");
     $sql->execute(array($data));
 
-    var_dump($data);
-    ;
+
+}
+
+function cherche_logo_Ad($id){
+     $bdd =  db_connect();
+
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
 }

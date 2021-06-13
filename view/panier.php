@@ -3,6 +3,8 @@ if (empty($_SESSION['id'])) {
     header("Location: accueil");
 }
 $user = new C_affiche();
+$user->logoA();
+
 ?>
 
 <main id="panier_main">

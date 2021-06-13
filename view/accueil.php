@@ -15,6 +15,7 @@ if (!empty($_POST['Envoyer'])) {
 }
 $user = new C_accueil();
 $user->redeletteA();
+$user->logoA();
 
 ?>
 <main id="accueil_main">

@@ -10,6 +10,7 @@ if ($_SESSION['rank'] == 1) {
 }
 
 $user = new C_voir();
+$user->logoA();
 
 ?>
 

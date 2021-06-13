@@ -17,5 +17,17 @@ function issertmessage($data1,$data2,$data3,$data4)
 
     return true;
 }
+function cherche_logo_CONT($id){
+     $bdd =  db_connect();
 
+    $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
+    $sel->execute(array($id));
+    $rec = $sel->fetchAll();
+
+    if ($rec){
+        return true;
+    }else{
+        return false;
+    }
+}
 ?>
