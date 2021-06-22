@@ -9,6 +9,7 @@
 #Options +FollowSymlinks
 
 #Activaiton du module de réécriture d'url
+
 RewriteEngine on
 
 #------
@@ -18,6 +19,11 @@ RewriteEngine on
 #  ^ : Début
 #  $ : Fin
 #   [L]  arrete si l'url définit au shema selectioné par l'utilisateur
+
+
+
+
+
 
 RewriteRule ^register$ index.php?page=register [L]
 

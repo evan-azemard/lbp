@@ -82,6 +82,7 @@ function voir(){
                     if (isset($_POST['supprimer'])){
                         supp_voir_mp($_POST['id_voir']);
                         ?><meta http-equiv="refresh" content="0"><?php
+
                     }
                     ?>
 

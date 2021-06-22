@@ -146,11 +146,17 @@ function ajout()
             $this->setPrix($prix);
             $this->setIduser($iduser);
             $errors = array();
-            $size = 650000;
-
             if ($_SESSION['rank'] = 2)
             {
-                if ($this->imgsize > $size) {
+                if ($this->imgtype == 'image/png' || $this->imgtype == 'image/jpg' || $this->imgtype == 'image/jpeg'){
+                    $verif = true;
+                }else{
+                    $verif = false;
+                }
+                if ($verif == false){
+                    array_push($errors, "Nous acceptons uniquement les images en png et jpeg)");
+                }
+                if ($this->imgsize > 650000) {
                     array_push($errors, "Le poid de l'image est trop grand.(maximum = 650 ko)");
                 }
                 if (strlen($this->resum) < 20) {

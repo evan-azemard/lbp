@@ -1,11 +1,11 @@
 <?php
 
-/*
- * Config Bdd
- */
 function db_connect()
 {
-	$servname = "localhost"; $dbname = "lbp"; $user = "root"; $pass = "";
+
+require "./pass.php";
+
+
 	try{
 	$bdd = new PDO("mysql:host=$servname;dbname=$dbname", $user , $pass);
  	}

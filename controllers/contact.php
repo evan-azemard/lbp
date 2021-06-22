@@ -8,10 +8,6 @@ function contact(){
         private $id_produit;
         private $com;
 
-
-
-
-
         public function getId_produit()
         {
             return $this->id_produit;
@@ -30,27 +26,6 @@ function contact(){
         {
             $this->com = $com;
         }
-
-        public  function logoA(){
-            $rec = cherche_logo_CONT($_SESSION['id']);
-            if ($rec === false){
-                var_dump("null");
-            }
-            if ($rec === true)
-            {
-                var_dump("true");
-
-                ?>
-                <style>
-                    #header_panier{
-                        color: rgba(255, 0, 55, 0.58) !important;
-                    }
-                </style>
-                <?php
-            }
-
-        }
-
 
         public function contactF($id_produit,$com)
         {
@@ -72,19 +47,30 @@ function contact(){
                     <?php
 
                     ?> <script>window.location.replace("accueil");</script><?php
-
-
                 }
-
             }
-
-
-
-
-
-
         }
 
+
+
+        public  function logoA(){
+            $rec = cherche_logo_CONT($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+        }
     }
 
     //Template

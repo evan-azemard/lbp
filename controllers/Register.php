@@ -2,7 +2,6 @@
 /*Rgister*/
 
 require('model/register.php');
-$errors = array();
 
 function register()
 {
@@ -19,102 +18,42 @@ function register()
         private $choix;
         private $adresse;
 
-
-        public function getPseudo()
-        {
-            return $this->pseudo;
-        }
-
         public function setPseudo($pseudo)
         {
             $this->pseudo = $pseudo;
         }
-
-        public function getTel()
-        {
-            return $this->tel;
-        }
-
         public function setTel($tel)
         {
             $this->tel = $tel;
         }
-
-        public function getPassword()
-        {
-            return $this->password;
-        }
-
         public function setPassword($password)
         {
             $this->password = $password;
         }
-
-        public function getEmail()
-        {
-            return $this->email;
-        }
-
         public function setEmail($email)
         {
             $this->email = $email;
         }
-
-        public function getR_password()
-        {
-            return $this->r_password;
-        }
-
         public function setR_password($r_password)
         {
             $this->r_password = $r_password;
         }
-
-        public function getAge()
-        {
-            return $this->age;
-        }
-
         public function setAge($age)
         {
             $this->age = $age;
         }
-
-        public function getPrenom()
-        {
-            return $this->prenom;
-        }
-
         public function setPrenom($prenom)
         {
             $this->prenom = $prenom;
         }
-
-        public function getNom()
-        {
-            return $this->nom;
-        }
-
         public function setNom($nom)
         {
             $this->nom = $nom;
         }
-
-        public function getChoix()
-        {
-            return $this->choix;
-        }
-
         public function setChoix($choix)
         {
             $this->choix = $choix;
         }
-
-        public function getAdresse()
-        {
-            return $this->adresse;
-        }
-
         public function setAdresse($adresse)
         {
             $this->adresse = $adresse;
@@ -133,8 +72,11 @@ function register()
             $this->setChoix($choix);
             $this->setAdresse($adresse);
             $errors = array();
-            $hpass = password_hash($this->password, PASSWORD_DEFAULT);
+
+
             if ($this->pseudo && $this->tel && $this->password && $this->email && $this->r_password && $this->age && $this->prenom && $this->prenom && $this->nom && $this->choix) {
+
+                $hpass = password_hash($this->password, PASSWORD_DEFAULT);
 
                 if (strlen($this->pseudo) > 12) {
                     array_push($errors, "Le pseudo est trop long");
@@ -157,12 +99,15 @@ function register()
                 if ($this->password !== $this->r_password) {
                     array_push($errors, "Le mot de passe répété n'est pas le même");
                 }
-                if ($this->pseudo == $this->password) {
-                    array_push($errors, "Le pseudo et le mot de passe ne doivent pas être identique");
+                if ($this->password  < 8) {
+                    array_push($errors, "Le mot de passe est trop court");
                 }
                 $password_required = preg_match('%^(?=[^A-Z]*+.)(?=[^a-z]*+.)(?=[^0-9]*+.)(?=[^\W]*+.)%', $this->password);
                 if (!$password_required) {
                     array_push($errors, 'Il faut au moins: 1 caractère spécial, majuscule, minuscule,  nombre. ');
+                }
+                if ($this->pseudo == $this->password) {
+                    array_push($errors, "Le pseudo et le mot de passe ne doivent pas être identique");
                 }
                 $mail = (filter_var($this->email, FILTER_VALIDATE_EMAIL));
                 if (!$mail) {
@@ -231,6 +176,7 @@ function register()
 
     //Template
     $template = 'register';
-    //Layout (contient header , footer)
     include('view/layout.php');
 }
+
+

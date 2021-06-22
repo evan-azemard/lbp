@@ -69,9 +69,7 @@ function remplaceAdd($nameA, $urlA)
 function remplaceID($nameA, $urlA)
 {
     if (isset($_SESSION['id'])) {
-        echo "<a href='$urlA' class='colorlien'>";
-        echo "$nameA";
-        echo "</a>";
+        echo "<a href='$urlA' class='colorlien'> $nameA </a>";
     } else {
         echo '';
     }

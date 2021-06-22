@@ -44,8 +44,9 @@ function panier()
 
             if (isset($_POST['Supprimer']))
             {
-                d_panier($_POST['idproduit'], $this->id);
 
+                d_panier($_POST['idproduit'], $this->id);
+                ?><meta http-equiv="refresh" content="0"><?php
             }
 
             /*l'id du pannier de l'utilisateur*/
@@ -88,6 +89,8 @@ function panier()
                                     delete_panier_article($articles['id_panier'],(int)$_SESSION['id']);
 
                                     $commendes = select_commende($_SESSION['id']);
+
+
 
                                     foreach ($commendes as  $commende)
                                     {

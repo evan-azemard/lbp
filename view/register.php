@@ -42,7 +42,9 @@ if (isset($_POST["submit"])) {
                     <div class="register_form_contient">
                         <div class="register_labput">
                             <label class="register_invi" for="pseudo">Pseudo</label>
-                            <input  placeholder="Pseudo" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"  value="<?php echo Htmlspecialchars($_POST['pseudo']) ?>"<?php ;}?> type="text" name="pseudo" minlength="4" maxlength="12" id="pseudo" required>
+                            <input  placeholder="Pseudo" <?php if (!empty($_POST['pseudo'])){ ?>style="color: red"
+                                    value="<?php echo Htmlspecialchars($_POST['pseudo']) ?>"
+                                <?php ;}?> type="text" name="pseudo" minlength="4" maxlength="12" id="pseudo" required>
                         </div>
                         <div class="register_labput">
                             <label class="register_invi" for="téléphone">Téléphone</label>
