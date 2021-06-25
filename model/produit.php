@@ -11,6 +11,15 @@ function  article_produit($model)
     $articles = $sel->fetchAll();
     return $articles;
 }
+
+function  article_produitV($model,$data1,$data2)
+{
+    $bdd =  db_connect();
+    $sel = $bdd->prepare('select * from articles  WHERE marque_model = ? AND prix_article < ? AND prix_article > ?');
+    $sel->execute(array($model,$data2,$data1));
+    $articles = $sel->fetchAll();
+    return $articles;
+}
 function categorie($model){
     $bdd =  db_connect();
     $sel = $bdd->prepare('select DISTINCT categorie from articles  WHERE marque_model = ?');

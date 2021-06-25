@@ -15,7 +15,7 @@ $user->redelette();
 $user->logoA();
 
 if (isset($_POST['Valider'])){
-      $articles_model = $user->validerV($_POST['prix1'],$_POST['prix2']);
+    $articles_model = $user->validerV($_POST['prix1'],$_POST['prix2']);
 }elseif (empty($_POST['Valider'])){
     $articles_model = $user->valider();
 }
@@ -67,9 +67,14 @@ if (isset($_POST['Valider'])){
             foreach ($articles_model as $tab) {
                 $model = $tab['marque_model'];
 
-                $articles = article_produit($model);
+                 if (isset($_POST['Valider']))
+                {
+                    $articles = article_produitV($model,$_POST['prix1'],$_POST['prix2']);
+                }elseif (empty($_POST['Valider'])) {
+                    $articles = article_produit($model);
+                 }
+                    $categories = categorie($model);
 
-                $categories = categorie($model);
 
                 foreach ($categories as $categorie)
                 { ?>
