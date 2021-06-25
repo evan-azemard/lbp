@@ -16,6 +16,9 @@ if (!empty($_POST['Envoyer'])) {
 $user = new C_accueil();
 $user->redeletteA();
 $user->logoA();
+if (isset($_POST['Supprimer'])){
+    $user->supprimer($_POST['idprod']);
+}
 
 ?>
 <main id="accueil_main">

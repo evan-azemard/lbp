@@ -75,24 +75,27 @@ function accueil()
         public  function logoA()
         {
             if (isset($_SESSION['id'])){
-                       $rec = cherche_logo_A($_SESSION['id']);
-            if ($rec === false){
-                var_dump("null");
-            }
-            if ($rec === true)
-            {
-                var_dump("true");
+                $rec = cherche_logo_A($_SESSION['id']);
+                if ($rec === false){
+                    var_dump("null");
+                }
+                if ($rec === true)
+                {
+                    var_dump("true");
 
-                ?>
-                <style>
-                    #header_panier{
-                        color: rgba(255, 0, 55, 0.58) !important;
-                    }
-                </style>
-                <?php
-            }
+                    ?>
+                    <style>
+                        #header_panier{
+                            color: rgba(255, 0, 55, 0.58) !important;
+                        }
+                    </style>
+                    <?php
+                }
             }
 
+        }
+        public function supprimer($data){
+            deletteA($data);
         }
         public  function contact_accueil($email,$iden,$mp){
             $this->setEmail($email);
@@ -213,7 +216,19 @@ function accueil()
                         </div>
                         <div class="cards_logo">
                             <form method="post" style="display: flex" class="form_cards_logo">
-                                <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
+                                <?php
+                                if ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2)
+                                {
+                                    ?>
+                                    <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
+                                    <?php
+                                }else{
+                                    ?>
+                                    <input style="cursor: pointer" type="submit" name="Supprimer" value="Supprimer">
+                                    <input type="text" style="display: none" name="idprod" value="<?= $article['id_produit']?>">
+                                    <?php
+                                }
+                                ?>
                                 <input type="text" aria-label="pasID" name="idppa" value="<?= Htmlspecialchars($article['id_produit']) ?>" style="display: none">
                                 <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= Htmlspecialchars($article['prix_article']) ?>" style="display: none">
                             </form>
