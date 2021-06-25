@@ -68,15 +68,19 @@ function remplaceAdd($nameA, $urlA)
 /*Si tu est connecté tu affiche*/
 function remplaceID($nameA, $urlA)
 {
-    if (isset($_SESSION['id'])) {
-        echo "<a href='$urlA' class='colorlien'> $nameA </a>";
-    } else {
-        echo '';
+    if (isset($_SESSION['id'])){
+        if ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2) {
+            echo "<a href='$urlA' class='colorlien'> $nameA </a>";
+        } else {
+            echo '';
+        }
     }
+
 }
 
 
 
+//Si tu est admin tu n'a pas accé
 
 
 
