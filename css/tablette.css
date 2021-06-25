@@ -2532,4 +2532,16 @@
         min-height: 300px !important;
         min-width: 300px !important;
     }
+
+    #aucun_produit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 2.5rem;
+    color: #5E80B0;
+    font-weight: bold;
+}
 }

@@ -16,6 +16,10 @@ $user->logoA();
 
 if (isset($_POST['Valider'])){
     $articles_model = $user->validerV($_POST['prix1'],$_POST['prix2']);
+
+    if ($articles_model == NULL){
+        $te = "<p id='aucun_produit'>Aucun résulat trouvé</p>";
+    }
 }elseif (empty($_POST['Valider'])){
     $articles_model = $user->valider();
 }
@@ -68,6 +72,9 @@ if (isset($_POST['Supprimer'])){
     <section>
         <article class="articlegrid">
             <?php
+            if ($articles_model == NULL){
+                echo $te;
+            }
             foreach ($articles_model as $tab) {
                 $model = $tab['marque_model'];
 

@@ -217,6 +217,7 @@ function accueil()
                         <div class="cards_logo">
                             <form method="post" style="display: flex" class="form_cards_logo">
                                 <?php
+                                if (isset($_SESSION['id'])){
                                 if ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2)
                                 {
                                     ?>
@@ -227,6 +228,7 @@ function accueil()
                                     <input style="cursor: pointer" type="submit" name="Supprimer" value="Supprimer">
                                     <input type="text" style="display: none" name="idprod" value="<?= $article['id_produit']?>">
                                     <?php
+                                }
                                 }
                                 ?>
                                 <input type="text" aria-label="pasID" name="idppa" value="<?= Htmlspecialchars($article['id_produit']) ?>" style="display: none">
