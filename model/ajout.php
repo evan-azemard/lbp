@@ -57,7 +57,8 @@ function ajouter(
 }
 
 function cherche_logo_Aj($id){
-     $bdd =  db_connect();
+
+    $bdd =  db_connect();
 
     $sel = $bdd->prepare('select * from paniers WHERE id_user = ?');
     $sel->execute(array($id));

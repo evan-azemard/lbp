@@ -78,5 +78,16 @@ if (isset($_POST["submit"])) {
                 </div>
             </article>
         </form>
+
+
+<!--        <form>
+            <input type="text" id="jstext" style="border: 1px solid blueviolet">
+            <p style="cursor: pointer" id="ok">ok</p>
+        </form>-->
     </section>
 </main>
+<?php
+/*var_dump($_POST['value']);*/
+?>
+<!--<script type="text/javascript" src="controllers/register.js"></script>
+-->

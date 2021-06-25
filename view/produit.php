@@ -30,9 +30,16 @@ $user->logoA();
                     <li>
                         <a class="ali" href="#">Catégorie</a>
                         <ul>
-                            <li><a class="ali" href="#encre4">Du smartphone au PC</a></li>
-                            <li><a class="ali" href="#encre3">Engin motorisé</a></li>
-                            <li><a class="ali" href="#encre3">Décoration</a></li>
+                            <?php
+                            $categorieS = categorieS();
+
+                            foreach ($categorieS as $categories)
+                            {
+                                ?>
+                                <li><a class="ali" href="#<?= $categories['categorie']?>"><?= $categories['categorie']?></a></li> <?php
+                            }
+
+                            ?>
                         </ul>
                     </li>
                 </ul>
@@ -54,9 +61,17 @@ $user->logoA();
                 $model = $tab['marque_model'];
 
                 $articles = article_produit($model);
-                ?>
-                <div class="produit_h1">
-                    <h1><?= Htmlspecialchars($tab['marque_model'])?></h1>
+
+                $categories = categorie($model);
+
+                foreach ($categories as $categorie)
+                { ?>
+                    <div  id="<?=  $categorie['categorie'] ?>" class="produit_h1">
+                    <h1>
+                    <?php echo $categorie['categorie'];
+                }?>
+                <?= Htmlspecialchars($tab['marque_model']); ?>
+                </h1>
                 </div>
                 <div id="flexcard">
                     <div class="grid">
@@ -65,14 +80,13 @@ $user->logoA();
                                 <article class="body_cards">
                                     <div class="cards_img">
                                         <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($article['bin_img']) . '"  alt="mon image" title="image"/>'; ?>
-
                                     </div>
                                     <div class="cards_des">
                                         <h3>
                                             <?php
                                             $str = strlen($article['nom_model']);
                                             if (strlen($str > 12)) {
-                                                $tt = substr($article['nom_model'], 0, 12) . '...';
+                                                $tt = substr($article['nom_model'], 0, 25) . '...';
                                                 echo  Htmlspecialchars($tt);
                                             } else {
                                                 echo Htmlspecialchars($article['nom_model']);
