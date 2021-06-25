@@ -43,14 +43,26 @@ function delette($id){
 }
 /*Sélédctionner 1 fois la marque*/
 
+function  article_modelValue($val1, $val2)
+{
+    $bdd =  db_connect();
+    $sel = $bdd->prepare('select DISTINCT marque_model from articles WHERE prix_article < ? AND prix_article > ? ');
+    $sel->execute(array($val2 , $val1));
+    $articles_model = $sel->fetchAll();
+    return $articles_model;
+
+}
+
+
 function  article_model()
 {
     $bdd =  db_connect();
-    $sel = $bdd->prepare('select DISTINCT marque_model from articles ');
+    $sel = $bdd->prepare('select DISTINCT marque_model from articles');
     $sel->execute();
     $articles_model = $sel->fetchAll();
     return $articles_model;
 }
+
 
 function  ajout_panier($id_user, $id_produit, $prix)
 {

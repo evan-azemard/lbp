@@ -14,6 +14,11 @@ $user = new C_produit();
 $user->redelette();
 $user->logoA();
 
+if (isset($_POST['Valider'])){
+      $articles_model = $user->validerV($_POST['prix1'],$_POST['prix2']);
+}elseif (empty($_POST['Valider'])){
+    $articles_model = $user->valider();
+}
 ?>
 
 
@@ -48,9 +53,11 @@ $user->logoA();
         <article id="info_produit_art2">
             <p>Rechercher dans votre fourchette de prix:</p>
             <div id="info_produit_art3">
-                <input id="prix1" aria-label="number" type="number" minlength="1" placeholder="50 (€)">
-                <input id="prix2" aria-label="number" type="number" minlength="1" placeholder=" 4000 (€)">
-                <div id="vprix">Valider</div>
+                <form id="info_produit_art3" method="post">
+                    <input id="prix1"  name="prix1" aria-label="number" type="number" minlength="1" placeholder="50 (€)">
+                    <input id="prix2" name="prix2" aria-label="number" type="number" minlength="1" placeholder=" 4000 (€)">
+                    <input  type="submit" id="vprix" value="Valider" name="Valider">
+                </form>
             </div>
         </article>
     </section>

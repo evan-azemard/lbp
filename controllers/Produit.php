@@ -94,11 +94,23 @@ function produit()
                 ?><meta http-equiv="refresh" content="0"><?php
             }
         }
+
+        public function  validerV($data1,$data2){
+
+            $articles_model = article_modelValue($data1,$data2);
+            return$articles_model;
+        }
+
+        public function  valider()
+        {
+            $articles_model = article_model();
+            return$articles_model;
+
+        }
+
     }
 
 
-
-    $articles_model = article_model();
 
     //Template
     $template = 'produit';
