@@ -131,6 +131,7 @@ function profil()
 
         }
 
+
         public function Update($pseudo, $tel, $password, $email, $r_password, $age, $prenom, $nom, $adresse)
         {
             $this->setPseudo($pseudo);

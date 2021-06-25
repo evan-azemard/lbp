@@ -69,6 +69,10 @@ function produit()
 
         }
 
+        public function supprimer($data){
+            supprimer($data);
+        }
+
         public function produit($id, $prix)
         {
             $this->setId($id);

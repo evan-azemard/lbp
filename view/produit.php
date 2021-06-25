@@ -19,6 +19,10 @@ if (isset($_POST['Valider'])){
 }elseif (empty($_POST['Valider'])){
     $articles_model = $user->valider();
 }
+if (isset($_POST['Supprimer'])){
+
+    $user->supprimer($_POST['idprod']);
+}
 ?>
 
 
@@ -124,7 +128,19 @@ if (isset($_POST['Valider'])){
                                     </div>
                                     <div class="cards_logo">
                                         <form method="post" style="display: flex">
+                                            <?php
+                                            if ($_SESSION['rank'] == 1 || $_SESSION['rank'] == 2)
+                                            {
+                                                ?>
                                             <input style="cursor: pointer" type="submit" name="ppan" value="Ajouter">
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <input style="cursor: pointer" type="submit" name="Supprimer" value="Supprimer">
+                                                <input type="text" style="display: none" name="idprod" value="<?= $article['id_produit']?>">
+                                            <?php
+                                            }
+                                            ?>
                                             <input type="text" aria-label="pasID" name="idppa" value="<?= Htmlspecialchars($article['id_produit']) ?>" style="display: none">
                                             <input type="text" aria-label="pasprix" id="prix" name="prix" value="<?= Htmlspecialchars($article['prix_article'])?>" style="display: none">
                                         </form>

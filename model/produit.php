@@ -94,6 +94,12 @@ function cherche_logo_produit($id){
     }
 }
 
+function supprimer($id){
+    $bdd =  db_connect();
+    $del = $bdd->prepare('DELETE from articles WHERE id_produit = ?');
+    $del->execute(array($id));
+}
+
 
 /*    $bdd =  db_connect();
     $sel = $bdd->prepare('select * from articles FOR JSON AUTO');
