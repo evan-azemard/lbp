@@ -1,5 +1,4 @@
 function panier() {
-
     let article = document.getElementById("panier_section");
     let container = document.createElement("div");
     let paragraphe = document.createElement("p");
@@ -7,13 +6,12 @@ function panier() {
 
     let form = document.getElementById("formpanier");
     let submit = document.createElement('input');
-    let butt = document.getElementsByClassName('button_panier');
+
     form.method = "post";
-    butt.className = "invisible";
 
     let text = "voulez vous vraiment supprimer cette article de votre panier ?";
     submit.type = "submit";
-    submit.value = "Confirmer et supprimer ? ";
+    submit.value = "Confirmer";
     submit.name = "Supprimer";
     submit.className = "button_panier3";
     container.className =  "panier_div";
@@ -26,13 +24,15 @@ function panier() {
     container.appendChild(form);
     form.appendChild(submit);
 
-    let but = document.querySelectorAll('.button_panier');
-    form.appendChild(but)
+       let but = document.querySelector('.button_panier');
+   but.remove();
+
+
 
 }
 
 let but = document.querySelectorAll('.button_panier');
-but.forEach((el) => el.addEventListener('click', () => panier(but)))
+but.forEach((e) => e.addEventListener('click', () => panier()))
 
 
 

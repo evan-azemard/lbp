@@ -100,11 +100,6 @@ function panier()
                             }
                         }
 
-
-
-
-
-
                         ?>
                         <article class="panier_card">
                             <div class="card_panier_img">
@@ -124,8 +119,8 @@ function panier()
                                     </div>
                                     <div class="panier_commende">
                                         <form name="panierform1" method="post" id="formpanier">
-                                            <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                             <p class="button_panier">Supprimer</p>
+                                            <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                         </form>
                                     </div>
                                 </div>
