@@ -45,8 +45,8 @@ function panier()
             if (isset($_POST['Supprimer']))
             {
 
-               /* d_panier($_POST['idproduit'], $this->id);
-                */?><!--<meta http-equiv="refresh" content="0">--><?php
+                d_panier($_POST['idproduit'], $this->id);
+                ?><!--<meta http-equiv="refresh" content="0">--><?php
             }
 
             /*l'id du pannier de l'utilisateur*/
@@ -123,7 +123,7 @@ function panier()
                                         <div class="code"><?= Htmlspecialchars($key['code']) ?></div>
                                     </div>
                                     <div class="panier_commende">
-                                        <form name="panierform1" method="post">
+                                        <form name="panierform1" method="post" id="formpanier">
                                             <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                             <p class="button_panier">Supprimer</p>
                                         </form>
@@ -155,7 +155,7 @@ function panier()
                     <p><?php if (!empty($prix['prix_total'])){echo Htmlspecialchars($prix['prix_total'])."€";}else{echo '0 €';}?></p>
                 </div>
                 <form name="panier_valider" method="post" >
-                    <input type="submit" name="acheter" value="Passer au paiment" class="button_panier">
+                    <input type="submit" name="acheter" value="Passer au paiment" class="button_panier2">
                 </form>
             </article>
             <?php

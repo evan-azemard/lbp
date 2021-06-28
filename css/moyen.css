@@ -1991,6 +1991,31 @@
         font-size: 1.5rem;
     }
 
+    .button_panier2 {
+        outline: none;
+        color: #e1e9f4;
+        border: 1px solid #527b9e;
+        background-color: #527b9e;
+        border-radius: 15px;
+        padding: 3px 3px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+    .button_panier3 {
+        outline: none;
+        color: #e1e9f4;
+        border: 1px solid #527b9e;
+        background-color: #527b9e;
+        border-radius: 15px;
+        padding: 3px 3px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
     .traimoyenpanier {
         background-color: black;
         height: 1px;

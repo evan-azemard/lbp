@@ -1,36 +1,42 @@
 function panier() {
 
-    let art = document.getElementById("panier_section");
-    let div = document.createElement("div");
-    let p = document.createElement("p");
+    let article = document.getElementById("panier_section");
+    let container = document.createElement("div");
+    let paragraphe = document.createElement("p");
     let br = document.createElement("br");
-    let but = document.createElement("p");
 
-    let para = "voulez vous vraiment supprimer cette article de votre panier ?";
-    let suppr = "Supprimer";
-    div.className =  "panier_div";
-    p.className =  "panier_p";
-    but.className= "button confimr_supp"
-    but.append(suppr);
-    art.appendChild(div);
-    p.append(para)
-    div.appendChild(p);
-    div.appendChild(br)
-    div.appendChild(but);
+    let form = document.getElementById("formpanier");
+    let submit = document.createElement('input');
+    let butt = document.getElementsByClassName('button_panier');
+    form.method = "post";
+    butt.className = "invisible";
+
+    let text = "voulez vous vraiment supprimer cette article de votre panier ?";
+    submit.type = "submit";
+    submit.value = "Confirmer et supprimer ? ";
+    submit.name = "Supprimer";
+    submit.className = "button_panier3";
+    container.className =  "panier_div";
+    paragraphe.className =  "panier_p";
+
+    article.appendChild(container);
+    paragraphe.append(text);
+    container.appendChild(paragraphe);
+    container.appendChild(br);
+    container.appendChild(form);
+    form.appendChild(submit);
+
+    let but = document.querySelectorAll('.button_panier');
+    form.appendChild(but)
+
 }
 
 let but = document.querySelectorAll('.button_panier');
-but.forEach((el) => el.addEventListener('click', () => panier()))
+but.forEach((el) => el.addEventListener('click', () => panier(but)))
 
 
 
-function confirmer (){
-    console.log("l")
-}
 
-let confirm = document.querySelectorAll('.confimr_supp');
-
-confirm.forEach((e) => e.addEventListener('click', () => confirmer ()))
 
 /*
 const btn = document.querySelector('.button_panier')
