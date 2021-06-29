@@ -1,5 +1,10 @@
 <!--Template for full page -->
 <?php session_start();  ?>
+ <?php
+ require "autocompletionScript.php";
+ $recherche = isset($_GET['search']) ? $_GET['search'] : '';
+ if(isset($_GET['search'])){$data = $search->getSearch($recherche);}
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php
@@ -120,22 +125,25 @@ require_once('library/fonctions.php');
 
 <!--Footer-->
 <footer>
-    <div id="footerdiv1">
-        <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-        <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-        <i class="fa fa-paypal fa-3x" aria-hidden="true"></i>
-        <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
-        <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
-    </div>
-    <div id="footerdiv2">
-        <div id="footerdiv3">
-            <p>Evan Azemard</p>
-            <p>Copyright 2021 © Smart Your Future</p>
-            <p>Clément Nahmens</p>
+    <form id="header_form" method="POST">
+        <div id="flfl">
+            <input type="search" name="search"  aria-label="recherche" id="searchNav" autocomplete="off">
+                <div id="fl2">
+                    <div class="autocompletion" id="autocompletion"></div>
+                </div>
+            </div>
+        <input type="submit" id="submitNav" value="Rechercher">
+    </form>
+            <?php if(isset($data)){ ?>
+        <div id="re_div">
+            <span id="searchDisplay" class="searchDisplay">
+                <?php echo $data; ?>
+            </span>
         </div>
-
-    </div>
+    <?php } ?>
 </footer>
 </body>
 </html>
+	<script type="text/javascript" src="autocompletion.js"></script>
+
+
