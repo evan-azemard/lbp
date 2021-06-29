@@ -17,7 +17,7 @@ function panier()
         }
 
 
-         public  function logoA(){
+        public  function logoA(){
             $rec = cherche_logo_pan($_SESSION['id']);
             if ($rec === false){
                 var_dump("null");
@@ -44,9 +44,9 @@ function panier()
 
             if (isset($_POST['Supprimer']))
             {
+                    d_panier($_POST['idproduit'], $this->id);
+                    ?><meta http-equiv="refresh" content="0"><?php
 
-                d_panier($_POST['idproduit'], $this->id);
-                ?><!--<meta http-equiv="refresh" content="0">--><?php
             }
 
             /*l'id du pannier de l'utilisateur*/
@@ -100,11 +100,6 @@ function panier()
                             }
                         }
 
-
-
-
-
-
                         ?>
                         <article class="panier_card">
                             <div class="card_panier_img">
@@ -123,9 +118,9 @@ function panier()
                                         <div class="code"><?= Htmlspecialchars($key['code']) ?></div>
                                     </div>
                                     <div class="panier_commende">
-                                        <form name="panierform1" method="post" id="formpanier">
+                                        <form name="panierform1"  method="post" id="formpanier">
+                                            <input type="submit" name="Supprimer" value="Supprimer" class="button_panier">
                                             <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
-                                            <p class="button_panier">Supprimer</p>
                                         </form>
                                     </div>
                                 </div>
