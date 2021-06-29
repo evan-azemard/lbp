@@ -1,6 +1,6 @@
- var i = import("articles.json")
+/* var i = import("articles.json")
     let  u = JSON.parse(i)
-    console.log(u)
+    console.log(u)*/
     /*   var i = import("data.json")
        let  u = JSON.parse(i)
        console.log(u)
