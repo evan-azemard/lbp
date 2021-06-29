@@ -24,7 +24,6 @@ RewriteEngine on
 
 
 
-
 RewriteRule ^register$ index.php?page=register [L]
 
 RewriteRule ^accueil$ index.php?page=accueil [L]

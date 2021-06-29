@@ -38,7 +38,6 @@ class Database
 $db = new Database();
 
 
-
 class Search
 {
 
@@ -48,7 +47,6 @@ class Search
 
 	public function __construct($db)
 	{
-
 		$this->db = $db;
 	}
 
@@ -89,37 +87,26 @@ class Search
 		if (!empty($search_results)) {
 
 			return $search_results;
+
 		} else {
 			echo 'Pas de résultat';
 		}
 	}
-
 }
 
 $search = new Search($db);
-
-
-
 
 	// var_dump($_POST['search']);
 
 	if(!empty($_POST['search'])){
 
-
 		// Récupère la recherche
-		$recherche = isset($_POST['search']) ? $_POST['search'] : '';
+
+        $recherche = isset($_POST['search']) ? $_POST['search'] : '';
 
 		$data = $search->autoCompletion($recherche);
 
 		echo $data;
-
-
-
-	}
-	else{
-
-		echo 'remplir le champs'; 
-
 	}
 
 

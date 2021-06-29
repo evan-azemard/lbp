@@ -1,9 +1,8 @@
-$(document).ready(function()
-{
+$(document).ready(function(){
 
-	let searchHome = $('#searchHome'),
+	let searchHome = $('#searchHome'), 
 		searchNav = $('#searchNav'),
-		formSearch = $('#formSearch'),
+		formSearch = $('#formSearch'), 
 		autocompletion = $('#autocompletion');
 
 	// AUTOCOMPLETION
@@ -14,14 +13,14 @@ $(document).ready(function()
 		//VIDE LES RECHERCHES A CHAQUE NOUVELLE ENTREE
 		$('#autocompletion').empty();
 
-		//SI L'INPUT SEARCH EST DIFFERENT DE VIDE EFFECTUER UNE RECHERCHE DANS LA BDD
+		//SI L'INPUT SEARCH EST DIFFERENT DE VIDE EFFECTUER UNE RECHERCHE DANS LA BDD 
 		//ET PRESENTER LES 5 PREMIERES REQUETES CORRESPONDANTES
 		if(searchNav.val() != ""){
 
 			$.ajax({
 
-				url : "autocompletionScript.php",
-				type : "POST",
+				url : "autocompletionScript.php", 
+				type : "POST", 
 				data : "search=" + searchNav.val(),
 				success : function(html){
 
@@ -49,12 +48,12 @@ $(document).ready(function()
 
 			$.ajax({
 
-				url : "recherche.php?search="+$('input').val(),
-				type : "GET",
+				url : "recherche.php?search="+$('input').val(), 
+				type : "GET", 
 				success : function(html){
 
 					$(location).attr('href','recherche.php?search='+$('input').val());
-				},
+				}, 
 				error : function(resultat,statut,erreur){
 
 					console.log(resultat,statut,erreur);

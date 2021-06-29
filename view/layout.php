@@ -1,16 +1,22 @@
 <!--Template for full page -->
-<?php session_start();  ?>
- <?php
- require "autocompletionScript.php";
- $recherche = isset($_GET['search']) ? $_GET['search'] : '';
- if(isset($_GET['search'])){$data = $search->getSearch($recherche);}
- ?>
-<!DOCTYPE html>
-<html lang="fr">
-<?php
+
+<?php session_start();
 require_once('library/fonctions.php');
+require "autocompletionScript.php";
+$recherche = isset($_GET['search']) ? $_GET['search'] : '';
+
+if(isset($_GET['id'])) {
+    $search = new search();
+    $data = $search->getRequestInfo($_GET['id']);
+}
+if(isset($_GET['search'])) {
+     $search = new search();
+    $data = $search->getSearch($recherche);
+}
 ?>
 
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -84,31 +90,31 @@ require_once('library/fonctions.php');
     </div>
     <div id="header_lien">
         <div id="header_lien_grid1">
-            <form method="post">
-                <i id="header_absolute" class="fa fa-search" aria-hidden="true">
-                    <input  id="header_submit" autocomplete="off" type="submit">
-                </i>
-                <input type="search" class="linput3" id="recherche" autoCompletion="off">
-                <label for="recherche">
-                    <i class="fa fa-microphone" aria-hidden="true"></i>
-                </label>
+            <form id="header_form" method="POST">
+                <div id="flfl">
+                    <input type="search" name="search"  aria-label="recherche" id="searchNav" autocomplete="off">
+                    <div id="fl2">
+                        <div class="autocompletion" id="autocompletion"></div>
+                    </div>
+                </div>
+                <input type="submit" id="submitNav" value="Rechercher">
             </form>
         </div>
-                    <?php
-            if (isset($_SESSION['id'])) {
+        <?php
+        if (isset($_SESSION['id'])) {
             ?>
-                <div id="header_lien_button">
-                    <button id="buttonl"><a href="disconnect">Déconexion</a> </button>
-                </div>
+            <div id="header_lien_button">
+                <button id="buttonl"><a href="disconnect">Déconexion</a> </button>
+            </div>
             <?php
-          } else {
-                echo '';
-            }
-            ?>
-            <?php
-            if (isset($_SESSION['id'])) {
-            ?>
-                <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+        } else {
+            echo '';
+        }
+        ?>
+        <?php
+        if (isset($_SESSION['id'])) {
+        ?>
+        <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
     </div>
     <?php
     } else {
@@ -125,25 +131,26 @@ require_once('library/fonctions.php');
 
 <!--Footer-->
 <footer>
-    <form id="header_form" method="POST">
-        <div id="flfl">
-            <input type="search" name="search"  aria-label="recherche" id="searchNav" autocomplete="off">
-                <div id="fl2">
-                    <div class="autocompletion" id="autocompletion"></div>
-                </div>
-            </div>
-        <input type="submit" id="submitNav" value="Rechercher">
-    </form>
-            <?php if(isset($data)){ ?>
-        <div id="re_div">
-            <span id="searchDisplay" class="searchDisplay">
-                <?php echo $data; ?>
-            </span>
+    <div id="footerdiv1">
+        <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-paypal fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
+    </div>
+    <div id="footerdiv2">
+        <div id="footerdiv3">
+            <p>Evan Azemard</p>
+            <p>Copyright 2021 © Smart Your Future</p>
+            <p>Clément Nahmens</p>
         </div>
-    <?php } ?>
+
+    </div>
+
 </footer>
 </body>
 </html>
-	<script type="text/javascript" src="autocompletion.js"></script>
+<script type="text/javascript" src="autocompletion.js"></script>
 
 
