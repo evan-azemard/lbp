@@ -10,7 +10,7 @@ if(isset($_GET['id'])) {
     $data = $search->getRequestInfo($_GET['id']);
 }
 if(isset($_GET['search'])) {
-     $search = new search();
+    $search = new search();
     $data = $search->getSearch($recherche);
 }
 ?>
@@ -90,14 +90,14 @@ if(isset($_GET['search'])) {
     </div>
     <div id="header_lien">
         <div id="header_lien_grid1">
-            <form id="header_form" method="POST">
-                <div id="flfl">
-                    <input type="search" name="search"  aria-label="recherche" id="searchNav" autocomplete="off">
-                    <div id="fl2">
-                        <div class="autocompletion" id="autocompletion"></div>
-                    </div>
-                </div>
-                <input type="submit" id="submitNav" value="Rechercher">
+            <form method="post">
+                <i id="header_absolute" class="fa fa-search" aria-hidden="true">
+                    <input id="header_submit" autocomplete="off" type="submit">
+                </i>
+                <input type="search" id="recherche">
+                <label for="recherche">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </label>
             </form>
         </div>
         <?php
@@ -122,7 +122,6 @@ if(isset($_GET['search'])) {
     }
     ?>
 </header>
-
 
 <!--Main-->
 

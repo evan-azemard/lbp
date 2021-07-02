@@ -118,8 +118,9 @@ function panier()
                                         <div class="code"><?= Htmlspecialchars($key['code']) ?></div>
                                     </div>
                                     <div class="panier_commende">
-                                        <form name="panierform1"  method="post" id="formpanier">
-                                            <input type="submit" name="Supprimer" value="Supprimer" class="button_panier">
+                                       <form name="panierform1" method="post" id="formpanier">
+                                            <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
+                                            <p class="button_panier">Supprimer</p>
                                             <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                         </form>
                                     </div>
