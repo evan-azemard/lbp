@@ -18,7 +18,7 @@ RewriteEngine on
 
 #  ^ : Début
 #  $ : Fin
-#   [L]  arrete si l'url définit au shema selectioné par l'utilisateur
+#  [L]  termine le processus de réécriture en cours
 
 
 

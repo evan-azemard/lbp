@@ -28,12 +28,6 @@ $user->logoA();
         <div id="historiquev_main_info_titre">
             <h1>Vos produits en vente</h1>
         </div>
-        <div id="historiquev_main_info_argent">
-            <span id="historiquev_color">
-                <p>Votre revenu : </p>
-                <p id="historiquev_argent">2250 €</p>
-            </span>
-        </div>
     </div>
     <section id="historique_vendeur_section">
         <!--<article class="card_historiquev">

@@ -29,10 +29,10 @@ $user->logoA();
                 </div>
                 <div class="card_panier_text_div2">
                     <div class="panier_commende">
-                        <h2><?= Htmlspecialchars($affiche['nom_article']) ?></h2>
+                        <h2><?= Htmlspecialchars($affiche['nom_article'])?></h2>
                     </div>
                     <div class="panier_commende2">
-                        <div><?= Htmlspecialchars($affiche['prix_article']) ?></div>
+                        <div><?= Htmlspecialchars($affiche['prix_article']) ?>€</div>
                         <div>
                             <p>#<?= Htmlspecialchars($affiche['id_produit']) ?></p>
                         </div>
