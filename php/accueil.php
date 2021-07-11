@@ -1,11 +1,6 @@
 <?php
-require('model/accueil.php');
-
+require('../model/accueil.php');
 //Plus tard pour afficher les produit phare sur l'accueil
-function accueil()
-{
-
-
 
     class C_accueil
     {
@@ -237,7 +232,7 @@ function accueil()
 
                             <p><?= Htmlspecialchars($article['prix_article'])?> €</p>
                             <p><?= Htmlspecialchars($article['code'])?></p>
-                            <button><a href="contact?id_produit=<?= Htmlspecialchars($article['id_produit'])?>">Contacter</a></button>
+                            <button><a href="contact.php?id_produit=<?= Htmlspecialchars($article['id_produit'])?>">Contacter</a></button>
                         </div>
                     </article>
 
@@ -248,10 +243,3 @@ function accueil()
         </div>
         <?php
     }
-
-
-    //Template
-    $template = 'accueil';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

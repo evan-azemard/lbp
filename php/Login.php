@@ -1,8 +1,7 @@
 <?php
-require('model/login.php');
+require('../model/login.php');
 /*Le login*/
-function login()
-{
+
     class C_Login
     {
         //ATTRIBUTES
@@ -128,7 +127,7 @@ function login()
                     $_SESSION["nom"] = $tab["nom"];
                     $_SESSION["adresse"] = $tab["adresse"];
 
-                    ?> <script>window.location.replace("accueil");</script><?php
+                    ?> <script>window.location.replace("accueil.php");</script><?php
 
                 } else {
                     return $errors;
@@ -139,9 +138,3 @@ function login()
         }
     }
 
-
-    //Template
-    $template = 'login';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

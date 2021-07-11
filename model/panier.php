@@ -1,4 +1,6 @@
 <?php
+require ('../config/database.php');
+
 function  article_panier($model)
 {
 

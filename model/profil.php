@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 //Update users
 function UpdateA($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)

@@ -1,8 +1,7 @@
 <?php
-require('model/panier.php');
+require('../model/panier.php');
 
-function panier()
-{
+
     class C_affiche
     {
         private $id;
@@ -84,7 +83,7 @@ function panier()
                                 {
                                     envoiepanier((int)$item['id_produit'],(int)$_SESSION['id'],(string)$key['nom_model'],(string)$key['resum'],(int)$key['prix_article'],(string)$_SESSION['nom'],(string)$inf['nom'],(int)$inf['id_user'],$articles['id_panier'],$key['nom_img'],$key['taille_img'],$key['type_img'],$key['bin_img']);
 
-                                    ?> <script>window.location.replace("paiment");</script><?php
+                                    ?> <script>window.location.replace("paiment.php");</script><?php
 
                                     delete_panier_article($articles['id_panier'],(int)$_SESSION['id']);
 
@@ -118,9 +117,8 @@ function panier()
                                         <div class="code"><?= Htmlspecialchars($key['code']) ?></div>
                                     </div>
                                     <div class="panier_commende">
-                                       <form name="panierform1" method="post" id="formpanier">
-                                            <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
-                                            <p class="button_panier">Supprimer</p>
+                                        <form name="panierform1"  method="post" id="formpanier">
+                                            <input type="submit" name="Supprimer" value="Supprimer" class="button_panier">
                                             <input type="hidden"  class="idproduitpanier" name="idproduit" value="<?= Htmlspecialchars($key['id_produit']) ?>">
                                         </form>
                                     </div>
@@ -158,14 +156,3 @@ function panier()
         }
     }
 
-    //Template
-    $template = 'panier';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}
-
-/* ob_start();
-                       ob_clean();
-                       render
-                       extends*/
-?>

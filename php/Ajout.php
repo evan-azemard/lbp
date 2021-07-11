@@ -1,9 +1,8 @@
 <?php
 /*Ajouter un produuit*/
-require('model/ajout.php');
+require('../model/ajout.php');
 
-function ajout()
-{
+
 
     class C_Ajout
     {
@@ -212,16 +211,9 @@ function ajout()
                     $this->iduser
                 );
 
-                ?> <script>window.location.replace("accueil");</script><?php
+                ?> <script>window.location.replace("accueil.php");</script><?php
             }
             return $errors;
         }
     }
 
-
-
-    //Template
-    $template = 'ajout';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

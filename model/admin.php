@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 function seladm(){
     $bdd =  db_connect();

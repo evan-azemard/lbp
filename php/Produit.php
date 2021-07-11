@@ -1,11 +1,8 @@
 <?php
 
 /*Pour la page qui affiche les produits trié*/
-require('model/produit.php');
-require('library/fonctions.php');
+require('../model/produit.php');
 
-function produit()
-{
 
     /*
      *  Si il n'y a pas de nom d'article correspondant au nom_model,
@@ -113,11 +110,3 @@ function produit()
         }
 
     }
-
-
-
-    //Template
-    $template = 'produit';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

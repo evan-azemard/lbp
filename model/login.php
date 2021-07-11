@@ -1,5 +1,6 @@
 <?php
 
+require ('../config/database.php');
 
 /*Ce connecter en tant que users ou sellers*/
 function F_login($pseudo)

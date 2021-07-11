@@ -1,20 +1,21 @@
-<!--Template for full page -->
-
 <?php session_start();
-require_once('library/fonctions.php');
-require "autocompletionScript.php";
-$recherche = isset($_GET['search']) ? $_GET['search'] : '';
+require_once('../library/fonctions.php');
+require ('../php/mail.php');
 
-if(isset($_GET['id'])) {
-    $search = new search();
-    $data = $search->getRequestInfo($_GET['id']);
+if (empty($_SESSION['id'])) {
+    header("Location: accueil.php");
 }
-if(isset($_GET['search'])) {
-    $search = new search();
-    $data = $search->getSearch($recherche);
+if ($_SESSION['rank'] == 3) {
+    header("Location: accueil.php");
 }
+if ($_SESSION['rank'] == 1) {
+    header("Location: accueil.php");
+}
+
+$user = new C_voir();
+$user->logoA();
+
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,11 +23,11 @@ if(isset($_GET['search'])) {
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="https://th.bing.com/th/id/R8b9399dc465e6ade5afd8001ed17a012?rik=c%2fW8QQUaPwl%2fPA&riu=http%3a%2f%2fimages.clipartpanda.com%2fphone-icon-phone-512.png&ehk=nxS%2fIZTzi%2bOuaWlzTAP5khMCqyHyy%2fG0FlBqvfFhBhI%3d&risl=&pid=ImgRaw">
-    <link rel="stylesheet" type="text/css" href="css/grand.css">
-    <link rel="stylesheet" type="text/css" href="css/moyen.css">
-    <link rel="stylesheet" type="text/css" href="css/tablette.css">
-    <link rel="stylesheet" type="text/css" href="css/phablette.css">
-    <link rel="stylesheet" type="text/css" href="css/smartphone.css">
+    <link rel="stylesheet" type="text/css" href="../css/grand.css">
+    <link rel="stylesheet" type="text/css" href="../css/moyen.css">
+    <link rel="stylesheet" type="text/css" href="../css/tablette.css">
+    <link rel="stylesheet" type="text/css" href="../css/phablette.css">
+    <link rel="stylesheet" type="text/css" href="../css/smartphone.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
@@ -35,33 +36,25 @@ if(isset($_GET['search'])) {
     <link href="https://fonts.googlecapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <title>Smart Your Future</title>
 </head>
-
 <body>
-<!-- barre de recherche -->
-
-<?php
-
-?>
-<!--Header-->
-
 <header>
     <div id="header_menu">
         <div class="sectiondiv">
             <div id="déroul" class="DEL" style="overflow: auto; min-height: 85%;">
                 <a href="#" class="fermer" onclick="closeNav()">×</a>
-                <a class="colorlien" href="accueil">Accueil</a>
-                <?php remplaceRIEN("Inscription", "register"); ?>
-                <?php remplaceRIEN("Connexion", "login"); ?>
-                <?php remplaceID("Profil", "profil"); ?>
-                <a class="colorlien" href="produit">Découvrer nos produits</a>
-                <?php remplacev("Ajouter un article", "ajout"); ?>
-                <?php remplacev("Historique de vente", "historique_vendeur"); ?>
-                <?php remplacev("Messagerie", "voir"); ?>
-                <?php remplaceID("Historique des commandes", "historique_commende"); ?>
-                <?php remplaceID("Panier", "panier"); ?>
-                <?php remplaceAd("Admin", "admin"); ?>
-                <?php remplaceAdd("Gérant", "gerant"); ?>
-                <?php remplaceID("Déconnexion", "disconnect"); ?>
+                <a class="colorlien" href="accueil.php">Accueil</a>
+                <?php remplaceRIEN("Inscription", "register.php"); ?>
+                <?php remplaceRIEN("Connexion", "login.php"); ?>
+                <?php remplaceID("Profil", "profil.php"); ?>
+                <a class="colorlien" href="produit.php">Découvrer nos produits</a>
+                <?php remplacev("Ajouter un article", "ajout.php"); ?>
+                <?php remplacev("Historique de vente", "historique_vendeur.php"); ?>
+                <?php remplacev("Messagerie", "mail.php"); ?>
+                <?php remplaceID("Historique des commandes", "historique_commende.php"); ?>
+                <?php remplaceID("Panier", "panier.php"); ?>
+                <?php remplaceAd("Admin", "admin.php"); ?>
+                <?php remplaceAdd("Gérant", "gerant.php"); ?>
+                <?php remplaceID("Déconnexion", "disconnect.php"); ?>
             </div>
             <span style="font-size:30px;" onclick="openNav()">
                     <i class="fa fa-user-circle fa-2x logomain" aria-hidden="true"></i>
@@ -77,12 +70,11 @@ if(isset($_GET['search'])) {
             </script>
         </div>
     </div>
-
     <div id="header_title">
         <div id="header_title_img">
-            <img src=img_docs/logo.png alt="logo">
+            <img src=../img_docs/logo.png alt="logo">
         </div>
-        <a href="accueil">
+        <a href="accueil.php">
             <div id="header_h1">
                 <h1>Smart Your Future</h1>
             </div>
@@ -104,7 +96,7 @@ if(isset($_GET['search'])) {
         if (isset($_SESSION['id'])) {
             ?>
             <div id="header_lien_button">
-                <button id="buttonl"><a href="disconnect">Déconexion</a> </button>
+                <button id="buttonl"><a href="disconnect.php">Déconexion</a> </button>
             </div>
             <?php
         } else {
@@ -114,7 +106,7 @@ if(isset($_GET['search'])) {
         <?php
         if (isset($_SESSION['id'])) {
         ?>
-        <a href="panier"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+        <a href="panier.php"><i id="header_panier" class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
     </div>
     <?php
     } else {
@@ -123,12 +115,12 @@ if(isset($_GET['search'])) {
     ?>
 </header>
 
-<!--Main-->
 
-<!--Template-->
-<?php include $template . '.php' ?>
 
-<!--Footer-->
+<main id="admin_main">
+<?= $affiche = $user->repondre($_SESSION['id']); ?>
+</main>
+
 <footer>
     <div id="footerdiv1">
         <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
@@ -146,7 +138,6 @@ if(isset($_GET['search'])) {
         </div>
 
     </div>
-
 </footer>
 </body>
 </html>

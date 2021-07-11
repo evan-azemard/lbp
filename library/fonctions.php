@@ -57,7 +57,7 @@ function remplaceAdd($nameA, $urlA)
 {
     if (!empty($_SESSION['id'])) {
         if ($_SESSION['rank'] == 4) {
-            echo "<a href='$urlA' class='colorlien'>";
+            echo "<a href='$urlA ' class='colorlien'>";
             echo "$nameA";
             echo "</a>";
         } else {

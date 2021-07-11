@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 /*Pour ajouter un produit*/
 

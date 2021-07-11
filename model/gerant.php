@@ -1,7 +1,11 @@
 <?php
+require ('../config/database.php');
+
 function ajoutadmin($data){
     $bdd =  db_connect();
     $sql = $bdd->prepare("UPDATE users SET   rank = 3  WHERE id_user = ?");
+        ?><script>alert("Modification enregistré !")</script> <?php
+
     $sql->execute(array($data));
 }
 
@@ -35,7 +39,10 @@ function selall(){
 function deladmin($data){
     $bdd =  db_connect();
     $sql = $bdd->prepare("UPDATE  users SET rank = 1 WHERE id_user = ? and rank = 3");
+        ?><script>alert("Modification enregistré !")</script> <?php
+
     $sql->execute(array($data));
+
 }
 
 function verif_id($data){
@@ -53,6 +60,7 @@ function delall($data){
     $sql = $bdd->prepare("DELETE FROM users  WHERE id_user = ?");
     $sql->execute(array($data));
     $sel = $sql->fetch();
+    ?><script>alert("Modification enregistré !")</script> <?php
     return $sel;
 }
 

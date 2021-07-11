@@ -1,11 +1,9 @@
 <?php
 /*Rgister*/
+require('../model/profil.php');
 
-require('model/register.php');
 
-function register()
-{
-    class Utilisateurs
+    class C_profil
     {
         private $pseudo;
         private $tel;
@@ -15,51 +13,122 @@ function register()
         private $age;
         private $prenom;
         private $nom;
-        private $choix;
         private $adresse;
+
+
+        public function getPseudo()
+        {
+            return $this->pseudo;
+        }
 
         public function setPseudo($pseudo)
         {
             $this->pseudo = $pseudo;
         }
+
+        public function getTel()
+        {
+            return $this->tel;
+        }
+
         public function setTel($tel)
         {
             $this->tel = $tel;
         }
+
+        public function getPassword()
+        {
+            return $this->password;
+        }
+
         public function setPassword($password)
         {
             $this->password = $password;
         }
+
+        public function getEmail()
+        {
+            return $this->email;
+        }
+
         public function setEmail($email)
         {
             $this->email = $email;
         }
+
+        public function getR_password()
+        {
+            return $this->r_password;
+        }
+
         public function setR_password($r_password)
         {
             $this->r_password = $r_password;
         }
+
+        public function getAge()
+        {
+            return $this->age;
+        }
+
         public function setAge($age)
         {
             $this->age = $age;
         }
+
+        public function getPrenom()
+        {
+            return $this->prenom;
+        }
+
         public function setPrenom($prenom)
         {
             $this->prenom = $prenom;
         }
+
+        public function getNom()
+        {
+            return $this->nom;
+        }
+
         public function setNom($nom)
         {
             $this->nom = $nom;
         }
-        public function setChoix($choix)
+
+
+        public function getAdresse()
         {
-            $this->choix = $choix;
+            return $this->adresse;
         }
+
         public function setAdresse($adresse)
         {
             $this->adresse = $adresse;
         }
 
-        public function Register($pseudo, $tel, $password, $email, $r_password, $age, $prenom, $nom, $choix, $adresse)
+         public  function logoA(){
+            $rec = cherche_logo_profil($_SESSION['id']);
+            if ($rec === false){
+                var_dump("null");
+            }
+            if ($rec === true)
+            {
+                var_dump("true");
+
+                ?>
+                <style>
+                    #header_panier{
+                        color: rgba(255, 0, 55, 0.58) !important;
+                    }
+                </style>
+                <?php
+            }
+
+        }
+
+
+        public function Update($pseudo, $tel, $password, $email, $r_password, $age, $prenom, $nom, $adresse)
         {
             $this->setPseudo($pseudo);
             $this->setTel($tel);
@@ -69,14 +138,11 @@ function register()
             $this->setAge($age);
             $this->setPrenom($prenom);
             $this->setNom($nom);
-            $this->setChoix($choix);
             $this->setAdresse($adresse);
             $errors = array();
 
-
-            if ($this->pseudo && $this->tel && $this->password && $this->email && $this->r_password && $this->age && $this->prenom && $this->prenom && $this->nom && $this->choix) {
-
-                $hpass = password_hash($this->password, PASSWORD_DEFAULT);
+            $hpass = password_hash($this->password, PASSWORD_DEFAULT);
+            if ($this->pseudo || $this->tel || $this->password || $this->email || $this->r_password || $this->age || $this->prenom || $this->nom || $this->adresse) {
 
                 if (strlen($this->pseudo) > 12) {
                     array_push($errors, "Le pseudo est trop long");
@@ -96,18 +162,20 @@ function register()
                 if (strlen($this->prenom) < 3) {
                     array_push($errors, "Le prénom est trop court");
                 }
-                if ($this->password !== $this->r_password) {
-                    array_push($errors, "Le mot de passe répété n'est pas le même");
+                if (!empty($this->password) && empty($this->r_password)) {
+                    array_push($errors, "Veuillez confirmer le password !");
                 }
-                if ($this->password  < 8) {
-                    array_push($errors, "Le mot de passe est trop court");
+                if (!empty($this->password) && !empty($this->r_password)) {
+                    if ($this->password !== $this->r_password) {
+                        array_push($errors, "Le mot de passe répété n'est pas le même");
+                    }
+                }
+                if ($this->pseudo === $this->password) {
+                    array_push($errors, "Le pseudo et le mot de passe ne doivent pas être identique");
                 }
                 $password_required = preg_match('%^(?=[^A-Z]*+.)(?=[^a-z]*+.)(?=[^0-9]*+.)(?=[^\W]*+.)%', $this->password);
                 if (!$password_required) {
-                    array_push($errors, 'Il faut au moins: 1 caractère spécial, majuscule, minuscule,  nombre. ');
-                }
-                if ($this->pseudo == $this->password) {
-                    array_push($errors, "Le pseudo et le mot de passe ne doivent pas être identique");
+                    array_push($errors, 'Il faut au moins: 1 caractère spéciale, majuscule, minuscule,  nombre. ');
                 }
                 $mail = (filter_var($this->email, FILTER_VALIDATE_EMAIL));
                 if (!$mail) {
@@ -116,11 +184,12 @@ function register()
                 if ($this->age < 18) {
                     array_push($errors, "Il faut avoir 18 ans !");
                 }
-                if ($this->choix = 1 && $this->choix != 2) {
-                    $sel = selectusers();
+                if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2) {
+                    $sel = select();
 
                     foreach ($sel as $row) {
                         if (isset($row)) {
+
                             if ($row["pseudo"] == $this->pseudo) {
                                 array_push($errors, "Le pseudo est déja utilisé");
                             }
@@ -137,8 +206,8 @@ function register()
                     }
                 }
 
-                if ($this->choix = 2 && $this->choix != 1) {
-                    $selle = selectsellers();
+                if ($_SESSION["rank"] = 2 && $_SESSION["rank"] != 1) {
+                    $selle = select2();
 
                     foreach ($selle as $rows) {
                         if (isset($rows)) {
@@ -157,26 +226,30 @@ function register()
                         }
                     }
                 }
-            } else {
-                array_push($errors, "Veuillez remplire tout les champs !");
             }
+
+
             if (count($errors) < 1) {
-                if ($this->choix = 1 && $this->choix != 2) {
-                    RegisterA($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
-                    /*2 = sellers*/
-                } else if ($this->choix = 2 && $this->choix != 1) {
-                    RegisterB($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
+                if (!empty($this->password)) {
+                    if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2) {
+                        UpdateA($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
+                        /*2 = sellers*/
+                    } else if ($_SESSION["rank"] = 2 && $_SESSION["rank"] != 1) {
+                        UpdateB($this->pseudo, $hpass, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
+                    }
                 }
-                ?> <script>window.location.replace("login");</script><?php
+                if (empty($this->password)) {
+                    if ($_SESSION["rank"] = 1 && $_SESSION["rank"] != 2 && $this->password = "vide") {
+                        UpdateAA($this->pseudo, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
+                        /*2 = sellers*/
+                    } else if ($_SESSION["rank"] = 2 && $_SESSION["rank"] != 1  && $this->password = "vide") {
+                        UpdateBB($this->pseudo, $this->tel, $this->email, $this->age, $this->prenom, $this->nom, $this->adresse);
+                    }
+                }
+                session_unset();
+                ?> <script>window.location.replace("login.php");</script><?php
             } else {
                 return $errors;
             }
         }
     }
-
-    //Template
-    $template = 'register';
-    include('view/layout.php');
-}
-
-

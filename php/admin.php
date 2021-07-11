@@ -1,8 +1,6 @@
 <?php
-require('model/admin.php');
+require('../model/admin.php');
 
-function admin()
-{
     class C_admin
     {
         public  function logoA()
@@ -105,11 +103,3 @@ function admin()
             }
         }
     }
-
-
-
-    //Template
-    $template = 'admin';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

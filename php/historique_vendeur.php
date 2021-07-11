@@ -1,7 +1,7 @@
 <?php
-require('model/historique_vendeur.php');
+require('../model/historique_vendeur.php');
 
-function historique_vendeur(){
+
 
 
 
@@ -83,9 +83,3 @@ function historique_vendeur(){
 
     }
 
-
-    //Template
-    $template = 'historique_vendeur';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

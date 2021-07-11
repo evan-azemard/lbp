@@ -1,7 +1,7 @@
 <?php
-require('model/gerant.php');
+require('../model/gerant.php');
 
-function gerant(){
+
 
     class C_gerant{
         private $id;
@@ -157,9 +157,3 @@ function gerant(){
 
         }
     }
-
-    //Template
-    $template = 'gerant';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}

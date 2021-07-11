@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 
 /*pour généré les catégories des articles*/

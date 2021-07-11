@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 //Enregistre users
 function RegisterA($pseudo, $hpass, $tel, $email, $age, $prenom, $nom, $adresse)

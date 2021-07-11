@@ -1,4 +1,5 @@
 <?php
+require ('../config/database.php');
 
 
 /*Plus tard pour les produit phare*/

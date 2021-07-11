@@ -1,7 +1,6 @@
 <?php
-require('model/contact.php');
+require('../model/contact.php');
 
-function contact(){
 
     class C_contact
     {
@@ -46,7 +45,7 @@ function contact(){
                     ?><script>alert("Message envoyé")</script>
                     <?php
 
-                    ?> <script>window.location.replace("accueil");</script><?php
+                    ?> <script>window.location.replace("accueil.php");</script><?php
                 }
             }
         }
@@ -73,8 +72,3 @@ function contact(){
         }
     }
 
-    //Template
-    $template = 'contact';
-    //Layout (contient header , footer)
-    include('view/layout.php');
-}
