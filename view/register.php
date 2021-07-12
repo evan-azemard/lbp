@@ -207,11 +207,7 @@ if (isset($_POST["submit"])) {
 </div>
 <input type="text" id="register_text" style="background-color: red">
 <input type="submit" id="clike" style="background-color: #9a6d6d">
-<?php
 
-    var_dump( $_POST['input']);
-
-?>
 
 <footer>
     <div id="footerdiv1">
