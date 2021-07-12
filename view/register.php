@@ -33,7 +33,6 @@ if (isset($_POST["submit"])) {
     <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/560ce3d2ed.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googlecapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <title>Smart Your Future</title>
 </head>
 <body>
@@ -206,6 +205,13 @@ if (isset($_POST["submit"])) {
         </section>
     </main>
 </div>
+<input type="text" id="register_text" style="background-color: red">
+<input type="submit" id="clike" style="background-color: #9a6d6d">
+<?php
+
+    var_dump( $_POST['input']);
+
+?>
 
 <footer>
     <div id="footerdiv1">
@@ -227,6 +233,6 @@ if (isset($_POST["submit"])) {
 </footer>
 </body>
 </html>
-<script type="text/javascript" src="autocompletion.js"></script>
+<script type="text/javascript" src="register.js"></script>
 
 
