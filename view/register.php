@@ -7,15 +7,7 @@ if (!empty($_SESSION['id'])){
 }
 ?>
 <!--Page Register-->
-<?php
-if (isset($_POST["submit"])) {
-    $user = new Utilisateurs();
-    $errors = $user->Register($_POST['pseudo'], $_POST['tel'], $_POST['password'], $_POST['email'], $_POST['r_password'], $_POST['age'], $_POST['prenom'], $_POST['nom'], $_POST['choix'], $_POST['adresse']);
-} else {
-    $errors = array();
-}
 
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -74,6 +66,10 @@ if (isset($_POST["submit"])) {
             <img src=../img_docs/logo.png alt="logo">
         </div>
         <a href="accueil.php">
+            <script>
+
+                let header_hi = document.getElementById("header_h1")
+            </script>
             <div id="header_h1">
                 <h1>Smart Your Future</h1>
             </div>
@@ -133,7 +129,7 @@ if (isset($_POST["submit"])) {
                     compte, sauf si votre contenu a été partagé avec d’autres personnes qui ne l’ont pas supprimé.<span id="register_g2">"</span></p>
             </article>
         </section>
-        <?php include 'error.php'; ?>
+        <div id="error"></div>
         <section id="register_section2">
             <form method="post" id="register_form">
                 <article id="register_form_article1">
@@ -193,22 +189,18 @@ if (isset($_POST["submit"])) {
                         <div class="register_labput5">
                             <p id="labelcompte" class="register_invi">Type de compte</p>
                             <label for="choix1">Vendeur</label>
-                            <input type="radio" required value="2" name="choix" id="choix1">
+                            <input type="radio" required value="2" class="check" name="choix" id="choix1">
                             <label for="choix2">Utilisateur</label>
-                            <input type="radio" required value="1" name="choix" id="choix2">
+                            <input type="radio" required value="1" class="check" name="choix" id="choix2">
                         </div>
                 </article>
                 <article id="register_form_article3">
-                    <input type="submit" class="button" value="Valider les choix" name="submit">
+                    <button class="button" value="Valider les choix" id="submit" name="submit">Valider les choix</button>
                 </article>
             </form>
         </section>
     </main>
 </div>
-<input type="text" id="register_text" style="background-color: red">
-<input type="submit" id="clike" style="background-color: #9a6d6d">
-
-
 <footer>
     <div id="footerdiv1">
         <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>

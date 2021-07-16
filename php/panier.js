@@ -98,11 +98,6 @@ function panier() {
     let but = document.querySelector('.button_panier');
 
         but.remove()
-
-/*    if (but[1]){
-        but[1].remove()
-    }*/
-
 }
 
 
@@ -110,3 +105,7 @@ let but = document.querySelectorAll('.button_panier');
 but.forEach((e) => e.addEventListener('click', () => panier()))
 
 
+
+/*    if (but[1]){
+        but[1].remove()
+    }*/
